@@ -58,15 +58,11 @@ set(USE_SYSTEM_COMAN_SHARED OFF CACHE BOOL "Initial cache")
 find_or_build_package(YARP 2.3.60)
 find_or_build_package(ICUB)
 find_or_build_package(iDynTree)
-find_or_build_package(COMAN_shared)
 
 find_or_build_package(IITComanRosPkg)
 find_or_build_package(icub_gazebo)
 
-# Packages not useful on robot
-if(NOT "${ROBOTOLOGY_PROFILE}" STREQUAL "ROBOT")
-    find_or_build_package(GazeboYARPPlugins)
-endif()
+find_or_build_package(GazeboYARPPlugins)
 
 
 set_package_properties(Git PROPERTIES TYPE RUNTIME)

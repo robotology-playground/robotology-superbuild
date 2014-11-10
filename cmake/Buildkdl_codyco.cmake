@@ -2,11 +2,11 @@
 include(YCMEPHelper)
 include(FindOrBuildPackage)
 
-find_or_build_package(orocos_kdl QUIET NO_CMAKE_PACKAGE_REGISTRY)
+find_or_build_package(orocos_kdl QUIET)
 
 ycm_ep_helper(kdl_codyco TYPE GIT
                          STYLE GITHUB
                          REPOSITORY traversaro/kdl_codyco.git
-                         TAG rovereto
+                         TAG master
                          COMPONENT external
                          DEPENDS orocos_kdl)

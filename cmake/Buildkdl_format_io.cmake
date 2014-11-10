@@ -1,8 +1,12 @@
-# kdl_codyco
+# kdl_format_io
 include(YCMEPHelper)
 include(FindOrBuildPackage)
 
-find_or_build_package(orocos_kdl QUIET NO_CMAKE_PACKAGE_REGISTRY)
+find_package(TinyXML QUIET)
+find_package(Boost COMPONENTS thread QUIET)
+
+find_or_build_package(orocos_kdl QUIET)
+find_or_build_package(kdl_codyco QUIET)
 find_or_build_package(console_bridge QUIET)
 find_or_build_package(urdfdom_headers QUIET)
 find_or_build_package(urdfdom QUIET)
@@ -15,4 +19,5 @@ ycm_ep_helper(kdl_format_io TYPE GIT
                             DEPENDS orocos_kdl
                                     console_bridge
                                     urdfdom_headers
-                                    urdfdom)
+                                    urdfdom
+                                    kdl_codyco)
