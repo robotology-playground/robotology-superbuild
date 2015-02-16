@@ -1,3 +1,18 @@
+#=============================================================================
+# Copyright 2013-2014 iCub Facility, Istituto Italiano di Tecnologia
+#   Authors: Daniele E. Domenichelli <daniele.domenichelli@iit.it>
+#
+# Distributed under the OSI-approved BSD License (the "License");
+# see accompanying file Copyright.txt for details.
+#
+# This software is distributed WITHOUT ANY WARRANTY; without even the
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the License for more information.
+#=============================================================================
+# (To distribute this file outside of YCM, substitute the full
+#  License text for the above reference.)
+
+
 # This module is intentionally kept as small as possible in order to
 # avoid the spreading of different modules.
 #
@@ -54,13 +69,17 @@ _ycm_clean_path("${CMAKE_BINARY_DIR}/install" CMAKE_PREFIX_PATH)
 _ycm_clean_path("${CMAKE_BINARY_DIR}/install" PATH)
 
 
-find_package(YCM QUIET)
-if(COMMAND set_package_properties)
-  set_package_properties(YCM PROPERTIES TYPE RECOMMENDED
-                                        PURPOSE "Used by the build system")
-endif()
-if(YCM_FOUND)
-    return()
+# If the USE_SYSTEM_YCM is explicitly set to false, we just skip to bootstrap.
+if(NOT DEFINED USE_SYSTEM_YCM OR USE_SYSTEM_YCM)
+    find_package(YCM QUIET)
+    if(COMMAND set_package_properties)
+        set_package_properties(YCM PROPERTIES TYPE RECOMMENDED
+                                              PURPOSE "Used by the build system")
+    endif()
+    if(YCM_FOUND)
+        message(STATUS "YCM found in ${YCM_MODULE_DIR}.")
+        return()
+    endif()
 endif()
 
 message(STATUS "YCM not found. Bootstrapping it.")
