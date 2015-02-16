@@ -25,11 +25,11 @@ set(ROBOTOLOGY_MINOR_VERSION 0)
 set(ROBOTOLOGY_PATCH_VERSION 1)
 set(ROBOTOLOGY_VERSION ${ROBOTOLOGY_MAJOR_VERSION}.${ROBOTOLOGY_MINOR_VERSION}.${ROBOTOLOGY_PATCH_VERSION})
 
+set(YCM_EP_MAINTAINER_MODE TRUE)
+
 include(CTest)
 include(FeatureSummary)
 
-
-set(YCM_GIT_GITLAB_ICUB_ORG_BASE_ADDRESS "ssh://git@gitlab.icub.org/" CACHE STRING "Address to use for IIT iCub Facility Gitlab git repositories")
 set(YCM_USE_CMAKE_PROPOSED TRUE CACHE BOOL "Use files including unmerged cmake patches")
 
 include(ProjectsTags OPTIONAL)
@@ -49,21 +49,26 @@ include(YCMEPHelper)
 # find_or_build_package(GtkDataboxMM)
 
 set(USE_SYSTEM_YARP OFF CACHE BOOL "Initial cache")
-set(USE_SYSTEM_ICUB OFF CACHE BOOL "Initial cache")
-set(USE_SYSTEM_CODYCO OFF CACHE BOOL "Initial cache")
 set(USE_SYSTEM_KDL_CODYCO OFF CACHE BOOL "Initial cache")
-set(USE_SYSTEM_COMAN_SHARED OFF CACHE BOOL "Initial cache")
-#set(USE_SYSTEM_RVIZ OFF CACHE BOOL "Initial cache")
+set(USE_SYSTEM_IDYNTREE OFF CACHE BOOL "Initial cache")
+set(USE_SYSTEM_PARAMHELP OFF CACHE BOOL "Initial cache")
+set(USE_SYSTEM_OPENSOT OFF CACHE BOOL "Initial cache")
 
-find_or_build_package(YARP 2.3.60)
+find_or_build_package(YARP 2.3.62)
 find_or_build_package(ICUB)
-find_or_build_package(iDynTree)
 
 find_or_build_package(IITComanRosPkg)
 find_or_build_package(icub_gazebo)
 
 find_or_build_package(GazeboYARPPlugins)
+find_or_build_package(OpenSoT)
 
+find_package(Matlab)
+if(MATLAB_FOUND)
+        find_or_build_package(mexWholeBodyModel)
+    find_or_build_package(WBIToolbox)
+endif()
+find_or_build_package(yarpWholeBodyInterface)
 
 set_package_properties(Git PROPERTIES TYPE RUNTIME)
 set_package_properties(Subversion PROPERTIES TYPE RUNTIME)
