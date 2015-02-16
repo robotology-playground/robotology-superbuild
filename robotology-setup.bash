@@ -17,6 +17,16 @@ if [ -f /opt/ros/hydro/setup.bash ]; then
     source /opt/ros/hydro/setup.bash
 fi
 
+
+if [ -f /opt/ros/indigo/setup.bash ]; then
+    source /opt/ros/indigo/setup.bash
+fi
+
+#gazebo setup
+if [ -f /usr/share/gazebo/setup.sh ]; then
+    source /usr/share/gazebo/setup.sh
+fi
+
 export PATH=$ROBOTOLOGY_ROOT/build/install/bin:$PATH
 export LD_LIBRARY_PATH=$ROBOTOLOGY_ROOT/build/install/lib:$LD_LIBRARY_PATH
 pathadd CMAKE_PREFIX_PATH $ROBOTOLOGY_ROOT/build/install
