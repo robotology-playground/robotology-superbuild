@@ -1,0 +1,17 @@
+
+set(GazeboYARPPlugins_TAG f18d3067)
+set(hrl_geom_TAG a8683c8)
+set(iDynTree_TAG 895f2f1)
+set(kdl_codyco_TAG 12bbb14)
+set(kdl_format_io_TAG 6890e69)
+set(mexWholeBodyModel_TAG 5c0edee)
+set(paramHelp_TAG de9f652)
+set(pykdl_utils_TAG a8683c8)
+set(TinyXML_TAG 8459459)
+set(WBIToolbox_TAG e410c34)
+set(wholeBodyInterface_TAG 68db004)
+set(YARP_TAG 3ef253c)
+set(yarpWholeBodyInterface_TAG 6d70ce2)
+set(YCM_TAG b327e75)
+
+set(idynutils_TAG convex_hull)
