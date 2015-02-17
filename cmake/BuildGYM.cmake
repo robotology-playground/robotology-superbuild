@@ -10,7 +10,7 @@ ycm_ep_helper(GYM   TYPE GIT
                     STYLE GITHUB
                     REPOSITORY robotology-playground/GYM.git
                     TAG master
-                    COMPONENT drc
+                    COMPONENT external
 #                    TEST_COMMAND ctest
                     DEPENDS YARP
                             idynutils

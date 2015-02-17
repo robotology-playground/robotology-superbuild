@@ -12,7 +12,7 @@ ycm_ep_helper(idynutils TYPE GIT
                         STYLE GITHUB
                         REPOSITORY robotology-playground/idynutils.git
                         TAG master
-                        COMPONENT drc
+                        COMPONENT external
 #                       TEST_COMMAND ctest
                         DEPENDS YARP
                                 iDynTree
