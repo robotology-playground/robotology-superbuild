@@ -52,7 +52,7 @@ fi
 
 mkdir -p $ROBOTOLOGY_ROOT/build
 
-cd $ROBOTOLOGY_ROOT/build; cmake ..; make update-all; make -j$((`nproc` - 1)) COMAN_shared; make -j$((`nproc` - 1)) YARP; make -j$((`nproc` - 1)) ICUB; make -ik; make;
+cd $ROBOTOLOGY_ROOT/build; cmake ..; make update-all; make -j$((`nproc` - 1)) YARP; make -ik; make;
 
 . $ROBOTOLOGY_ROOT/robotology-setup.bash
 
