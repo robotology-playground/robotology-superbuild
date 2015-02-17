@@ -24,7 +24,7 @@ endif()
 ycm_ep_helper(OpenSoT TYPE GIT
               STYLE GITHUB
               REPOSITORY robotology-playground/OpenSoT.git
-              TAG devel
+              TAG master
               COMPONENT external
 #              CMAKE_ARGS ${qpOASES_EXTRA_CMAKE_ARGS}
 #              TEST_COMMAND ctest
