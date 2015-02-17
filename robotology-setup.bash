@@ -3,6 +3,8 @@
 ROBOTOLOGY_ROOT=$(dirname $(readlink --canonicalize --no-newline $BASH_SOURCE))
 if [ -f $ROBOTOLOGY_ROOT/build/active_profile ]; then
     source $ROBOTOLOGY_ROOT/build/active_profile
+else
+    export ROBOTOLOGY_PROFILE=SIMULATION
 fi
 
 pathadd() {
