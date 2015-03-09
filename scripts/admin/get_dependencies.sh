@@ -143,17 +143,17 @@ else
     sudo pip install svg.path
 
     # TODO this is a [quickfix]
-    echo "Adding walkman-setup.sh to your .bashrc"
+    echo "Adding robotology-setup.bash to your .bashrc"
 
     echo ">>> Press ENTER if you want to skip writing to .bashrc. "
     echo "    You should not skip it unless you know what you are doing."
     if read -t 10 -p '    I will wait for 10 seconds <<< ' ; then
         echo "... skipping"
     else
-        echo ". $ROBOTOLOGY_ROOT/walkman-env.bash" >> ~/.bashrc
+        echo ". $ROBOTOLOGY_ROOT/robotology-setup.bash" >> ~/.bashrc
     fi
 
-    . $ROBOTOLOGY_ROOT/walkman-env.bash
+    . $ROBOTOLOGY_ROOT/robotology-setup.bash
 
     # A fresh installaion of ROS would require the following two commands
     # NOT TESTED, please verify!
