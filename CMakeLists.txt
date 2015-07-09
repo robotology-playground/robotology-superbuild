@@ -63,12 +63,13 @@ find_or_build_package(icub_gazebo)
 find_or_build_package(GazeboYARPPlugins)
 find_or_build_package(OpenSoT)
 
+find_or_build_package(GYM)
+
 find_package(Matlab)
 if(MATLAB_FOUND)
-        find_or_build_package(mexWholeBodyModel)
+    find_or_build_package(mexWholeBodyModel)
     find_or_build_package(WBIToolbox)
 endif()
-find_or_build_package(yarpWholeBodyInterface)
 
 set_package_properties(Git PROPERTIES TYPE RUNTIME)
 set_package_properties(Subversion PROPERTIES TYPE RUNTIME)
