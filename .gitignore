@@ -1,0 +1,9 @@
+/external/
+/robots/
+/documentation/
+/templates/
+/examples/
+/drc/
+/build/
+*.orig
+*~
