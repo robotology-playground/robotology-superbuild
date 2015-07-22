@@ -64,8 +64,6 @@ wait_and_print() {
 
 setup_profile() {
 
-    mkdir -p $ROBOTOLOGY_ROOT/build
-
     echo "Which kind of installation would you like to perform?"
 
     if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" != "ROBOT" ]; then
@@ -75,8 +73,8 @@ setup_profile() {
     fi
     echo " 1   default"
     echo "     Select this option when installing the superbuild on a regular"
-    echo "     laptop or desktop. You can use this installation to interface with both"
-    echo "     the robot and the simulator."
+    echo "     laptop or desktop. You can use this installation to interface with"
+    echo "     the robot."
 
 
     if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" = "ROBOT" ]; then
@@ -89,6 +87,11 @@ setup_profile() {
     echo "     the robot's on-board PC104. This will install the low-latency"
     echo "     linux kernel and scripts to start yarp and ros at boot,"
     echo "     but won't install gazebo."
+
+    echo " 3   simulation"
+    echo "     Select this option when installing the superbuild on a regular"
+    echo "     laptop or desktop. You can use this installation to interface with"
+    echo "     the simulator."
 
     echo
     echo "Please input the desired number, CTRL-C to quit"
@@ -117,6 +120,15 @@ setup_profile() {
 
             print_success_info
             ;;
+        3|simulation|Simulation|SIMULATION)
+            echo -n "Starting simulation installation to local server... "
+            wait_and_print
+
+            $ROBOTOLOGY_ROOT/profiles/simulation/setup.sh
+            echo "127.0.0.1 10000 yarp" > `yarp conf`
+
+            print_success_info
+            ;;
         "")
             echo "No selection made, bye!"
             exit 1
@@ -137,7 +149,6 @@ setup_force() {
 
 bootstrap_profile() {
     # bootstrap
-    mkdir -p $ROBOTOLOGY_ROOT/build
 
     if [ -f $ROBOTOLOGY_ROOT/build/active_profile ]; then
       . $ROBOTOLOGY_ROOT/build/active_profile

@@ -7,7 +7,7 @@ ROBOTOLOGY_ROOT=$(readlink --canonicalize --no-newline $(dirname $(readlink --ca
 cd $ROBOTOLOGY_ROOT
 git fetch --all || exit 1
 git pull
-echo "git status for robotology-superbuild says:"
+echo "git status for walkman says:"
 echo
 git status
 echo
@@ -47,14 +47,25 @@ if [ -d $ROBOTOLOGY_ROOT/build ]; then
     esac
 
     cd $ROBOTOLOGY_ROOT
+  
+    if [ -f active_profile ]; then
+	cp active_profile /tmp/
+    fi
+  
     rm -rf $ROBOTOLOGY_ROOT/build
 fi
 
 mkdir -p $ROBOTOLOGY_ROOT/build
 
-cd $ROBOTOLOGY_ROOT/build; cmake ..; make update-all; make -j$((`nproc` - 1)) YARP; make -ik; make;
+if [ -f /tmp/active_profile ]; then
+    cp /tmp/active_profile $ROBOTOLOGY_ROOT/build/
+fi
+
+cd $ROBOTOLOGY_ROOT/build; cmake ..; make update-all; 
 
 . $ROBOTOLOGY_ROOT/robotology-setup.bash
+
+rospack profile
 
 echo
 echo
@@ -77,12 +88,12 @@ echo "make status-all"
 echo
 echo "If  you want just to test changes to your local project,"
 echo "we recommend to run the build process from inside the build folder"
-echo "that is, e.g. for module_a, once inside your robotology folder"
+echo "that is, e.g. for flat_walk, once inside your walkman folder"
 echo
-echo "cd build/modules/module_a; make; make install"
+echo "cd build/drc/flat_walk; make; make install"
 echo
 echo "More easily, if you use QtCreator to build your project, remember"
-echo "to set the previous folder (e.g. build/modules/module_a) for compilation."
+echo "to set the previous folder (e.g. build/drc/flat_walk) for compilation."
 echo "It will not run a make install, but this is the preferred quick way"
 echo "to test your module."
 echo
@@ -90,21 +101,7 @@ echo "Remember also you can run executables from any location in your pc,"
 echo "but you should be aware that the configuration files"
 echo "loaded by the application are different."
 echo "If you need to change the application configuration, it is advised"
-echo "to do so locally. That is e.g. once inside your robotology folder,"
-echo "1) you need to modify your build/modules/module_a/initial_config.ini"
-echo "   if you want to test new configuration parameters on the robot, or"
-echo "   your build/modules/module_a/initial_config_simulator.ini"
-echo "   if you want to test new configuration parameters on the simulator."
-echo "   Of course, if you want to try a lot of different parameters"
-echo "   without recompiling, maybe you want to consider adding a functionality"
-echo "   to modify parameters on the fly."
-echo "   Please be aware that the local parameters ATM are cleared after a build,"
-echo "   so if you want to keep them, you should read 2)"
-echo "2) if you want to keep new parameters as default, you should modify"
-echo "   modules/module_a/app/conf/initial_config.ini or "
-echo "   modules/module_a/app/conf/initial_config_simulator.ini"
-echo "   If you like the changes, remember to commit them and push on the"
-echo "   repository or in a branch."
+echo "to do so locally."
 echo
 echo
 echo

@@ -2,14 +2,14 @@
 
 
 
-ROBOTOLOGY_ROOT=$(readlink --canonicalize --no-newline $(dirname $(readlink --canonicalize --no-newline $0))/../..)
+ROBOTOLOGY_ROOT=$(readlink --canonicalize --no-newline $(dirname $(readlink --canonicalize --no-newline $0))/..)
 
 if [ -f $ROBOTOLOGY_ROOT/build/active_profile ]; then
     . $ROBOTOLOGY_ROOT/build/active_profile
 fi
 
 if [ -f ${ROBOTOLOGY_ROOT}/build/got_dependencies ]; then
-    echo "WALKMAN dependencies already installed. Skipping..."
+    echo "ROBOTOLOGY dependencies already installed. Skipping..."
     echo "If you really want to repeat an installation, you can"
     echo "remove $ROBOTOLOGY_ROOT/build/got_dependencies"
 else
@@ -63,7 +63,7 @@ else
                 #No uncommon packages for for default setups
                 echo
             fi
-
+profiles
             git config --global http.sslverify false
             
             #call the script to install yaml-cpp from sources
