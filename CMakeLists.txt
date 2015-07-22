@@ -54,13 +54,19 @@ if(USE_ONLY_OPEN_SOURCE)
 	find_or_build_package(iDynTree)
 	find_or_build_package(paramHelp)
 
+find_or_build_package(roboptim-core)
+find_or_build_package(roboptim-capsule)
+find_or_build_package(roboptim-core-plugin-ipopt)
+find_or_build_package(moveit_compute_default_collisions)
+find_or_build_package(robot_capsule_generator)
+
 	find_or_build_package(IITComanRosPkg)
 	find_or_build_package(icub_gazebo)
 
 	find_or_build_package(GazeboYARPPlugins)
 	find_or_build_package(idynutils)
 	find_or_build_package(OpenSoT)
-	#find_or_build_package(yarp_ros_joint_state_publisher)
+	find_or_build_package(yarp_ros_joint_state_publisher)
 	find_or_build_package(robot_state_publisher_ext)
 
 	find_or_build_package(GYM)
@@ -75,4 +81,3 @@ set_package_properties(PkgConfig PROPERTIES TYPE RUNTIME)
 set_package_properties(Doxygen PROPERTIES TYPE RUNTIME)
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
-
