@@ -63,6 +63,8 @@ fi
 
 cd $ROBOTOLOGY_ROOT/build; cmake ..; make update-all; 
 
+make 
+
 . $ROBOTOLOGY_ROOT/robotology-setup.bash
 
 rospack profile
