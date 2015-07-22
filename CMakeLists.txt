@@ -71,6 +71,7 @@ find_or_build_package(robot_capsule_generator)
 
 	find_or_build_package(GYM)
 else(USE_ONLY_OPEN_SOURCE)
+        find_or_build_package(drc_shared)
 	find_or_build_package(walking)
 	find_or_build_package(iit-bigman-ros-pkg)
 endif(USE_ONLY_OPEN_SOURCE)
