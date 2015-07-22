@@ -1,9 +1,13 @@
-## iit-bigman-ros-pkg
-#include(YCMEPHelper)
+# iit-bigman-ros-pkg
+include(YCMEPHelper)
+include(FindOrBuildPackage)
 
-#ycm_ep_helper(iit-bigman-ros-pkg TYPE GIT
-				      #STYLE GITHUB
-				      #REPOSITORY EnricoMingo/iit-coman-ros-pkg.git
-				      #TAG master
-				      #COMPONENT robots
-				      #INSTALL_COMMAND "")
+find_or_build_package(moveit_compute_default_collisions REQUIRED QUIET)
+
+ycm_ep_helper(iit-bigman-ros-pkg TYPE GIT
+                             STYLE GITLAB_ROBOTOLOGY
+                             REPOSITORY walkman-drc/iit-bigman-ros-pkg.git
+                             TAG master
+                             COMPONENT drc
+                             DEPENDS moveit_compute_default_collisions
+                             INSTALL_COMMAND "")
