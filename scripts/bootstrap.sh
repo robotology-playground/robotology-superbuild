@@ -61,9 +61,10 @@ if [ -f /tmp/active_profile ]; then
     cp /tmp/active_profile $ROBOTOLOGY_ROOT/build/
 fi
 
-cd $ROBOTOLOGY_ROOT/build; cmake ..; make update-all; 
-
-make 
+cd $ROBOTOLOGY_ROOT/build
+cmake .. -DYCM_EP_MAINTAINER_MODE=ON
+make update-all 
+make -ik; make;
 
 . $ROBOTOLOGY_ROOT/robotology-setup.bash
 
