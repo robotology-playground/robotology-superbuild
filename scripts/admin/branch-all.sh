@@ -2,7 +2,7 @@
 
 ROBOTOLOGY_ROOT=$(readlink --canonicalize --no-newline $(dirname $(readlink --canonicalize --no-newline $BASH_SOURCE))/../..)
 
-. $ROBOTOLOGY_ROOT/robotology-setup.bash
+. $ROBOTOLOGY_ROOT/walkman-env.bash
 
 if [ $# -ne 1 ]; then 
     echo "Error: branch-all.sh accepts exactly one input parameter, the branch name"
@@ -13,7 +13,7 @@ echo
 echo "branch-all will create branches for all local projects with name $1"
 echo
 echo "All dependencies will be freezed."
-echo "The robotology superbuild will be branched with name $1"
+echo "The walkman superbuild will be branched with name $1"
 echo
 echo "To use the new branch, please switch to the branch and bootstrap again by issuing"
 echo "cd ${ROBOTOLOGY_ROOT}"
@@ -25,7 +25,7 @@ echo
 
 cd ${ROBOTOLOGY_ROOT}
 git fetch --all
-echo "git status for robotology-superbuild says:"
+echo "git status for walkman says:"
 echo
 git status
 echo
@@ -40,8 +40,8 @@ echo
 
 git branch $1
 git checkout $1
-echo "" > ${ROBOTOLOGY_ROOT}/cmake/ProjectsTags.cmake
 cd ${ROBOTOLOGY_ROOT}/build; make update-all;
+echo "" > ${ROBOTOLOGY_ROOT}/cmake/ProjectsTags.cmake
 
 if [ -d ${ROBOTOLOGY_ROOT}/external ]; then
     for PROJ_NAME in `ls ${ROBOTOLOGY_ROOT}/external`;
@@ -60,11 +60,11 @@ else
     echo "Error: could not find folder ${ROBOTOLOGY_ROOT}/external"
 fi
 
-if [ -d ${ROBOTOLOGY_ROOT}/modules ]; then
-    for PROJ_NAME in `ls ${ROBOTOLOGY_ROOT}/modules`;
+if [ -d ${ROBOTOLOGY_ROOT}/robots ]; then
+    for PROJ_NAME in `ls ${ROBOTOLOGY_ROOT}/robots`;
     do
-        if [ -d ${ROBOTOLOGY_ROOT}/modules/${PROJ_NAME}/.git ]; then
-            cd ${ROBOTOLOGY_ROOT}/modules/$PROJ_NAME
+        if [ -d ${ROBOTOLOGY_ROOT}/robots/${PROJ_NAME}/.git ]; then
+            cd ${ROBOTOLOGY_ROOT}/robots/$PROJ_NAME
             echo -n "Updating and branching project $PROJ_NAME with name $1 ... "
             git branch $1
             git checkout $1
@@ -77,7 +77,7 @@ if [ -d ${ROBOTOLOGY_ROOT}/modules ]; then
         fi
     done
 else
-    echo "Error: could not find folder ${ROBOTOLOGY_ROOT}/modules"
+    echo "Error: could not find folder ${ROBOTOLOGY_ROOT}/robots"
 fi
 
 echo "Printing all tags for all projects:"

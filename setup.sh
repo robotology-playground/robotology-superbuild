@@ -3,7 +3,7 @@
 ROBOTOLOGY_ROOT=$(dirname $(readlink --canonicalize --no-newline $0))
 
 echo
-echo "Welcome to the Walkman setup!"
+echo "Welcome to the robotology-superbuild setup!"
 echo
 
 print_success_info() {
@@ -364,7 +364,7 @@ if [ ! -f  $ROBOTOLOGY_ROOT/build/got_dependencies ]; then
     echo 
     echo "What would you like to do?"
     echo
-    echo " 1   Install superbuild (ubuntu 12.04 or 13.04) & bootstrap"
+    echo " 1   Install superbuild (ubuntu 14.04 LTS) & bootstrap"
     echo " 2   Just bootstrap (for unsupported configurations, you need"
     echo "     to install dependencies manually, check the robotology wiki)"
     if [ "`dpkg-query -W -f='${Status}\n' gazebo-current  2> /dev/null`" = "install ok installed" ] ; then
@@ -401,8 +401,6 @@ if [ ! -f  $ROBOTOLOGY_ROOT/build/got_dependencies ]; then
             bootstrap_profile
             ;;
         2)
-            echo "true" > $ROBOTOLOGY_ROOT/build/got_dependencies
-
             echo -n "Starting bootstrap. "
             wait_and_print
             bootstrap_profile
