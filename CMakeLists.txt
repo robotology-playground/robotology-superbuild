@@ -40,14 +40,6 @@ include(YCMBootstrap)
 include(FindOrBuildPackage)
 include(YCMEPHelper)
 
-# find_or_build_package(ECM)
-# find_or_build_package(TinyXML)
-# find_or_build_package(SQLite)
-# find_or_build_package(GooCanvas)
-# find_or_build_package(GooCanvasMM)
-# find_or_build_package(GtkDatabox)
-# find_or_build_package(GtkDataboxMM)
-
 set(USE_SYSTEM_YARP OFF CACHE BOOL "Initial cache")
 set(USE_SYSTEM_KDL_CODYCO OFF CACHE BOOL "Initial cache")
 set(USE_SYSTEM_IDYNTREE OFF CACHE BOOL "Initial cache")
@@ -56,12 +48,16 @@ set(USE_SYSTEM_OPENSOT OFF CACHE BOOL "Initial cache")
 
 find_or_build_package(YARP 2.3.62)
 find_or_build_package(ICUB)
+find_or_build_package(iDynTree)
+find_or_build_package(paramHelp)
 
 find_or_build_package(IITComanRosPkg)
 find_or_build_package(icub_gazebo)
 
 find_or_build_package(GazeboYARPPlugins)
+find_or_build_package(idynutils)
 find_or_build_package(OpenSoT)
+find_or_build_package(yarp_ros_joint_state_publisher)
 
 find_or_build_package(GYM)
 

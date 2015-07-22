@@ -15,3 +15,5 @@ set(yarpWholeBodyInterface_TAG 6d70ce2)
 set(YCM_TAG b327e75)
 
 set(idynutils_TAG master)
+set(OpenSoT_TAG devel)
+set(yarp_ros_joint_state_publisher_TAG master)
