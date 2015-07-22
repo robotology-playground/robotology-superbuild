@@ -16,4 +16,5 @@ set(YCM_TAG b327e75)
 
 set(idynutils_TAG master)
 set(OpenSoT_TAG devel)
-set(yarp_ros_joint_state_publisher_TAG master)
+set(yarp_ros_joint_state_publisher_TAG VVV15)
+set(robot_state_publisher_ext_TAG VVV15)

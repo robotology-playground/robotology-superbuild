@@ -58,6 +58,7 @@ find_or_build_package(GazeboYARPPlugins)
 find_or_build_package(idynutils)
 find_or_build_package(OpenSoT)
 find_or_build_package(yarp_ros_joint_state_publisher)
+find_or_build_package(robot_state_publisher_ext)
 
 find_or_build_package(GYM)
 
