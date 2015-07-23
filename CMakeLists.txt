@@ -69,14 +69,25 @@ find_or_build_package(yarp_ros_joint_state_publisher)
 find_or_build_package(robot_state_publisher_ext)
 find_or_build_package(simple_homing)
 find_or_build_package(centralized_inverse_kinematics)
-
 find_or_build_package(GYM)
 
 IF(NOT USE_ONLY_OPEN_SOURCE)
         find_or_build_package(drc_shared)
 	find_or_build_package(walking)
 	find_or_build_package(iit-bigman-ros-pkg)
+	
+	IF("${ROBOTOLOGY_PROFILE}" STREQUAL "ROBOT")
+	
+		find_or_build_package(comaninterface)
+    		find_or_build_package(comanmod)
+		find_or_build_package(comanapp)
+		find_or_build_package(COMAN_shared)
+
+	ENDIF("${ROBOTOLOGY_PROFILE}" STREQUAL "ROBOT")
+
 ENDIF(NOT USE_ONLY_OPEN_SOURCE)
+
+
 
 set_package_properties(Git PROPERTIES TYPE RUNTIME)
 set_package_properties(Subversion PROPERTIES TYPE RUNTIME)
