@@ -67,7 +67,7 @@ profiles
             git config --global http.sslverify false
             
             #call the script to install yaml-cpp from sources
-            sh $ROBOTOLOGY_ROOT/scripts/admin/get_yaml-cpp.sh
+            sh $ROBOTOLOGY_ROOT/scripts/get_yaml-cpp.sh
 
         elif [ "`lsb_release -cs`" = 'raring' ]; then
             sudo sed -i -e 's/it.archive.ubuntu.com\|archive.ubuntu.com\|security.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list
@@ -104,7 +104,7 @@ profiles
             sudo apt-get install -y --force-yes --fix-missing build-essential cmake cmake-curses-gui  \
               git subversion doxygen graphviz  \
               libace-dev libgsl0-dev libgtkmm-2.4-dev libgoocanvasmm-dev libsqlite3-dev swig  \
-              icub-common libtinyxml2-dev \
+              libtinyxml2-dev \
               libeigen3-dev libyaml-cpp-dev libxml2-dev  \
               ros-indigo-desktop ros-indigo-srdfdom ros-indigo-cmake-modules  \
               ros-indigo-openni2-* ros-indigo-moveit-* ros-indigo-joy* ros-indigo-octomap* \
@@ -156,6 +156,10 @@ profiles
     fi
 
     . $ROBOTOLOGY_ROOT/robotology-setup.bash
+
+    # ICUB will be installed as a system program
+    sh $ROBOTOLOGY_ROOT/scripts/get_system_icub.sh
+    # YARP will be built and installed in the superbuild starting from master branch
 
     # A fresh installaion of ROS would require the following two commands
     # NOT TESTED, please verify!
