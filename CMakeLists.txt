@@ -54,10 +54,10 @@ find_or_build_package(iDynTree)
 find_or_build_package(paramHelp)
 
 find_or_build_package(roboptim-core)
-find_or_build_package(roboptim-capsule)
-find_or_build_package(roboptim-core-plugin-ipopt)
 find_or_build_package(moveit_compute_default_collisions)
-find_or_build_package(robot_capsule_generator)
+#find_or_build_package(roboptim-capsule)
+#find_or_build_package(roboptim-core-plugin-ipopt)
+#find_or_build_package(robot_capsule_generator)
 
 find_or_build_package(IITComanRosPkg)
 find_or_build_package(icub_gazebo)
