@@ -8,6 +8,6 @@ ycm_ep_helper(iit-bigman-ros-pkg TYPE GIT
                              STYLE GITLAB_ROBOTOLOGY
                              REPOSITORY walkman-drc/iit-bigman-ros-pkg.git
                              TAG master
-                             COMPONENT drc
+                             COMPONENT robots
                              DEPENDS moveit_compute_default_collisions
                              INSTALL_COMMAND "")

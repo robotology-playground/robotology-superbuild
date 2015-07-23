@@ -13,9 +13,9 @@ ycm_ep_helper(drc_shared TYPE GIT
                          STYLE GITLAB_ROBOTOLOGY
                          REPOSITORY walkman-drc/drc_shared.git
                          TAG master
-                         COMPONENT drc
+                         COMPONENT robots
 #                         TEST_COMMAND ctest
                          DEPENDS YARP
-				                 IITComanRosPkg
+				 IITComanRosPkg
                                  iDynTree
                                  paramHelp)

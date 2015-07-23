@@ -11,7 +11,7 @@ ycm_ep_helper(walking TYPE GIT
                       STYLE GITLAB_ROBOTOLOGY
                       REPOSITORY walkman-drc/walking.git
                       TAG master
-                      COMPONENT drc
+                      COMPONENT robots
                       DEPENDS iDynTree
                               GYM
                               idynutils
