@@ -158,7 +158,7 @@ profiles
     . $ROBOTOLOGY_ROOT/robotology-setup.bash
 
     # ICUB will be installed as a system program
-    sh $ROBOTOLOGY_ROOT/scripts/get_system_icub.sh
+    # sh $ROBOTOLOGY_ROOT/scripts/get_system_icub.sh
     # YARP will be built and installed in the superbuild starting from master branch
 
     # A fresh installaion of ROS would require the following two commands
