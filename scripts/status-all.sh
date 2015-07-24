@@ -1,4 +1,6 @@
 #!/bin/bash
+ROBOTOLOGY_ROOT=$(readlink --canonicalize --no-newline $(dirname $(readlink --canonicalize --no-newline $0))/..)
+
 
 actual_dir=`pwd`
 # if the script is sourced add the trap
