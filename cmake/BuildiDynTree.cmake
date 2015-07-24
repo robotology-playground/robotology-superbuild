@@ -12,4 +12,5 @@ ycm_ep_helper(iDynTree TYPE GIT
               TAG master
               COMPONENT external
               DEPENDS YARP
-                      orocos_kdl)
+                      orocos_kdl
+	      CMAKE_CACHE_ARGS -DIDYNTREE_USES_ICUB_MAIN:BOOL=OFF)
