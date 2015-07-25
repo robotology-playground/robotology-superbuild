@@ -22,7 +22,7 @@ set(YCM_TAG b327e75)
 ##########
 # robots #
 ##########
-set(centralized_inverse_kinematics_TAG master)
+set(centralized_inverse_kinematics_TAG VVV15)
 set(comanapp_TAG VVV15)
 set(comaninterface_TAG VVV15)
 set(comanmod_TAG VVV15)
