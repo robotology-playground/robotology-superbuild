@@ -31,7 +31,7 @@ set(icub_gazebo_TAG master)
 set(iit-bigman-ros-pkg_TAG master)
 set(IITComanRosPkg_TAG master)
 set(simple_homing_TAG VVV15)
-set(walking_TAG master)
+set(walking_TAG VVV15)
 
 
 
