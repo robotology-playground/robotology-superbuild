@@ -7,7 +7,7 @@ set(GYM_TAG master)
 set(iDynTree_TAG master)
 set(idynutils_TAG master)
 # moveit
-set(OpenSoT_TAG devel)
+set(OpenSoT_TAG VVV15)
 set(paramHelp_TAG de9f652)
 set(roboptim-core_TAG v3.1)
 set(roboptim-core-plugin-ipopt_TAG v3.1)
