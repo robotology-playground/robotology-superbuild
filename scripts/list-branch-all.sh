@@ -7,11 +7,11 @@ actual_dir=`pwd`
 robots_dir="$ROBOTOLOGY_ROOT/robots"
 external_dir="$ROBOTOLOGY_ROOT/external"
 
-#robots dir for each
+#drc dir for each
 for f in `cd $robots_dir && ls -d -- */`
 do
     cd "$robots_dir/$f"
-    echo -e "\e[32m$f \e[39m --> `git status` \n"
+    echo -e "\e[32m$f \e[39m --> `git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'` "
     cd ..
 done
 
@@ -19,7 +19,7 @@ done
 for f in `cd $external_dir && ls -d -- */`
 do  
     cd "$external_dir/$f"
-    echo -e "\e[31m$f \e[39m --> `git status` \n"
+    echo -e "\e[31m$f \e[39m --> `git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'` "
     cd ..
 done
 

@@ -7,19 +7,28 @@ actual_dir=`pwd`
 robots_dir="$ROBOTOLOGY_ROOT/robots"
 external_dir="$ROBOTOLOGY_ROOT/external"
 
+echo -e "\nROBOTOLOGY superbuild repo where you have to push your commits: \n"
+suffix="/"
+
 #robots dir for each
 for f in `cd $robots_dir && ls -d -- */`
 do
     cd "$robots_dir/$f"
-    echo -e "\e[32m$f \e[39m --> `git status` \n"
+    if  git status | grep -q push ;  then
+	to_print=${f%$suffix} 
+	echo -e "\e[32m$to_print \e[39m"	
+    fi
     cd ..
 done
 
 #external dir for each
 for f in `cd $external_dir && ls -d -- */`
-do  
+do
     cd "$external_dir/$f"
-    echo -e "\e[31m$f \e[39m --> `git status` \n"
+    if  git status | grep -q push ;  then 
+        to_print=${f%$suffix} 
+	echo -e "\e[32m$to_print \e[39m"	
+    fi
     cd ..
 done
 

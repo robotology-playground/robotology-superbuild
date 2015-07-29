@@ -70,3 +70,7 @@ fi
 if [ -f ${ROBOTOLOGY_ROOT}/external/YARP/scripts/yarp_completion ]; then
     source ${ROBOTOLOGY_ROOT}/external/YARP/scripts/yarp_completion
 fi
+
+# Some aliases for superbuild/scripts
+alias superbuild=". ${ROBOTOLOGY_ROOT}/scripts/superbuild.sh"
+source ${ROBOTOLOGY_ROOT}/scripts/superbuild.profile 
