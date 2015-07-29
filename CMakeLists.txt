@@ -50,7 +50,6 @@ set(USE_SYSTEM_OPENSOT OFF CACHE BOOL "Initial cache")
 set(USE_ONLY_OPEN_SOURCE ON CACHE BOOL "Only the open-source repo will be cloned and built")
 
 find_or_build_package(YARP 2.3.62)
-find_or_build_package(ICUB)
 find_or_build_package(iDynTree)
 find_or_build_package(paramHelp)
 
