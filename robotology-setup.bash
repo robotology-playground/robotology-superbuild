@@ -65,8 +65,17 @@ unalias gazebo > /dev/null 2>&1
 unalias gzserver > /dev/null 2>&1
 if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" == "SIMULATION" ]; then
     export YARP_CLOCK=/clock
-    alias gazebo='gazebo -s libgazebo_yarp_clock.so'
-    alias gzserver='gzserver -s libgazebo_yarp_clock.so'
+
+    # check for optirun
+    HAS_OPTIRUN=true;
+    type optirun >/dev/null 2>&1 || { HAS_OPTIRUN=false; }
+    if [ $HAS_OPTIRUN == true ]; then
+        alias gazebo='optirun gazebo -s libgazebo_yarp_clock.so'
+    else
+        alias gazebo='gazebo -s libgazebo_yarp_clock.so'
+        alias gzserver='gzserver -s libgazebo_yarp_clock.so'
+    fi
+
 fi
 
 export YARP_WORKSPACE=${ROBOTOLOGY_ROOT}/robots
