@@ -1,6 +1,9 @@
 #!/bin/bash
 
 ROBOTOLOGY_ROOT=$(dirname $(readlink --canonicalize --no-newline $BASH_SOURCE))
+
+export ROBOTOLOGY_ROOT
+
 if [ -f $ROBOTOLOGY_ROOT/build/active_profile ]; then
     source $ROBOTOLOGY_ROOT/build/active_profile
 else
@@ -66,6 +69,7 @@ if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" == "SIMULATION" ]; then
     alias gzserver='gzserver -s libgazebo_yarp_clock.so'
 fi
 
+export YARP_WORKSPACE=${ROBOTOLOGY_ROOT}/robots
 
 if [ -f ${ROBOTOLOGY_ROOT}/external/YARP/scripts/yarp_completion ]; then
     source ${ROBOTOLOGY_ROOT}/external/YARP/scripts/yarp_completion
