@@ -3,10 +3,7 @@ include(YCMEPHelper)
 include(FindOrBuildPackage)
 
 find_or_build_package(YARP QUIET)
-find_or_build_package(ICUB QUIET)
 find_or_build_package(orocos_kdl QUIET)
-find_or_build_package(kdl_codyco QUIET)
-find_or_build_package(kdl_format_io QUIET)
 find_or_build_package(iDynTree QUIET)
 find_or_build_package(idynutils QUIET)
 #find_or_build_package(qpOASES QUIET)
@@ -29,10 +26,7 @@ ycm_ep_helper(OpenSoT TYPE GIT
 #              CMAKE_ARGS ${qpOASES_EXTRA_CMAKE_ARGS}
 #              TEST_COMMAND ctest
               DEPENDS YARP
-                      ICUB
                       orocos_kdl
-                      kdl_codyco
-                      kdl_format_io
                       iDynTree
                       idynutils)
-#                      qpOASES)
+#                     qpOASES)
