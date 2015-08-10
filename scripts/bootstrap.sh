@@ -7,7 +7,7 @@ ROBOTOLOGY_ROOT=$(readlink --canonicalize --no-newline $(dirname $(readlink --ca
 cd $ROBOTOLOGY_ROOT
 git fetch --all || exit 1
 git pull
-echo "git status for walkman says:"
+echo "git status for robotology-superbuild says:"
 echo
 git status
 echo
@@ -91,7 +91,7 @@ echo "make status-all"
 echo
 echo "If  you want just to test changes to your local project,"
 echo "we recommend to run the build process from inside the build folder"
-echo "that is, e.g. for flat_walk, once inside your walkman folder"
+echo "that is, e.g. for flat_walk, once inside your robotology-superbuild folder"
 echo
 echo "cd build/drc/flat_walk; make; make install"
 echo

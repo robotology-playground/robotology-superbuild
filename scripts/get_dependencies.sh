@@ -145,7 +145,7 @@ profiles
     sudo pip install svg.path
 
     # TODO this is a [quickfix]
-    echo "Adding walkman-setup.sh to your .bashrc"
+    echo "Adding robotology-setup.sh to your .bashrc"
 
     echo ">>> Press ENTER if you want to skip writing to .bashrc. "
     echo "    You should not skip it unless you know what you are doing."
