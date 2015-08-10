@@ -27,15 +27,15 @@ else
         #sudo apt-get remove --purge ca-certificates-icub-org
         sudo apt-get update
 
-        sudo apt-get dist-upgrade -y --force-yes --fix-missing
+        sudo apt-get dist-upgrade  --fix-missing
 
         if [ "`lsb_release -cs`" = 'precise' ]; then
             #First install common packages
-            sudo apt-get install -y --force-yes --fix-missing \
+            sudo apt-get install  --fix-missing \
               build-essential cmake cmake-curses-gui  \
               git subversion doxygen graphviz  \
               libace-dev libgsl0-dev libgtkmm-2.4-dev libgoocanvasmm-dev libsqlite3-dev python3.2-dev swig  \
-              icub-common libtinyxml2-dev \
+              libtinyxml2-dev \
               libeigen3-dev libxml2-dev  \
               ros-hydro-roscpp-core ros-hydro-srdfdom ros-hydro-cmake-modules  \
               ros-hydro-openni2-*  ros-hydro-moveit-full ros-hydro-joy*  \
@@ -43,7 +43,7 @@ else
               python3-sip-dev python-numpy python-scipy python-matplotlib python-pandas  \
               libarmadillo-dev libblas-dev liblapack-dev  libflann-dev\
               libpng++-dev python-bs4 libsctp-dev mercurial drcsim ros-hydro-rviz-imu-plugin
-	    sudo apt-get install -y --force-yes --fix-missing ros-hydro-desktop-full
+	    sudo apt-get install  --fix-missing ros-hydro-desktop-full
             string="`uname -r`"
             word="enomai"
             if [ "${string#*$word}" != "$string" ]; then #if xenomai kernel...
@@ -54,7 +54,7 @@ else
             else
                 if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" = 'ROBOT' ]; then
                 #Add low latency kernel to non-xenomai
-                    sudo apt-get install -y --force-yes --fix-missing linux-lowlatency
+                    sudo apt-get install  --fix-missing linux-lowlatency
                 fi
             fi
 
@@ -71,10 +71,10 @@ profiles
 
         elif [ "`lsb_release -cs`" = 'raring' ]; then
             sudo sed -i -e 's/it.archive.ubuntu.com\|archive.ubuntu.com\|security.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list
-            sudo apt-get install -y --force-yes --fix-missing build-essential cmake cmake-curses-gui  \
+            sudo apt-get install  --fix-missing build-essential cmake cmake-curses-gui  \
               git subversion doxygen graphviz  \
               libace-dev libgsl0-dev libgtkmm-2.4-dev libgoocanvasmm-dev libsqlite3-dev swig  \
-              icub-common libtinyxml2-dev \
+              libtinyxml2-dev \
               libeigen3-dev libyaml-cpp-dev libxml2-dev  \
 	      ros-hydro-srdfdom ros-hydro-cmake-modules  \
               ros-hydro-openni2-* ros-hydro-moveit-full ros-hydro-joy*  ros-hydro-octomap* \
@@ -82,7 +82,7 @@ profiles
               python3-sip-dev python-numpy python-scipy python-matplotlib python-pandas  \
               libarmadillo-dev libblas-dev liblapack-dev  libflann-dev\
               libpng++-dev python-bs4 libsctp-dev mercurial drcsim ros-hydro-rviz-imu-plugin
-	    sudo apt-get install -y --force-yes --fix-missing ros-hydro-desktop-full
+	    sudo apt-get install  --fix-missing ros-hydro-desktop-full
             string="`uname -r`"
             word="enomai"
             if [ "${string#*$word}" != "$string" ]; then #if xenomai kernel...
@@ -92,16 +92,16 @@ profiles
                 fi
             else
                 if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" = 'ROBOT' ]; then
-                    sudo apt-get install -y --force-yes --fix-missing linux-lowlatency
+                    sudo apt-get install  --fix-missing linux-lowlatency
                 fi
             fi
 
             if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" != 'ROBOT' ]; then
-                sudo apt-get install -y --force-yes --fix-missing gazebo
+                sudo apt-get install  --fix-missing gazebo
             fi
 
         elif [ "`lsb_release -cs`" = 'trusty' ]; then
-            sudo apt-get install -y --force-yes --fix-missing build-essential cmake cmake-curses-gui  \
+            sudo apt-get install  --fix-missing build-essential cmake cmake-curses-gui  \
               git subversion doxygen graphviz  \
               libace-dev libgsl0-dev libgtkmm-2.4-dev libgoocanvasmm-dev libsqlite3-dev swig  \
               libtinyxml2-dev \
@@ -122,12 +122,12 @@ profiles
             fi
         else
             if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" = 'ROBOT' ]; then
-                sudo apt-get install -y --force-yes --fix-missing linux-lowlatency
+                sudo apt-get install  --fix-missing linux-lowlatency
             fi
         fi
 
         if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" != 'ROBOT' ]; then
-            sudo apt-get install -y --force-yes --fix-missing gazebo3 libgazebo-dev
+            sudo apt-get install  --fix-missing gazebo3 libgazebo-dev
         fi
 
       else
@@ -141,7 +141,7 @@ profiles
 
 
     # needed by SoT demos
-    sudo apt-get install -y --force-yes --fix-missing python-pip
+    sudo apt-get install  --fix-missing python-pip
     sudo pip install svg.path
 
     # TODO this is a [quickfix]
@@ -169,14 +169,14 @@ profiles
     if [ -d /opt/ros/indigo ]; then
         ROSVER=indigo
         #call the script to install opencv nonfree lib from sources
-        sh $ROBOTOLOGY_ROOT/scripts/get_libopencv_nonfree.sh	
+        #sh $ROBOTOLOGY_ROOT/scripts/get_libopencv_nonfree.sh	
         #call the script to insall PCL from sources
-        sh $ROBOTOLOGY_ROOT/scripts/get_pcl.sh
+        #sh $ROBOTOLOGY_ROOT/scripts/get_pcl.sh
     fi
 
     if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" = 'ROBOT' ]; then
         #Install IMU drivers
-        sh $ROBOTOLOGY_ROOT/scripts/admin/get_Ftd2xx.sh
+        #sh $ROBOTOLOGY_ROOT/scripts/admin/get_Ftd2xx.sh
     fi
 
     if [ -d $ROBOTOLOGY_ROOT/build/ ]; then
