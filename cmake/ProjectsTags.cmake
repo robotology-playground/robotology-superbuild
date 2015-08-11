@@ -4,7 +4,7 @@
 set(drc_shared_TAG master)
 set(GazeboYARPPlugins_TAG master)
 set(hrl_geom_TAG a8683c8)
-set(iDynTree_TAG master)
+set(iDynTree_TAG no_icub_fixes)
 set(idynutils_TAG devel)
 set(mexWholeBodyModel_TAG 5c0edee)
 set(OpenSoT_TAG new_iDyn)

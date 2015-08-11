@@ -8,7 +8,7 @@ find_or_build_package(orocos_kdl QUIET)
 
 ycm_ep_helper(iDynTree TYPE GIT
               STYLE GITHUB
-              REPOSITORY robotology-playground/iDynTree.git
+              REPOSITORY arocchi/iDynTree.git
               TAG master
               COMPONENT external
               DEPENDS YARP
