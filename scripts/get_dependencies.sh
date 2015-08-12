@@ -35,7 +35,7 @@ else
               build-essential cmake cmake-curses-gui  \
               git subversion doxygen graphviz  \
               libace-dev libgsl0-dev libgtkmm-2.4-dev libgoocanvasmm-dev libsqlite3-dev python3.2-dev swig  \
-              coinor-libipopt-dev gfortran libtinyxml2-dev \
+              icub-common coinor-libipopt-dev gfortran libtinyxml2-dev \
               libeigen3-dev libxml2-dev  \
               ros-hydro-roscpp-core ros-hydro-srdfdom ros-hydro-cmake-modules  \
               ros-hydro-openni2-*  ros-hydro-moveit-full ros-hydro-joy*  \
@@ -74,7 +74,7 @@ profiles
             sudo apt-get install -y --force-yes --fix-missing build-essential cmake cmake-curses-gui  \
               git subversion doxygen graphviz  \
               libace-dev libgsl0-dev libgtkmm-2.4-dev libgoocanvasmm-dev libsqlite3-dev swig  \
-              coinor-libipopt-dev gfortran libtinyxml2-dev \
+              icub-common coinor-libipopt-dev gfortran libtinyxml2-dev \
               libeigen3-dev libyaml-cpp-dev libxml2-dev  \
 	      ros-hydro-srdfdom ros-hydro-cmake-modules  \
               ros-hydro-openni2-* ros-hydro-moveit-full ros-hydro-joy*  ros-hydro-octomap* \
@@ -104,7 +104,7 @@ profiles
             sudo apt-get install -y --force-yes --fix-missing build-essential cmake cmake-curses-gui  \
               git subversion doxygen graphviz  \
               libace-dev libgsl0-dev libgtkmm-2.4-dev libgoocanvasmm-dev libsqlite3-dev swig  \
-              coinor-libipopt-dev gfortran libtinyxml2-dev \
+              icub-common coinor-libipopt-dev gfortran libtinyxml2-dev \
               libeigen3-dev libyaml-cpp-dev libxml2-dev  \
               ros-indigo-desktop ros-indigo-srdfdom ros-indigo-cmake-modules  \
               ros-indigo-openni2-* ros-indigo-moveit-* ros-indigo-joy* ros-indigo-octomap* \
@@ -165,9 +165,9 @@ profiles
     if [ -d /opt/ros/indigo ]; then
         ROSVER=indigo
         #call the script to install opencv nonfree lib from sources
-        sh $ROBOTOLOGY_ROOT/scripts/get_libopencv_nonfree.sh	
+        #sh $ROBOTOLOGY_ROOT/scripts/get_libopencv_nonfree.sh	
         #call the script to insall PCL from sources
-        sh $ROBOTOLOGY_ROOT/scripts/get_pcl.sh
+        #sh $ROBOTOLOGY_ROOT/scripts/get_pcl.sh
     fi
 
     if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" = 'ROBOT' ]; then
