@@ -42,8 +42,12 @@ else
               ros-hydro-urdfdom-py ros-hydro-libg2o ros-hydro-octomap* \
               python3-sip-dev python-numpy python-scipy python-matplotlib python-pandas  \
               libarmadillo-dev libblas-dev liblapack-dev  libflann-dev\
-              libpng++-dev python-bs4 libsctp-dev mercurial drcsim ros-hydro-rviz-imu-plugin
-	    sudo apt-get install -y --force-yes --fix-missing ros-hydro-desktop-full
+              libpng++-dev python-bs4 libsctp-dev mercurial ros-hydro-rviz-imu-plugin
+            sudo apt-get install -y --force-yes --fix-missing ros-hydro-desktop-full
+            sudo apt-get install -y --force-yes --fix-missing drcsim
+            # in case ros-hydro-desktop-full and drcsim shouldn't be installed...
+            #sudo apt-get install -y --force-yes --fix-missing sdformat libsdformat2 libsdformat2-dev sdformat-sdf \
+            # ros-hydro-cmake-modules ros-hydro-convex-decomposition libgsl0-dev libhighgui-dev
             string="`uname -r`"
             word="enomai"
             if [ "${string#*$word}" != "$string" ]; then #if xenomai kernel...
@@ -76,13 +80,14 @@ profiles
               libace-dev libgsl0-dev libgtkmm-2.4-dev libgoocanvasmm-dev libsqlite3-dev swig  \
               icub-common coinor-libipopt-dev gfortran libtinyxml2-dev \
               libeigen3-dev libyaml-cpp-dev libxml2-dev  \
-	      ros-hydro-srdfdom ros-hydro-cmake-modules  \
+              ros-hydro-srdfdom ros-hydro-cmake-modules  \
               ros-hydro-openni2-* ros-hydro-moveit-full ros-hydro-joy*  ros-hydro-octomap* \
               ros-hydro-urdfdom-py ros-hydro-libg2o \
               python3-sip-dev python-numpy python-scipy python-matplotlib python-pandas  \
               libarmadillo-dev libblas-dev liblapack-dev  libflann-dev\
-              libpng++-dev python-bs4 libsctp-dev mercurial drcsim ros-hydro-rviz-imu-plugin
-	    sudo apt-get install -y --force-yes --fix-missing ros-hydro-desktop-full
+              libpng++-dev python-bs4 libsctp-dev mercurial ros-hydro-rviz-imu-plugin
+            sudo apt-get install -y --force-yes --fix-missing ros-hydro-desktop-full
+            sudo apt-get install -y --force-yes --fix-missing drcsim
             string="`uname -r`"
             word="enomai"
             if [ "${string#*$word}" != "$string" ]; then #if xenomai kernel...
