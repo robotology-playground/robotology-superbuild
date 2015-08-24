@@ -50,9 +50,11 @@ pathadd GAZEBO_MODEL_PATH $ROBOTOLOGY_ROOT/robots/icub_gazebo
 if [ -d $ROBOTOLOGY_ROOT/robots/iit-bigman-ros-pkg ]; then
         pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/robots/iit-bigman-ros-pkg
 	pathadd GAZEBO_MODEL_PATH $ROBOTOLOGY_ROOT/robots/iit-bigman-ros-pkg/bigman_gazebo/database
+fi
 
-	pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/robots/ynl-hydra-ros-pkg
-	pathadd GAZEBO_MODEL_PATH $ROBOTOLOGY_ROOT/robots/ynl-hydra-ros-pkg/hydra_gazebo/database
+if [ -d $ROBOTOLOGY_ROOT/robots/openth/ynl-hydra-ros-pkg ]; then
+	pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/robots/openth/ynl-hydra-ros-pkg
+	pathadd GAZEBO_MODEL_PATH $ROBOTOLOGY_ROOT/robots/openth/ynl-hydra-ros-pkg/hydra_gazebo/database
 fi
 
 export COMAN_ROOT=${ROBOTOLOGY_ROOT}/build/install

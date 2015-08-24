@@ -93,7 +93,7 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
 ENDIF(NOT USE_ONLY_OPEN_SOURCE)
 
 IF(YNL_HYDRA_TOKYO_UNIVERSITY)
-	find_or_build_package(ynl-hydra-ros-pkg)
+	find_or_build_package(openth)
 ENDIF(YNL_HYDRA_TOKYO_UNIVERSITY)
 
 
