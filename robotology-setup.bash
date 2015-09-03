@@ -32,6 +32,10 @@ if [ -f /usr/share/gazebo/setup.sh ]; then
     source /usr/share/gazebo/setup.sh
 fi
 
+if [ -f ${ROBOTOLOGY_ROOT}/external/ros2_ws/install/local_setup.sh ]; then
+    source ${ROBOTOLOGY_ROOT}/external/ros2_ws/install/local_setup.*
+fi
+
 export PATH=$ROBOTOLOGY_ROOT/build/install/bin:$PATH
 export LD_LIBRARY_PATH=$ROBOTOLOGY_ROOT/build/install/lib:$LD_LIBRARY_PATH
 export LTDL_LIBRARY_PATH=$ROBOTOLOGY_ROOT/build/install/lib/roboptim-core:$LTDL_LIBRARY_PATH
