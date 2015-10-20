@@ -11,4 +11,5 @@ ycm_ep_helper(roboptim-core-plugin-ipopt TYPE GIT
                                          REPOSITORY roboptim/roboptim-core-plugin-ipopt.git
                                          TAG master
                                          COMPONENT external
-                                         DEPENDS roboptim-core)
+                                         DEPENDS roboptim-core
+					 CMAKE_CACHE_ARGS -DDISABLE_TESTS:BOOL=ON)
