@@ -8,7 +8,6 @@ find_package(rospy QUIET)
 find_package(Boost COMPONENTS system QUIET)
 find_package(Eigen QUIET)
 find_or_build_package(YARP)
-find_or_build_package(ICUB)
 
 ycm_ep_helper(yarp_ros_joint_state_publisher TYPE GIT
                                              STYLE GITLAB_ROBOTOLOGY
@@ -16,6 +15,5 @@ ycm_ep_helper(yarp_ros_joint_state_publisher TYPE GIT
                                              TAG master
                                              COMPONENT external
                                              DEPENDS YARP
-                                                     ICUB
                                                      GYM
                                                      idynutils)
