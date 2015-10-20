@@ -29,4 +29,5 @@ ycm_ep_helper(OpenSoT TYPE GIT
                       kdl_codyco
                       kdl_format_io
                       iDynTree
-                      idynutils)
+                      idynutils
+	      CMAKE_CACHE_ARGS -DOPENSOT_COMPILE_TESTS:BOOL=OFF)
