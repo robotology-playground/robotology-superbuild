@@ -9,7 +9,6 @@ find_or_build_package(kdl_codyco QUIET)
 find_or_build_package(kdl_format_io QUIET)
 find_or_build_package(iDynTree QUIET)
 find_or_build_package(idynutils QUIET)
-#find_or_build_package(qpOASES QUIET)
 
 # Workaround to use qpOASES that does not have an install target or cmake config
 # files.
@@ -26,8 +25,6 @@ ycm_ep_helper(OpenSoT TYPE GIT
               REPOSITORY robotology-playground/OpenSoT.git
               TAG devel
               COMPONENT external
-#              CMAKE_ARGS ${qpOASES_EXTRA_CMAKE_ARGS}
-#              TEST_COMMAND ctest
               DEPENDS YARP
                       ICUB
                       orocos_kdl
@@ -35,4 +32,3 @@ ycm_ep_helper(OpenSoT TYPE GIT
                       kdl_format_io
                       iDynTree
                       idynutils)
-#                      qpOASES)
