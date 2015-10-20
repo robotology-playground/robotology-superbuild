@@ -30,7 +30,7 @@ set(YCM_EP_MAINTAINER_MODE TRUE)
 include(CTest)
 include(FeatureSummary)
 
-set(YCM_GIT_GITLAB_ROBOTOLOGY_BASE_ADDRESS "ssh://git@gitlab.robotology.eu/" CACHE STRING "Address to use for Robotology Gitlab git repositories")
+set(YCM_GIT_GITLAB_ROBOTOLOGY_BASE_ADDRESS "https://git@gitlab.robotology.eu/" CACHE STRING "Address to use for Robotology Gitlab git repositories")
 set(YCM_USE_CMAKE_PROPOSED TRUE CACHE BOOL "Use files including unmerged cmake patches")
 
 include(ProjectsTags OPTIONAL)
