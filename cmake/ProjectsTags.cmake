@@ -1,7 +1,7 @@
 
 set(GazeboYARPPlugins_TAG master)
 set(hrl_geom_TAG a8683c8)
-set(iDynTree_TAG 895f2f1)
+set(iDynTree_TAG f0346c1)
 set(kdl_codyco_TAG 12bbb14)
 set(kdl_format_io_TAG 6890e69)
 set(mexWholeBodyModel_TAG 5c0edee)
