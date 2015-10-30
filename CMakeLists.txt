@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.7)
+cmake_minimum_required(VERSION 2.8.12)
 project(robotology NONE)
 
 ## we have to enable C because it is currently used
@@ -20,12 +20,12 @@ endif()
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
-set(ROBOTOLOGY_MAJOR_VERSION 0)
+set(ROBOTOLOGY_MAJOR_VERSION 1)
 set(ROBOTOLOGY_MINOR_VERSION 0)
-set(ROBOTOLOGY_PATCH_VERSION 1)
+set(ROBOTOLOGY_PATCH_VERSION 0)
 set(ROBOTOLOGY_VERSION ${ROBOTOLOGY_MAJOR_VERSION}.${ROBOTOLOGY_MINOR_VERSION}.${ROBOTOLOGY_PATCH_VERSION})
 
-set(YCM_EP_MAINTAINER_MODE TRUE)
+set(YCM_EP_MAINTAINER_MODE FALSE)
 
 include(CTest)
 include(FeatureSummary)
@@ -47,6 +47,7 @@ set(USE_SYSTEM_IDYNTREE OFF CACHE BOOL "Initial cache")
 set(USE_SYSTEM_PARAMHELP OFF CACHE BOOL "Initial cache")
 set(USE_SYSTEM_OPENSOT OFF CACHE BOOL "Initial cache")
 
+# Only open source repo by default
 set(USE_ONLY_OPEN_SOURCE ON CACHE BOOL "Only the open-source repo will be cloned and built")
 
 find_or_build_package(YARP 2.3.62)
