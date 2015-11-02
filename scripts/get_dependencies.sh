@@ -171,7 +171,7 @@ else
         #call the script to install opencv nonfree lib from sources
         sh $ROBOTOLOGY_ROOT/scripts/admin/get_libopencv_nonfree.sh	
         #call the script to insall PCL from sources
-        sh $ROBOTOLOGY_ROOT/scripts/admin/get_pcl.sh
+        # sh $ROBOTOLOGY_ROOT/scripts/admin/get_pcl.sh
     fi
 
     if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" = 'ROBOT' ]; then
