@@ -13,7 +13,7 @@ if [ -f ${ROBOTOLOGY_ROOT}/build/got_dependencies ]; then
     echo "If you really want to repeat an installation, you can"
     echo "remove $ROBOTOLOGY_ROOT/build/got_dependencies"
 else
-
+    # we are on Ubutntu
     if [ "`lsb_release -is`" = 'Ubuntu' ]; then
         sudo apt-add-repository ppa:robotology/ppa -y
         sudo sh -c 'echo "deb http://www.icub.org/ubuntu `lsb_release -cs` contrib/science" > /etc/apt/sources.list.d/icub.list'
@@ -28,22 +28,23 @@ else
         sudo apt-get update
 
         sudo apt-get dist-upgrade -y --force-yes --fix-missing
-
+        
+        # 12.04
         if [ "`lsb_release -cs`" = 'precise' ]; then
             #First install common packages
             sudo apt-get install -y --force-yes --fix-missing \
-              build-essential cmake cmake-curses-gui  \
-              git subversion doxygen graphviz  \
-              libace-dev libgsl0-dev libgtkmm-2.4-dev libgoocanvasmm-dev libsqlite3-dev python3.2-dev swig  \
-              icub-common libtinyxml2-dev \
-              libeigen3-dev libxml2-dev  \
-              ros-hydro-roscpp-core ros-hydro-srdfdom ros-hydro-cmake-modules  \
-              ros-hydro-openni2-*  ros-hydro-moveit-full ros-hydro-joy*  \
-              ros-hydro-urdfdom-py ros-hydro-libg2o ros-hydro-octomap* \
-              python3-sip-dev python-numpy python-scipy python-matplotlib python-pandas  \
-              libarmadillo-dev libblas-dev liblapack-dev  libflann-dev\
-              libpng++-dev python-bs4 libsctp-dev mercurial drcsim ros-hydro-rviz-imu-plugin
-	    sudo apt-get install -y --force-yes --fix-missing ros-hydro-desktop-full
+                build-essential cmake cmake-curses-gui  \
+                git subversion doxygen graphviz  \
+                libace-dev libgsl0-dev libgtkmm-2.4-dev libgoocanvasmm-dev libsqlite3-dev python3.2-dev swig  \
+                icub-common libtinyxml2-dev \
+                libeigen3-dev libxml2-dev  \
+                ros-hydro-roscpp-core ros-hydro-srdfdom ros-hydro-cmake-modules  \
+                ros-hydro-openni2-*  ros-hydro-moveit-full ros-hydro-joy*  \
+                ros-hydro-urdfdom-py ros-hydro-libg2o ros-hydro-octomap* \
+                python3-sip-dev python-numpy python-scipy python-matplotlib python-pandas  \
+                libarmadillo-dev libblas-dev liblapack-dev  libflann-dev\
+                libpng++-dev python-bs4 libsctp-dev mercurial drcsim ros-hydro-rviz-imu-plugin
+            sudo apt-get install -y --force-yes --fix-missing ros-hydro-desktop-full
             string="`uname -r`"
             word="enomai"
             if [ "${string#*$word}" != "$string" ]; then #if xenomai kernel...
@@ -58,31 +59,31 @@ else
                 fi
             fi
 
-
             if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" != 'ROBOT' ]; then
                 #No uncommon packages for for default setups
                 echo
             fi
-profiles
+
             git config --global http.sslverify false
             
             #call the script to install yaml-cpp from sources
             sh $ROBOTOLOGY_ROOT/scripts/admin/get_yaml-cpp.sh
-
+            
+        # 13.04
         elif [ "`lsb_release -cs`" = 'raring' ]; then
             sudo sed -i -e 's/it.archive.ubuntu.com\|archive.ubuntu.com\|security.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list
             sudo apt-get install -y --force-yes --fix-missing build-essential cmake cmake-curses-gui  \
-              git subversion doxygen graphviz  \
-              libace-dev libgsl0-dev libgtkmm-2.4-dev libgoocanvasmm-dev libsqlite3-dev swig  \
-              icub-common libtinyxml2-dev \
-              libeigen3-dev libyaml-cpp-dev libxml2-dev  \
-	      ros-hydro-srdfdom ros-hydro-cmake-modules  \
-              ros-hydro-openni2-* ros-hydro-moveit-full ros-hydro-joy*  ros-hydro-octomap* \
-              ros-hydro-urdfdom-py ros-hydro-libg2o \
-              python3-sip-dev python-numpy python-scipy python-matplotlib python-pandas  \
-              libarmadillo-dev libblas-dev liblapack-dev  libflann-dev\
-              libpng++-dev python-bs4 libsctp-dev mercurial drcsim ros-hydro-rviz-imu-plugin
-	    sudo apt-get install -y --force-yes --fix-missing ros-hydro-desktop-full
+                git subversion doxygen graphviz  \
+                libace-dev libgsl0-dev libgtkmm-2.4-dev libgoocanvasmm-dev libsqlite3-dev swig  \
+                icub-common libtinyxml2-dev \
+                libeigen3-dev libyaml-cpp-dev libxml2-dev  \
+                ros-hydro-srdfdom ros-hydro-cmake-modules  \
+                ros-hydro-openni2-* ros-hydro-moveit-full ros-hydro-joy*  ros-hydro-octomap* \
+                ros-hydro-urdfdom-py ros-hydro-libg2o \
+                python3-sip-dev python-numpy python-scipy python-matplotlib python-pandas  \
+                libarmadillo-dev libblas-dev liblapack-dev  libflann-dev\
+                libpng++-dev python-bs4 libsctp-dev mercurial drcsim ros-hydro-rviz-imu-plugin
+            sudo apt-get install -y --force-yes --fix-missing ros-hydro-desktop-full
             string="`uname -r`"
             word="enomai"
             if [ "${string#*$word}" != "$string" ]; then #if xenomai kernel...
@@ -99,20 +100,22 @@ profiles
             if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" != 'ROBOT' ]; then
                 sudo apt-get install -y --force-yes --fix-missing gazebo
             fi
-
+            
+        # 14.04
         elif [ "`lsb_release -cs`" = 'trusty' ]; then
             sudo apt-get install -y --force-yes --fix-missing build-essential cmake cmake-curses-gui  \
-              git subversion doxygen graphviz  \
-              libace-dev libgsl0-dev libgtkmm-2.4-dev libgoocanvasmm-dev libsqlite3-dev swig  \
-              icub-common libtinyxml2-dev \
-              libeigen3-dev libyaml-cpp-dev libxml2-dev  \
-              ros-indigo-desktop ros-indigo-srdfdom ros-indigo-cmake-modules  \
-              ros-indigo-openni2-* ros-indigo-moveit-* ros-indigo-joy* ros-indigo-octomap* \
-              ros-indigo-urdfdom-py ros-indigo-libg2o ros-indigo-pcl-ros  ros-indigo-pcl-conversions \
-              ros-indigo-laser-* ros-indigo-ps3joy ros-indigo-stereo-image-proc ros-indigo-image-transport* \
-              python3-sip-dev python-numpy python-scipy python-matplotlib python-pandas  \
-              libarmadillo-dev libblas-dev liblapack-dev  libflann-dev libmumps-seq-dev \
-              libpng++-dev python-bs4 libsctp-dev mercurial drcsim ros-indigo-rviz-imu-plugin
+                git subversion doxygen graphviz  \
+                libace-dev libgsl0-dev libgtkmm-2.4-dev libgoocanvasmm-dev libsqlite3-dev swig  \
+                icub-common libtinyxml2-dev \
+                libeigen3-dev libyaml-cpp-dev libxml2-dev  \
+                ros-indigo-desktop ros-indigo-srdfdom ros-indigo-cmake-modules  \
+                ros-indigo-openni2-* ros-indigo-moveit-* ros-indigo-joy* ros-indigo-octomap* \
+                ros-indigo-urdfdom-py ros-indigo-libg2o ros-indigo-pcl-ros  ros-indigo-pcl-conversions \
+                ros-indigo-laser-* ros-indigo-ps3joy ros-indigo-stereo-image-proc ros-indigo-image-transport* \
+                python3-sip-dev python-numpy python-scipy python-matplotlib python-pandas  \
+                libarmadillo-dev libblas-dev liblapack-dev  libflann-dev libmumps-seq-dev \
+                libpng++-dev python-bs4 libsctp-dev mercurial drcsim ros-indigo-rviz-imu-plugin
+            
             string="`uname -r`"
             word="enomai"
             if [ "${string#*$word}" != "$string" ]; then #if xenomai kernel...
@@ -162,6 +165,7 @@ profiles
     sudo rosdep init
     rosdep update
 
+    # ROS indigo
     if [ -d /opt/ros/indigo ]; then
         ROSVER=indigo
         #call the script to install opencv nonfree lib from sources
