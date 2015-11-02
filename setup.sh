@@ -71,10 +71,10 @@ setup_profile() {
     else
         echo -n " "
     fi
-    echo " 1   default"
+    echo " 1   simulation"
     echo "     Select this option when installing the superbuild on a regular"
     echo "     laptop or desktop. You can use this installation to interface with"
-    echo "     the robot."
+    echo "     the simulator."
 
 
     if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" = "ROBOT" ]; then
@@ -88,11 +88,7 @@ setup_profile() {
     echo "     linux kernel and scripts to start yarp and ros at boot,"
     echo "     but won't install gazebo."
 
-    echo " 3   simulation"
-    echo "     Select this option when installing the superbuild on a regular"
-    echo "     laptop or desktop. You can use this installation to interface with"
-    echo "     the simulator."
-
+    
     echo
     echo "Please input the desired number, CTRL-C to quit"
     echo
@@ -103,11 +99,12 @@ setup_profile() {
     echo
 
     case $i in
-        1|default|Default|DEFAULT)
-            echo -n "Starting default installation... "
+        1|simulation|Simulation|SIMULATION)
+            echo -n "Starting simulation installation to local server... "
             wait_and_print
 
-            $ROBOTOLOGY_ROOT/profiles/default/setup.sh
+            $ROBOTOLOGY_ROOT/profiles/simulation/setup.sh
+            echo "127.0.0.1 10000 yarp" > `yarp conf`
 
             print_success_info
             ;;
@@ -117,15 +114,6 @@ setup_profile() {
 
             sudo $ROBOTOLOGY_ROOT/profiles/robot/setup.sh
             $ROBOTOLOGY_ROOT/profiles/robot/activate.sh
-
-            print_success_info
-            ;;
-        3|simulation|Simulation|SIMULATION)
-            echo -n "Starting simulation installation to local server... "
-            wait_and_print
-
-            $ROBOTOLOGY_ROOT/profiles/simulation/setup.sh
-            echo "127.0.0.1 10000 yarp" > `yarp conf`
 
             print_success_info
             ;;
@@ -170,23 +158,22 @@ bootstrap_force() {
 switch_profile() {
     . $ROBOTOLOGY_ROOT/robotology-setup.bash
 
-    if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" = "DEFAULT" ]; then
+    if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" = "SIMULATION" ]; then
       echo -n "*"
     else
       echo -n " "
     fi
-    echo -n " 1   default"
-    if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" = "DEFAULT" ]; then
+    echo -n " 1   simulation"
+    if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" = "SIMULATION" ]; then
         if [ -f $ROBOTOLOGY_ROOT/build/install/bin/yarp ]; then
-          if [ -f `yarp conf` ] ; then
-            echo "@(`cat \`yarp conf\``) - select to change remote (local/PC104)" 
+          if [ -f `yarp conf` ]; then
+            echo "@(`cat \`yarp conf\``) - select to change remote (127.0.0.1/other IP)" 
           else
             echo
           fi
         else
           echo
         fi
-        echo "     this is the recommended profile at the moment unless you know what you are doing."
     else
       echo
     fi
@@ -214,29 +201,6 @@ switch_profile() {
       echo
     fi
 
-    if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" = "SIMULATION" ]; then
-      echo -n "*"
-    else
-      echo -n " "
-    fi
-    echo -n " 3   simulation"
-    if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" = "SIMULATION" ]; then
-        if [ -f $ROBOTOLOGY_ROOT/build/install/bin/yarp ]; then
-          if [ -f `yarp conf` ]; then
-            echo "@(`cat \`yarp conf\``) - select to change remote (127.0.0.1/other IP)" 
-          else
-            echo
-          fi
-        else
-          echo
-        fi
-        echo "     this is an EXPERIMENTAL profile to be used to interact with the simulator."
-        echo "     It will synchronize the control loop time with the simulation loop time."
-        echo "     This can lead to very slow simulations at the moment, so if your computer is fast enough"
-        echo "     you should use the default profile also for simulation"
-    else
-      echo
-    fi
 
     echo
     echo -n "> "
@@ -246,78 +210,7 @@ switch_profile() {
     echo
 
     case $i in
-        1|default|Default|DEFAULT)
-            if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" = "ROBOT" ]; then
-              echo "Your current profile is ROBOT."
-              echo "Are you sure you want to switch to DEFAULT?"
-              echo "This will invoke uninstall.sh for the ROBOT profile and"
-              echo "setup.sh for the DEFAULT profile. Remember to reinstall"
-              echo -n "dependencies if needed. "
-
-              if ask "Are you sure? [y/N] " ; then
-                echo
-                echo -n "Uninstalling ROBOT profile. "
-                wait_and_print
-
-                sudo $ROBOTOLOGY_ROOT/profiles/robot/uninstall.sh
-
-                rm -f $ROBOTOLOGY_ROOT/build/got_dependencies
-
-                echo -n "Installing DEFAULT profile. "
-                wait_and_print
-
-                $ROBOTOLOGY_ROOT/profiles/default/setup.sh
-
-                print_success_info
-              else
-                echo "OK! bye!"
-                exit 0;
-              fi
-
-            else
-                echo -n "Switching profile to DEFAULT. "
-                if ask_robot_local_or_remote ; then
-                    echo "Selected local yarpserver .. activating"
-                    wait_and_print
-
-                    $ROBOTOLOGY_ROOT/profiles/default/activate-local.sh
-
-                else
-                    echo "Selected PC104 yarpserver .. activating"
-                    wait_and_print
-
-                    $ROBOTOLOGY_ROOT/profiles/default/activate-remote.sh
-
-                fi
-                print_success_info
-            fi
-            ;;
-        2|robot|Robot|ROBOT)
-            if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" != "ROBOT" ]; then
-              echo "Your current profile is  different than $ROBOTOLOGY_PROFILE."
-              echo "Are you sure you want to switch to ROBOT?"
-              echo -n "This will invoke setup.sh for the ROBOT profile. "
-
-              if ask "Are you sure? [y/N] " ; then
-                echo
-                echo -n "Installing ROBOT profile. "
-                wait_and_print
-
-                rm -f $ROBOTOLOGY_ROOT/build/got_dependencies
-                sudo $ROBOTOLOGY_ROOT/profiles/robot/setup.sh
-                $ROBOTOLOGY_ROOT/profiles/robot/activate.sh
-
-                print_success_info
-              else
-                echo "OK! bye!"
-                exit 0;
-              fi
-
-            else
-                echo
-            fi
-            ;;
-        3|simulation|Simulation|SIMULATION)
+       1|simulation|Simulation|SIMULATION)
             if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" = "ROBOT" ]; then
               echo "Your current profile is ROBOT."
               echo "Are you sure you want to switch to SIMULATION?"
@@ -354,6 +247,33 @@ switch_profile() {
                 print_success_info
             fi
             ;;
+
+        2|robot|Robot|ROBOT)
+            if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" != "ROBOT" ]; then
+              echo "Your current profile is  different than $ROBOTOLOGY_PROFILE."
+              echo "Are you sure you want to switch to ROBOT?"
+              echo -n "This will invoke setup.sh for the ROBOT profile. "
+
+              if ask "Are you sure? [y/N] " ; then
+                echo
+                echo -n "Installing ROBOT profile. "
+                wait_and_print
+
+                rm -f $ROBOTOLOGY_ROOT/build/got_dependencies
+                sudo $ROBOTOLOGY_ROOT/profiles/robot/setup.sh
+                $ROBOTOLOGY_ROOT/profiles/robot/activate.sh
+
+                print_success_info
+              else
+                echo "OK! bye!"
+                exit 0;
+              fi
+
+            else
+                echo
+            fi
+            ;;
+        
         "")
             echo "No selection made, bye!"
             exit 1
@@ -383,13 +303,13 @@ if [ ! -f  $ROBOTOLOGY_ROOT/build/got_dependencies ]; then
     echo "     work if you don't remove it first. You can either manually install dependencies,"
     echo "     or try to remove it, run the install, then reinstall gazeb-current."
     fi
-    echo " 3   Select Profile (defaults to DEFAULT)"
+    echo " 3   Select Profile (defaults to SIMULATION)"
     echo "     Notice: you can do this at any time after the installation,"
-    echo "     it allows you to switch to simulation mode, where the yarp modules"
+    echo "     it allows you to switch between ROBOT mode (PC104 or COM Express)"
+    echo "     and simulation mode. In the SIMULATION mode the yarp modules"
     echo "     are synchronized with the gazebo clock. Also, some aliases are created"
-    echo "     in order to run everything with the right configuration parameters,"
-    echo "     so simple_homing and flat_walk will run automatically with the --simulation"
-    echo "     switch, and by running gazebo it will automatically load the yarp clock plugin"
+    echo "     in order to run everything with the right configuration parameters."
+    echo "     Gazebo will automatically load the yarp clock plugin, "
     echo "     needed for synchronization. Please remember that after the switch you must"
     echo "     reload your environment variables by running"
     echo "     source robotology-setup.bash"
@@ -416,7 +336,7 @@ if [ ! -f  $ROBOTOLOGY_ROOT/build/got_dependencies ]; then
             wait_and_print
             bootstrap_profile
             ;;
-        3)
+	3)
             switch_profile
             ;;
         "")
