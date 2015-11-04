@@ -32,6 +32,10 @@ if [ -f /usr/share/gazebo/setup.sh ]; then
     source /usr/share/gazebo/setup.sh
 fi
 
+if [ -f ${ROBOTOLOGY_ROOT}/external/ros2_ws/install/local_setup.sh ]; then
+    source ${ROBOTOLOGY_ROOT}/external/ros2_ws/install/local_setup.*
+fi
+
 export PATH=$ROBOTOLOGY_ROOT/build/install/bin:$PATH
 export LD_LIBRARY_PATH=$ROBOTOLOGY_ROOT/build/install/lib:$LD_LIBRARY_PATH
 export LTDL_LIBRARY_PATH=$ROBOTOLOGY_ROOT/build/install/lib/roboptim-core:$LTDL_LIBRARY_PATH
@@ -50,6 +54,11 @@ pathadd GAZEBO_MODEL_PATH $ROBOTOLOGY_ROOT/robots/icub_gazebo
 if [ -d $ROBOTOLOGY_ROOT/robots/iit-bigman-ros-pkg ]; then
         pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/robots/iit-bigman-ros-pkg
 	pathadd GAZEBO_MODEL_PATH $ROBOTOLOGY_ROOT/robots/iit-bigman-ros-pkg/bigman_gazebo/database
+fi
+
+if [ -d $ROBOTOLOGY_ROOT/robots/openth/ynl-hydra-ros-pkg ]; then
+	pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/robots/openth/ynl-hydra-ros-pkg
+	pathadd GAZEBO_MODEL_PATH $ROBOTOLOGY_ROOT/robots/openth/ynl-hydra-ros-pkg/hydra_gazebo/database
 fi
 
 export COMAN_ROOT=${ROBOTOLOGY_ROOT}/build/install
