@@ -49,9 +49,9 @@ set(USE_SYSTEM_OPENSOT OFF CACHE BOOL "Initial cache")
 
 # Only open source repo by default
 set(USE_ONLY_OPEN_SOURCE ON CACHE BOOL "Only the open-source repo will be cloned and built")
-set(YNL_HYDRA_TOKYO_UNIVERSITY ON CACHE BOOL "Enable the download and usages of repos from University of Tokyo YNL Lab")
+# Tokyo University HYDRA OFF by default
+set(YNL_HYDRA_TOKYO_UNIVERSITY OFF CACHE BOOL "Enable the download and usages of repos from University of Tokyo YNL Lab")
 
-find_or_build_package(YARP 2.3.62)
 find_or_build_package(iDynTree)
 find_or_build_package(paramHelp)
 
