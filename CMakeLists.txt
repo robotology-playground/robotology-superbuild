@@ -52,6 +52,7 @@ set(USE_ONLY_OPEN_SOURCE ON CACHE BOOL "Only the open-source repo will be cloned
 # Tokyo University HYDRA OFF by default
 set(YNL_HYDRA_TOKYO_UNIVERSITY OFF CACHE BOOL "Enable the download and usages of repos from University of Tokyo YNL Lab")
 
+find_or_build_package(YARP)
 find_or_build_package(iDynTree)
 find_or_build_package(paramHelp)
 
