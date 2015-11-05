@@ -30,7 +30,7 @@ set(YCM_EP_MAINTAINER_MODE FALSE)
 include(CTest)
 include(FeatureSummary)
 
-set(YCM_GIT_GITLAB_ROBOTOLOGY_BASE_ADDRESS "https://gitlab.robotology.eu/" CACHE STRING "Address to use for Robotology Gitlab git repositories")
+set(YCM_GIT_GITLAB_ROBOTOLOGY_BASE_ADDRESS "https://gitlab.robotology.eu/" CACHE STRING "Address to use for Robotology Gitlab git repositories" FORCE)
 set(YCM_USE_CMAKE_PROPOSED TRUE CACHE BOOL "Use files including unmerged cmake patches")
 
 include(ProjectsTags OPTIONAL)
@@ -76,6 +76,9 @@ find_or_build_package(GYM)
 find_or_build_package(testQPsolvers)
 
 IF(NOT USE_ONLY_OPEN_SOURCE)
+	# set ssh connection with gitlab using rsa keys.
+	set(YCM_GIT_GITLAB_ROBOTOLOGY_BASE_ADDRESS "ssh://git@gitlab.robotology.eu/" CACHE STRING "Address to use for Robotology Gitlab git repositories" FORCE)
+
         find_or_build_package(drc_shared)
 	find_or_build_package(walking)
 	find_or_build_package(iit-bigman-ros-pkg)
