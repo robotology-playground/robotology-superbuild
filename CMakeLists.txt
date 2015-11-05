@@ -49,6 +49,7 @@ set(USE_SYSTEM_OPENSOT OFF CACHE BOOL "Initial cache")
 
 # Only open source repo by default
 set(USE_ONLY_OPEN_SOURCE ON CACHE BOOL "Only the open-source repo will be cloned and built")
+set(YNL_HYDRA_TOKYO_UNIVERSITY ON CACHE BOOL "Enable the download and usages of repos from University of Tokyo YNL Lab")
 
 find_or_build_package(YARP 2.3.62)
 find_or_build_package(iDynTree)
@@ -72,10 +73,14 @@ find_or_build_package(simple_homing)
 find_or_build_package(centralized_inverse_kinematics)
 find_or_build_package(GYM)
 
+find_or_build_package(testQPsolvers)
+
 IF(NOT USE_ONLY_OPEN_SOURCE)
         find_or_build_package(drc_shared)
 	find_or_build_package(walking)
 	find_or_build_package(iit-bigman-ros-pkg)
+	find_or_build_package(trajectory_generator)
+	find_or_build_package(drc_valve)
 	
 	IF("${ROBOTOLOGY_PROFILE}" STREQUAL "ROBOT")
 	
@@ -87,6 +92,10 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
 	ENDIF("${ROBOTOLOGY_PROFILE}" STREQUAL "ROBOT")
 
 ENDIF(NOT USE_ONLY_OPEN_SOURCE)
+
+IF(YNL_HYDRA_TOKYO_UNIVERSITY)
+	find_or_build_package(openth)
+ENDIF(YNL_HYDRA_TOKYO_UNIVERSITY)
 
 
 
