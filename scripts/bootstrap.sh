@@ -91,12 +91,12 @@ echo "make status-all"
 echo
 echo "If  you want just to test changes to your local project,"
 echo "we recommend to run the build process from inside the build folder"
-echo "that is, e.g. for flat_walk, once inside your walkman folder"
+echo "that is, e.g. for simple_homing, once inside your walkman folder"
 echo
-echo "cd build/drc/flat_walk; make; make install"
+echo "cd build/drc/simple_homing; make; make install"
 echo
 echo "More easily, if you use QtCreator to build your project, remember"
-echo "to set the previous folder (e.g. build/drc/flat_walk) for compilation."
+echo "to set the previous folder (e.g. build/drc/simple_homing) for compilation."
 echo "It will not run a make install, but this is the preferred quick way"
 echo "to test your module."
 echo
