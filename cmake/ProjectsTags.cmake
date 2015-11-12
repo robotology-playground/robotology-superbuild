@@ -6,7 +6,7 @@ set(roboptim-core_TAG v3.1)
 set(roboptim-core-plugin-ipopt_TAG v3.1)
 set(roboptim-capsule_TAG v3.1)
 set(TinyXML_TAG 8459459)
-set(YARP_TAG a2b38a0)
+set(YARP_TAG 2fae615)
 set(YCM_TAG b327e75)
 
 set(centralized_inverse_kinematics_TAG master)
