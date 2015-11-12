@@ -85,6 +85,8 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
 	find_or_build_package(iit-bigman-ros-pkg)
 	find_or_build_package(trajectory_generator)
 	find_or_build_package(drc_valve)
+	find_or_build_package(drc_plug)
+	find_or_build_package(drc_poses)
 	
 	IF("${ROBOTOLOGY_PROFILE}" STREQUAL "ROBOT")
 	
