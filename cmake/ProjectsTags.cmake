@@ -1,10 +1,7 @@
 # external
 set(GazeboYARPPlugins_TAG master)
 set(iDynTree_TAG f0346c1)
-set(kdl_codyco_TAG 12bbb14)
-set(kdl_format_io_TAG 6890e69)
 set(paramHelp_TAG de9f652)
-set(pykdl_utils_TAG a8683c8)
 set(roboptim-core_TAG v3.1)
 set(roboptim-core-plugin-ipopt_TAG v3.1)
 set(roboptim-capsule_TAG v3.1)
