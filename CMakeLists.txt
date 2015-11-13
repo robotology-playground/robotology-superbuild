@@ -52,29 +52,34 @@ set(USE_ONLY_OPEN_SOURCE ON CACHE BOOL "Only the open-source repo will be cloned
 # Tokyo University HYDRA OFF by default
 set(YNL_HYDRA_TOKYO_UNIVERSITY OFF CACHE BOOL "Enable the download and usages of repos from University of Tokyo YNL Lab")
 
+# superbuild core
 find_or_build_package(YARP)
 find_or_build_package(iDynTree)
+find_or_build_package(idynutils)
+find_or_build_package(OpenSoT)
+find_or_build_package(GYM)
 find_or_build_package(paramHelp)
 
+# GAZEBO 
+find_or_build_package(GazeboYARPPlugins)
+find_or_build_package(IITComanRosPkg)
+find_or_build_package(icub_gazebo)
+
+# collision avoidance
 find_or_build_package(roboptim-core)
 find_or_build_package(moveit_compute_default_collisions)
 find_or_build_package(roboptim-capsule)
 find_or_build_package(roboptim-core-plugin-ipopt)
 find_or_build_package(robot_capsule_generator)
 
-find_or_build_package(IITComanRosPkg)
-find_or_build_package(icub_gazebo)
-
-find_or_build_package(GazeboYARPPlugins)
-find_or_build_package(idynutils)
-find_or_build_package(OpenSoT)
-find_or_build_package(yarp_ros_joint_state_publisher)
-find_or_build_package(robot_state_publisher_ext)
+# modules
 find_or_build_package(simple_homing)
 find_or_build_package(centralized_inverse_kinematics)
-find_or_build_package(GYM)
-
 find_or_build_package(testQPsolvers)
+
+# yarp_ros plublisher
+find_or_build_package(yarp_ros_joint_state_publisher)
+find_or_build_package(robot_state_publisher_ext)
 
 IF(NOT USE_ONLY_OPEN_SOURCE)
 	# set ssh connection with gitlab using rsa keys.
