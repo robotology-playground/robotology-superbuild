@@ -52,30 +52,68 @@ set(USE_ONLY_OPEN_SOURCE ON CACHE BOOL "Only the open-source repo will be cloned
 # Tokyo University HYDRA OFF by default
 set(YNL_HYDRA_TOKYO_UNIVERSITY OFF CACHE BOOL "Enable the download and usages of repos from University of Tokyo YNL Lab")
 
-# superbuild core
+# ------------------------------------
+# Superbuild CORE - compile it always.
+# ------------------------------------
 find_or_build_package(YARP)
 find_or_build_package(iDynTree)
 find_or_build_package(idynutils)
 find_or_build_package(OpenSoT)
 find_or_build_package(GYM)
 find_or_build_package(paramHelp)
-
-# GAZEBO 
 find_or_build_package(GazeboYARPPlugins)
-find_or_build_package(IITComanRosPkg)
-find_or_build_package(icub_gazebo)
 
-# collision avoidance
-find_or_build_package(roboptim-core)
-find_or_build_package(moveit_compute_default_collisions)
-find_or_build_package(roboptim-capsule)
-find_or_build_package(roboptim-core-plugin-ipopt)
-find_or_build_package(robot_capsule_generator)
+#------
+# Model
+#------
+# Compile COMAN model
+set(SUPERBUILD_IITComanRosPkg ON CACHE BOOL "Flag to compile IITComanRosPkg")
+IF(SUPERBUILD_IITComanRosPkg)
+	find_or_build_package(IITComanRosPkg)
+ENDIF(SUPERBUILD_IITComanRosPkg)
+# Compile iCub model
+set(SUPERBUILD_icub_gazebo ON CACHE BOOL "Flag to compile icub_gazebo")
+IF(SUPERBUILD_icub_gazebo)
+        find_or_build_package(icub_gazebo)
+ENDIF(SUPERBUILD_icub_gazebo)
 
-# modules
-find_or_build_package(simple_homing)
-find_or_build_package(centralized_inverse_kinematics)
-find_or_build_package(testQPsolvers)
+# -------------------------------------------
+# Compile CAPSULE for the collision avoidance
+# -------------------------------------------
+set(SUPERBUILD_CAPSULE ON CACHE BOOL "Flag to compile roboptim-core, moveit_compute_default_collisions, roboptim-capsule, roboptim-core-plugin-ipopt, robot_capsule_generator")
+IF(SUPERBUILD_CAPSULE)
+	find_or_build_package(roboptim-core)
+	find_or_build_package(moveit_compute_default_collisions)
+	find_or_build_package(roboptim-capsule)
+	find_or_build_package(roboptim-core-plugin-ipopt)
+	find_or_build_package(robot_capsule_generator)
+ENDIF(SUPERBUILD_CAPSULE)
+
+# ---------------------
+# Compile simple_homing
+# ---------------------
+set(SUPERBUILD_simple_homing ON CACHE BOOL "Flag to compile simple_homing")
+IF(SUPERBUILD_simple_homing)
+	find_or_build_package(simple_homing)
+ENDIF(SUPERBUILD_simple_homing)
+
+# --------------------------------------
+# Compile centralized_inverse_kinematics
+# --------------------------------------
+set(SUPERBUILD_centralized_inverse_kinematics ON CACHE BOOL "Flag to compile centralized_inverse_kinematics")
+IF(SUPERBUILD_centralized_inverse_kinematics)
+	find_or_build_package(centralized_inverse_kinematics)
+ENDIF(SUPERBUILD_centralized_inverse_kinematics)
+
+# ---------------------
+# Compile testQPsolvers
+# ---------------------
+set(SUPERBUILD_testQPsolvers OFF CACHE BOOL "Flag to compile testQPsolvers")
+IF(SUPERBUILD_testQPsolvers)
+	find_or_build_package(testQPsolvers)
+ENDIF(SUPERBUILD_testQPsolvers)
+
+
 
 # yarp_ros plublisher
 find_or_build_package(yarp_ros_joint_state_publisher)
@@ -85,7 +123,7 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
 	# set ssh connection with gitlab using rsa keys.
 	set(YCM_GIT_GITLAB_ROBOTOLOGY_BASE_ADDRESS "ssh://git@gitlab.robotology.eu/" CACHE STRING "Address to use for Robotology Gitlab git repositories" FORCE)
 
-        find_or_build_package(drc_shared)
+    find_or_build_package(drc_shared)
 	#find_or_build_package(walking)
 	find_or_build_package(iit-bigman-ros-pkg)
 	find_or_build_package(trajectory_generator)
