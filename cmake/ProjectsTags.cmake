@@ -1,21 +1,30 @@
-# external
-set(GazeboYARPPlugins_TAG master)
-set(iDynTree_TAG f0346c1)
+#superbuild
+set(YCM_TAG b327e75)
+
+# Superbuild CORE
+set(YARP_TAG 2fae615)
 set(paramHelp_TAG de9f652)
+set(GazeboYARPPlugins_TAG 0b4a645)
+set(iDynTree_TAG f0346c1)
+set(idynutils_TAG master)
+set(OpenSoT_TAG master)
+set(GYM_TAG master)
+
+# CAPSULE
 set(roboptim-core_TAG v3.1)
 set(roboptim-core-plugin-ipopt_TAG v3.1)
 set(roboptim-capsule_TAG v3.1)
-set(TinyXML_TAG 8459459)
-set(YARP_TAG 2fae615)
-set(YCM_TAG b327e75)
 
-set(centralized_inverse_kinematics_TAG master)
+# utils
 set(drc_shared_TAG master)
-set(idynutils_TAG master)
-set(OpenSoT_TAG master)
-set(robot_state_publisher_ext_TAG master)
+
+# modules
+set(centralized_inverse_kinematics_TAG master)
 set(simple_homing_TAG master)
 set(walking_TAG master)
+
+# ROS publisher
+set(robot_state_publisher_ext_TAG master)
 set(yarp_ros_joint_state_publisher_TAG master)
 
 # COMAN
