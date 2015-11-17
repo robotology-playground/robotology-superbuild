@@ -104,33 +104,90 @@ set(SUPERBUILD_centralized_inverse_kinematics ON CACHE BOOL "Flag to compile cen
 IF(SUPERBUILD_centralized_inverse_kinematics)
 	find_or_build_package(centralized_inverse_kinematics)
 ENDIF(SUPERBUILD_centralized_inverse_kinematics)
-
-# ---------------------
-# Compile testQPsolvers
-# ---------------------
+# --------------------------------------
+# Compile testQPsolvers - OFF by default
+# --------------------------------------
 set(SUPERBUILD_testQPsolvers OFF CACHE BOOL "Flag to compile testQPsolvers")
 IF(SUPERBUILD_testQPsolvers)
 	find_or_build_package(testQPsolvers)
 ENDIF(SUPERBUILD_testQPsolvers)
 
-
-
-# yarp_ros plublisher
-find_or_build_package(yarp_ros_joint_state_publisher)
-find_or_build_package(robot_state_publisher_ext)
+# --------------------------------------
+# Compile yarp_ros_joint_state_publisher
+# --------------------------------------
+set(SUPERBUILD_yarp_ros_joint_state_publisher ON CACHE BOOL "Flag to compile yarp_ros_joint_state_publisher")
+IF(SUPERBUILD_yarp_ros_joint_state_publisher)
+        find_or_build_package(yarp_ros_joint_state_publisher)
+ENDIF(SUPERBUILD_yarp_ros_joint_state_publisher)
+# --------------------------------------
+# Compile robot_state_publisher_ext
+# --------------------------------------
+set(SUPERBUILD_robot_state_publisher_ext ON CACHE BOOL "Flag to compile robot_state_publisher_ext")
+IF(SUPERBUILD_robot_state_publisher_ext)
+        find_or_build_package(robot_state_publisher_ext)
+ENDIF(SUPERBUILD_robot_state_publisher_ext)
 
 IF(NOT USE_ONLY_OPEN_SOURCE)
 	# set ssh connection with gitlab using rsa keys.
 	set(YCM_GIT_GITLAB_ROBOTOLOGY_BASE_ADDRESS "ssh://git@gitlab.robotology.eu/" CACHE STRING "Address to use for Robotology Gitlab git repositories" FORCE)
 
-    find_or_build_package(drc_shared)
-	#find_or_build_package(walking)
-	find_or_build_package(iit-bigman-ros-pkg)
-	find_or_build_package(trajectory_generator)
-	find_or_build_package(drc_valve)
-	#find_or_build_package(drc_plug)
-	find_or_build_package(drc_poses)
-	
+	# --------------------------------------
+        # Compile drc_shared
+        # --------------------------------------
+	set(SUPERBUILD_drc_shared ON CACHE BOOL "Flag to compile drc_shared")
+        IF(SUPERBUILD_drc_shared)
+            find_or_build_package(drc_shared)
+        ENDIF(SUPERBUILD_drc_shared)
+        
+        # --------------------------------------
+        # Compile trajectory_generator
+        # --------------------------------------
+        set(SUPERBUILD_trajectory_generator ON CACHE BOOL "Flag to compile trajectory_generator")
+        IF(SUPERBUILD_trajectory_generator)
+            find_or_build_package(trajectory_generator)
+        ENDIF(SUPERBUILD_trajectory_generator)
+        
+        # --------------------------------------
+        # Compile iit-bigman-ros-pkg
+        # --------------------------------------
+        set(SUPERBUILD_iit-bigman-ros-pkg ON CACHE BOOL "Flag to compile iit-bigman-ros-pkg")
+        IF(SUPERBUILD_iit-bigman-ros-pkg)
+            find_or_build_package(iit-bigman-ros-pkg)
+        ENDIF(SUPERBUILD_iit-bigman-ros-pkg)
+        
+        # --------------------------------------
+        # Compile drc_poses
+        # --------------------------------------
+        set(SUPERBUILD_drc_poses ON CACHE BOOL "Flag to compile drc_poses")
+        IF(SUPERBUILD_drc_poses)
+            find_or_build_package(drc_poses)
+        ENDIF(SUPERBUILD_drc_poses)
+        
+        # --------------------------------------
+        # Compile walking
+        # --------------------------------------
+        set(SUPERBUILD_walking OFF CACHE BOOL "Flag to compile walking")
+        IF(SUPERBUILD_walking)
+            find_or_build_package(walking)
+        ENDIF(SUPERBUILD_walking)
+        
+        # --------------------------------------
+        # Compile drc_valve
+        # --------------------------------------
+        set(SUPERBUILD_drc_valve ON CACHE BOOL "Flag to compile drc_valve")
+        IF(SUPERBUILD_drc_valve)
+            find_or_build_package(drc_valve)
+        ENDIF(SUPERBUILD_drc_valve)
+        
+        # --------------------------------------
+        # Compile drc_plug
+        # --------------------------------------
+        set(SUPERBUILD_drc_plug OFF CACHE BOOL "Flag to compile drc_plug")
+        IF(SUPERBUILD_drc_plug)
+            find_or_build_package(drc_plug)
+        ENDIF(SUPERBUILD_drc_plug)
+
+        
 	IF("${ROBOTOLOGY_PROFILE}" STREQUAL "ROBOT")
 	
 		find_or_build_package(comaninterface)
