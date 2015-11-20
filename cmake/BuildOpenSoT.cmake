@@ -22,5 +22,5 @@ ycm_ep_helper(  OpenSoT TYPE GIT
                 COMPONENT external
                 DEPENDS iDynTree
                         idynutils
-                CMAKE_CACHE_ARGS -DOPENSOT_COMPILE_TESTS:BOOL=OFF
+                CMAKE_CACHE_ARGS -DOPENSOT_COMPILE_TESTS:BOOL=ON
             )
