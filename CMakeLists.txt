@@ -115,14 +115,14 @@ ENDIF(SUPERBUILD_testQPsolvers)
 # --------------------------------------
 # Compile yarp_ros_joint_state_publisher
 # --------------------------------------
-set(SUPERBUILD_yarp_ros_joint_state_publisher OFF CACHE BOOL "Flag to compile yarp_ros_joint_state_publisher")
+set(SUPERBUILD_yarp_ros_joint_state_publisher ON CACHE BOOL "Flag to compile yarp_ros_joint_state_publisher")
 IF(SUPERBUILD_yarp_ros_joint_state_publisher)
         find_or_build_package(yarp_ros_joint_state_publisher)
 ENDIF(SUPERBUILD_yarp_ros_joint_state_publisher)
 # --------------------------------------
 # Compile robot_state_publisher_ext
 # --------------------------------------
-set(SUPERBUILD_robot_state_publisher_ext OFF CACHE BOOL "Flag to compile robot_state_publisher_ext")
+set(SUPERBUILD_robot_state_publisher_ext ON CACHE BOOL "Flag to compile robot_state_publisher_ext")
 IF(SUPERBUILD_robot_state_publisher_ext)
         find_or_build_package(robot_state_publisher_ext)
 ENDIF(SUPERBUILD_robot_state_publisher_ext)
