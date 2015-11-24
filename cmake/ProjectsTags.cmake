@@ -23,13 +23,3 @@ set(trajectory_generator TAG 4bcf25603c)
 #set(robot_state_publisher_ext_TAG master)
 #set(yarp_ros_joint_state_publisher_TAG master)
 
-# modules
-#set(centralized_inverse_kinematics_TAG master)
-#set(simple_homing_TAG master)
-#set(walking_TAG master)
-
-# COMAN
-#set(comanapp_TAG VVV15)
-#set(comaninterface_TAG VVV15)
-#set(comanmod_TAG VVV15)
-#set(COMAN_shared_TAG emergency)
