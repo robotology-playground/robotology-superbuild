@@ -20,6 +20,6 @@ set(drc_shared_TAG e995308796b)
 set(trajectory_generator TAG 4bcf25603c)
 
 # ROS publisher
-#set(robot_state_publisher_ext_TAG master)
-#set(yarp_ros_joint_state_publisher_TAG master)
+set(robot_state_publisher_ext_TAG 90ffac07f)
+set(yarp_ros_joint_state_publisher_TAG 101ddfb3c)
 
