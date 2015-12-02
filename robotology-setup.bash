@@ -61,6 +61,14 @@ if [ -d $ROBOTOLOGY_ROOT/robots/openth/ynl-hydra-ros-pkg ]; then
 	pathadd GAZEBO_MODEL_PATH $ROBOTOLOGY_ROOT/robots/openth/ynl-hydra-ros-pkg/hydra_gazebo/database
 fi
 
+if [ -d $ROBOTOLOGY_ROOT/external/yarp_ros_joint_state_publisher ]; then
+	pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/external/yarp_ros_joint_state_publisher
+fi
+
+if [ -d $ROBOTOLOGY_ROOT/external/robot_state_publisher_ext ]; then
+	pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/external/robot_state_publisher_ext
+fi
+
 export COMAN_ROOT=${ROBOTOLOGY_ROOT}/build/install
 
 # TODO add a switch here to select correct robot
