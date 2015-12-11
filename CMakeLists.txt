@@ -104,6 +104,7 @@ set(SUPERBUILD_centralized_inverse_kinematics OFF CACHE BOOL "Flag to compile ce
 IF(SUPERBUILD_centralized_inverse_kinematics)
 	find_or_build_package(centralized_inverse_kinematics)
 ENDIF(SUPERBUILD_centralized_inverse_kinematics)
+
 # --------------------------------------
 # Compile testQPsolvers - OFF by default
 # --------------------------------------
@@ -111,6 +112,14 @@ set(SUPERBUILD_testQPsolvers OFF CACHE BOOL "Flag to compile testQPsolvers")
 IF(SUPERBUILD_testQPsolvers)
 	find_or_build_package(testQPsolvers)
 ENDIF(SUPERBUILD_testQPsolvers)
+
+# --------------------------------------
+# Compile athletic - OFF by default
+# --------------------------------------
+set(SUPERBUILD_athletic OFF CACHE BOOL "Flag to compile athletic")
+IF(SUPERBUILD_athletic)
+	find_or_build_package(athletic)
+ENDIF(SUPERBUILD_athletic)
 
 # --------------------------------------
 # Compile yarp_ros_joint_state_publisher
