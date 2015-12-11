@@ -16,7 +16,7 @@ else
     # we are on Ubutntu
     if [ "`lsb_release -is`" = 'Ubuntu' ]; then
         sudo apt-add-repository ppa:robotology/ppa -y
-	sudo add-apt-repository ppa:v-launchpad-jochen-sprickerhof-de/pcl -y
+        sudo add-apt-repository ppa:v-launchpad-jochen-sprickerhof-de/pcl -y
         sudo sh -c 'echo "deb http://www.icub.org/ubuntu `lsb_release -cs` contrib/science" > /etc/apt/sources.list.d/icub.list'
         sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-latest.list'
         wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -

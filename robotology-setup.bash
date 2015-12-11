@@ -103,4 +103,12 @@ fi
 
 # Some aliases for superbuild/scripts
 alias superbuild=". ${ROBOTOLOGY_ROOT}/scripts/superbuild.sh"
-source ${ROBOTOLOGY_ROOT}/scripts/superbuild.profile 
+source ${ROBOTOLOGY_ROOT}/scripts/superbuild.profile
+
+# add robotology folder for robot models
+if [ -d $ROBOTOLOGY_ROOT/build/install/share/robots ]; then
+	export ROBOTOLOGY_ROBOTS=$ROBOTOLOGY_ROOT/build/install/share/robots
+else
+	unset ROBOTOLOGY_ROBOTS
+fi
+ 
