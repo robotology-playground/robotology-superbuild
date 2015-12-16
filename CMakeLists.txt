@@ -204,6 +204,14 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
         IF(SUPERBUILD_network)
             find_or_build_package(network)
         ENDIF(SUPERBUILD_network)
+
+	# --------------------------------------
+        # Compile footstep_perception
+        # --------------------------------------
+        set(SUPERBUILD_footstep_perception OFF CACHE BOOL "Flag to compile footstep_perception")
+        IF(SUPERBUILD_footstep_perception)
+            find_or_build_package(footstep_perception)
+        ENDIF(SUPERBUILD_footstep_perception)
         
 	IF("${ROBOTOLOGY_PROFILE}" STREQUAL "ROBOT")
 	
