@@ -196,6 +196,14 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
             find_or_build_package(drc_plug)
         ENDIF(SUPERBUILD_drc_plug)
 
+
+	# --------------------------------------
+        # Compile network
+        # --------------------------------------
+        set(SUPERBUILD_network OFF CACHE BOOL "Flag to compile network")
+        IF(SUPERBUILD_network)
+            find_or_build_package(network)
+        ENDIF(SUPERBUILD_network)
         
 	IF("${ROBOTOLOGY_PROFILE}" STREQUAL "ROBOT")
 	
