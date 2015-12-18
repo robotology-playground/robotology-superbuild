@@ -1,0 +1,90 @@
+VISION PC (on board)
+=========
+
+hostname: walkman-vision-pc
+IP address: 10.24.3.101
+
+user: vision
+pass: vision
+
+How to access: 
+
+ssh -X vision@10.24.3.101
+
+Open 4 terminals in the walkman-vision-pc:
+
+1) roscore
+2) multisense (start the multisense ros driver)
+3) dimi_grabber (start Dimitrios Kanoulas grabbers)
+4) rosrun rqt_reconfigure rqt_reconfigure (to change the multisense parameters)
+
+
+
+CONTROL PC (on board)
+==========
+
+hostname: walkman-control-pc
+IP address: 10.24.3.100
+
+user: walkman
+pass: walkman
+
+How to access:
+
+ssh -X walkman@10.24.3.100
+
+Open 3 terminals in the walkman-vision-pc:
+
+1) yarpserver --write
+2) cd $WI 
+   ./walkmainterface (first lunch: it will find 1 board [POWER BOARD] and starts the other boards then CTRL+C)  
+   ./walkmainterface (second lunch: it will find 41 boards [ALL BOARDS] give enter every times to start the control on each chain of the robot)
+
+3) encoder_publisher
+
+If you need it, you can open other terminals to have one of the following features:
+
+* Force-Torque ROS publisher (run 2 terminals):
+  1. ft_ros_publisher
+  2. yarp write ... /ft_ros_publisher/switch:i
+    >> start
+
+  It will publish the ft as ROS topic at 100hz
+
+* YARP robot motor GUI (run 1 terminal)
+  1. cd ~
+     yarpmotorgui --direct
+ 
+* Start the perception/control module that you need: take care to start only one control module at a time.
+
+* start IMU independently from the walkmaninterface
+
+  1. walkmanmodexe --device inertial --subdevice lpms_imu --imu_id A5022WEY 
+
+PILOT PC
+========
+
+hostname: walkman-pilot-pc
+IP address: 10.24.3.77 
+
+user: lucamuratore
+pass: lucamuratore
+
+How to access:
+
+Turn on the PC inside the rack.
+
+Open 3 terminals in the walkman-pilot-pc:
+
+1) encoder_subscriber
+2) roslaunch walkman_launch state_publisher.launch
+3) roslaunch pilot_interface PI_walkman.launch config:=drc
+
+
+
+
+
+
+
+
+
