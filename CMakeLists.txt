@@ -136,6 +136,15 @@ IF(SUPERBUILD_robot_state_publisher_ext)
         find_or_build_package(robot_state_publisher_ext)
 ENDIF(SUPERBUILD_robot_state_publisher_ext)
 
+# ---------------------
+# Compile locoman_utils
+# ---------------------
+set(SUPERBUILD_locoman_utils OFF CACHE BOOL "Flag to compile locoman_utils")
+IF(SUPERBUILD_locoman_utils)
+    find_or_build_package(locoman_utils)
+ENDIF(SUPERBUILD_locoman_utils)
+
+
 IF(NOT USE_ONLY_OPEN_SOURCE)
 	# set ssh connection with gitlab using rsa keys.
 	set(YCM_GIT_GITLAB_ROBOTOLOGY_BASE_ADDRESS "ssh://git@gitlab.robotology.eu/" CACHE STRING "Address to use for Robotology Gitlab git repositories" FORCE)
@@ -213,6 +222,16 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
             find_or_build_package(footstep_perception)
         ENDIF(SUPERBUILD_footstep_perception)
         
+	# --------------------------------------
+        # Compile locomanipulation
+        # --------------------------------------
+        set(SUPERBUILD_locomanipulation OFF CACHE BOOL "Flag to compile locomanipulation")
+        IF(SUPERBUILD_locomanipulation)
+            find_or_build_package(locomanipulation)
+            find_or_build_package(locoman_utils)
+        ENDIF(SUPERBUILD_locomanipulation)
+
+
 	IF("${ROBOTOLOGY_PROFILE}" STREQUAL "ROBOT")
 	
 		find_or_build_package(comaninterface)
