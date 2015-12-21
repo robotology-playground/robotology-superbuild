@@ -205,8 +205,7 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
             find_or_build_package(drc_plug)
         ENDIF(SUPERBUILD_drc_plug)
 
-
-	# --------------------------------------
+		# --------------------------------------
         # Compile network
         # --------------------------------------
         set(SUPERBUILD_network OFF CACHE BOOL "Flag to compile network")
@@ -214,13 +213,22 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
             find_or_build_package(network)
         ENDIF(SUPERBUILD_network)
 
-	# --------------------------------------
+	    # --------------------------------------
         # Compile footstep_perception
         # --------------------------------------
         set(SUPERBUILD_footstep_perception OFF CACHE BOOL "Flag to compile footstep_perception")
         IF(SUPERBUILD_footstep_perception)
             find_or_build_package(footstep_perception)
         ENDIF(SUPERBUILD_footstep_perception)
+
+        # --------------------------------------
+        # Compile drcsim
+        # --------------------------------------
+        set(SUPERBUILD_drcsim OFF CACHE BOOL "Flag to compile drcsim")
+        IF(SUPERBUILD_drcsim)
+            find_or_build_package(drcsim)
+        ENDIF(SUPERBUILD_drcsim)
+
         
 	# --------------------------------------
         # Compile locomanipulation
