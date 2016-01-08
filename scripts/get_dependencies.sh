@@ -122,8 +122,12 @@ else
               libarmadillo-dev libblas-dev liblapack-dev  libflann-dev libmumps-seq-dev \
               libpng++-dev python-bs4 libsctp-dev mercurial ros-indigo-rviz-imu-plugin libhighgui2.4 \
               libopensplice64 cppcheck \
-              python3-empy python3-setuptools python3-nose python3-pip python3-vcstool
-            string="`uname -r`"
+              python3-empy python3-setuptools python3-nose python3-pip python3-vcstool \
+	      # pronto dependencies
+              libglib2.0-dev openjdk-6-jdk python-dev gtk-doc-tools freeglut3-dev libjpeg-dev \
+	      libboost-thread-dev libgtk2.0-dev python-gtk2 mesa-common-dev libgl1-mesa-dev libglu1-mesa-dev libqwt-dev 
+            
+	    string="`uname -r`"
             word="enomai"
             if [ "${string#*$word}" != "$string" ]; then #if xenomai kernel...
                 if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" = 'ROBOT' ]; then

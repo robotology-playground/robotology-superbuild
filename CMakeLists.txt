@@ -144,6 +144,14 @@ IF(SUPERBUILD_locoman_utils)
     find_or_build_package(locoman_utils)
 ENDIF(SUPERBUILD_locoman_utils)
 
+# ---------------------
+# Compile pronto
+# ---------------------
+set(SUPERBUILD_pronto OFF CACHE BOOL "Flag to compile pronto library")
+IF(SUPERBUILD_pronto)
+        find_or_build_package(pronto)
+ENDIF(SUPERBUILD_pronto)
+
 
 IF(NOT USE_ONLY_OPEN_SOURCE)
 	# set ssh connection with gitlab using rsa keys.
