@@ -10,5 +10,5 @@ ycm_ep_helper(  pronto
                 COMPONENT external
 		CONFIGURE_COMMAND ""
 		BUILD_COMMAND make_pronto.sh
-                INSTALL_COMMAND ""
+                INSTALL_COMMAND install_pronto.sh
 	    )
