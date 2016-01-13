@@ -76,6 +76,11 @@ set(SUPERBUILD_icub_gazebo ON CACHE BOOL "Flag to compile icub_gazebo")
 IF(SUPERBUILD_icub_gazebo)
         find_or_build_package(icub_gazebo)
 ENDIF(SUPERBUILD_icub_gazebo)
+# Compile cogimon model
+set(SUPERBUILD_iit-cogimon-ros-pkg ON CACHE BOOL "Flag to compile iit-cogimon-ros-pkg")
+IF(SUPERBUILD_iit-cogimon-ros-pkg)
+        find_or_build_package(iit-cogimon-ros-pkg)
+ENDIF(SUPERBUILD_iit-cogimon-ros-pkg)
 
 # -------------------------------------------
 # Compile CAPSULE for the collision avoidance
