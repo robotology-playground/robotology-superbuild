@@ -1,13 +1,13 @@
 #superbuild
 set(YCM_TAG b327e753)
 
-# Superbuild CORE
+# Superbuild CORE: put the SHA of the commit, not the branch name.
 set(YARP_TAG 2fae615)
 set(paramHelp_TAG de9f652)
-set(GazeboYARPPlugins_TAG master)
+set(GazeboYARPPlugins_TAG caf5b45a8)
 set(iDynTree_TAG f0346c1)
-set(idynutils_TAG master)
-set(OpenSoT_TAG contact_force_optimization)
+set(idynutils_TAG 79825b3d2)
+set(OpenSoT_TAG 101b9d703)
 set(GYM_TAG e49bb522a)
 
 # CAPSULE
