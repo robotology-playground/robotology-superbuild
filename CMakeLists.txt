@@ -102,6 +102,15 @@ IF(SUPERBUILD_simple_homing)
 	find_or_build_package(simple_homing)
 ENDIF(SUPERBUILD_simple_homing)
 
+# ---------------------
+# Compile cogimon_simulation_tests
+# ---------------------
+set(SUPERBUILD_cogimon_simulation_tests OFF CACHE BOOL "Flag to compile cogimon_simulation_tests")
+IF(SUPERBUILD_cogimon_simulation_tests)
+	find_or_build_package(cogimon_simulation_tests)
+ENDIF(SUPERBUILD_cogimon_simulation_tests)
+
+
 # --------------------------------------
 # Compile centralized_inverse_kinematics
 # --------------------------------------
