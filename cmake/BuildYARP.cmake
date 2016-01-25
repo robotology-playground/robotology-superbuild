@@ -41,6 +41,6 @@ ycm_ep_helper(  YARP
                                  -DYARP_COMPILE_TESTS:BOOL=OFF
                                  -DYARP_COMPILE_EXPERIMENTAL_WRAPPERS:BOOL=ON
                                  -DYARP_COMPILE_BINDINGS:BOOL=ON
-                                 -DCREATE_PYTHON:BOOL=ON
+                                 -DCREATE_PYTHON:BOOL=OFF
                                  -DCREATE_GUIS:BOOL=ON
                 )
