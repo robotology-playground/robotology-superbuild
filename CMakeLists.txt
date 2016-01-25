@@ -244,7 +244,7 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
         ENDIF(SUPERBUILD_drcsim)
 
         
-	# --------------------------------------
+        # --------------------------------------
         # Compile locomanipulation
         # --------------------------------------
         set(SUPERBUILD_locomanipulation OFF CACHE BOOL "Flag to compile locomanipulation")
@@ -253,6 +253,14 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
             find_or_build_package(locoman_utils)
         ENDIF(SUPERBUILD_locomanipulation)
 
+        # --------------------------------------
+        # Compile yw_module
+        # --------------------------------------
+        set(SUPERBUILD_yw_module OFF CACHE BOOL "Flag to compile yw_module")
+        IF(SUPERBUILD_yw_module)
+            find_or_build_package(yw_module)
+        ENDIF(SUPERBUILD_yw_module)        
+        
 
 	IF("${ROBOTOLOGY_PROFILE}" STREQUAL "ROBOT")
 	
