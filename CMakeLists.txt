@@ -261,6 +261,14 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
             find_or_build_package(yw_module)
         ENDIF(SUPERBUILD_yw_module)        
         
+	# --------------------------------------
+        # Compile valve_strategies
+        # --------------------------------------
+        set(SUPERBUILD_valve_strategies OFF CACHE BOOL "Flag to compile valve_strategies")
+        IF(SUPERBUILD_valve_strategies)
+            find_or_build_package(valve_strategies)
+        ENDIF(SUPERBUILD_valve_strategies)        
+        
 
 	IF("${ROBOTOLOGY_PROFILE}" STREQUAL "ROBOT")
 	
