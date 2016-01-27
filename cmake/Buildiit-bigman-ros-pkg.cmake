@@ -11,5 +11,5 @@ ycm_ep_helper(  iit-bigman-ros-pkg
                 TAG master
                 COMPONENT robots
                 DEPENDS moveit_compute_default_collisions
-                INSTALL_COMMAND ""
+                #INSTALL_COMMAND ""
             )
