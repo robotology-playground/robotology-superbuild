@@ -151,6 +151,14 @@ IF(SUPERBUILD_robot_state_publisher_ext)
 ENDIF(SUPERBUILD_robot_state_publisher_ext)
 
 # ---------------------
+# Compile ft_publisher
+# ---------------------
+set(SUPERBUILD_ft_publisher OFF CACHE BOOL "Flag to compile ft_publisher")
+IF(SUPERBUILD_ft_publisher)
+	find_or_build_package(ft_publisher)
+ENDIF(SUPERBUILD_ft_publisher)
+
+# ---------------------
 # Compile locoman_utils
 # ---------------------
 set(SUPERBUILD_locoman_utils OFF CACHE BOOL "Flag to compile locoman_utils")
