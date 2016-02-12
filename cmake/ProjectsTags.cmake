@@ -2,12 +2,14 @@
 set(YCM_TAG b327e753)
 
 # Superbuild CORE: put the SHA1 of the commit or the TAG, not the branch name.
+#set(YARP_TAG cdb890c4) # walkman-control-pc TAG 
 set(YARP_TAG 2fae615)
 set(paramHelp_TAG de9f652)
 set(GazeboYARPPlugins_TAG caf5b45a8)
-set(iDynTree_TAG f0346c1)
-set(idynutils_TAG 79825b3d2)
-set(OpenSoT_TAG 101b9d703)
+set(iDynTree_TAG 895f2f1) # walkman-control-pc TAG  
+set(idynutils_TAG 67a400b8c0c) # walkman-control-pc TAG
+set(OpenSoT_TAG 058edfd7a4) # walkman-control-pc TAG
+#set(GYM_TAG 74a4e07f) # walkman-control-pc TAG
 set(GYM_TAG e49bb522a)
 
 # CAPSULE: put the SHA1 of the commit or the TAG, not the branch name.
@@ -17,7 +19,7 @@ set(roboptim-capsule_TAG v3.1)
 
 # utils: put the SHA1 of the commit or the TAG, not the branch name.
 set(drc_shared_TAG fd9845435)
-set(trajectory_generator_TAG 4bcf25603c)
+set(trajectory_generator_TAG 46d894478c) # walkman-control-pc TAG
 
 # ROS publisher: put the SHA1 of the commit or the TAG, not the branch name.
 set(robot_state_publisher_ext_TAG 90ffac07f)
