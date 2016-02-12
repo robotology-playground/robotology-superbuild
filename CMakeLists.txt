@@ -227,7 +227,7 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
             find_or_build_package(drc_plug)
         ENDIF(SUPERBUILD_drc_plug)
 
-		# --------------------------------------
+	# --------------------------------------
         # Compile network
         # --------------------------------------
         set(SUPERBUILD_network OFF CACHE BOOL "Flag to compile network")
@@ -235,7 +235,7 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
             find_or_build_package(network)
         ENDIF(SUPERBUILD_network)
 
-	    # --------------------------------------
+	# --------------------------------------
         # Compile footstep_perception
         # --------------------------------------
         set(SUPERBUILD_footstep_perception OFF CACHE BOOL "Flag to compile footstep_perception")
@@ -269,6 +269,14 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
             find_or_build_package(yw_module)
         ENDIF(SUPERBUILD_yw_module)        
         
+	# --------------------------------------
+        # Compile manipulation 
+        # --------------------------------------
+        set(SUPERBUILD_manipulation OFF CACHE BOOL "Flag to compile manipulation")
+        IF(SUPERBUILD_manipulation)
+            find_or_build_package(manipulation)
+        ENDIF(SUPERBUILD_manipulation)
+	
 
 	IF("${ROBOTOLOGY_PROFILE}" STREQUAL "ROBOT")
 	
