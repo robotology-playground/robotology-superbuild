@@ -74,6 +74,10 @@ How to access:
 
 Turn on the PC inside the rack.
 
+Check that we are inside the same YARP network (using yarp detect), otherwise in a terminal write:
+
+yarp conf 10.24.3.100 10000
+
 Open 3 terminals in the walkman-pilot-pc:
 
 1) encoder_subscriber
