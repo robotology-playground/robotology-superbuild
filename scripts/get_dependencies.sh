@@ -137,7 +137,10 @@ else
         fi
 
         if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" != 'ROBOT' ]; then
-            sudo apt-get install -y --force-yes --fix-missing gazebo3 libgazebo-dev
+	    # clean up previous versions
+	    sudo apt-get remove gazebo*
+	    # install gazebo 5 and the dev
+            sudo apt-get install -y --force-yes --fix-missing ros-indigo-gazebo5-* libgazebo5-dev
         fi
 
       else
