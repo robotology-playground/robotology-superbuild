@@ -57,6 +57,7 @@ set(YNL_HYDRA_TOKYO_UNIVERSITY OFF CACHE BOOL "Enable the download and usages of
 # ------------------------------------
 find_or_build_package(YARP)
 find_or_build_package(iDynTree)
+find_or_build_package(kdl_codyco)
 find_or_build_package(idynutils)
 find_or_build_package(OpenSoT)
 find_or_build_package(GYM)

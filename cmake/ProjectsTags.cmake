@@ -6,7 +6,10 @@ set(YCM_TAG b327e753)
 set(YARP_TAG 2fae615)
 set(paramHelp_TAG de9f652)
 set(GazeboYARPPlugins_TAG caf5b45a8)
+
 set(iDynTree_TAG 895f2f1) # walkman-control-pc TAG  
+set(kdl_codyco_TAG 12bbb14)
+
 set(idynutils_TAG 67a400b8c0c) # walkman-control-pc TAG
 set(OpenSoT_TAG 058edfd7a4) # walkman-control-pc TAG
 #set(GYM_TAG 74a4e07f) # walkman-control-pc TAG
