@@ -30,3 +30,5 @@ set(yarp_ros_joint_state_publisher_TAG 101ddfb3c)
 
 # modules: put the SHA1 of the commit or the TAG, not the branch name.
 set(drc_poses_TAG 07041f56933)
+
+set(iit-bigman-ros-pkg_TAG c06bbe7ed) # WALKMAN whole body wrapper
