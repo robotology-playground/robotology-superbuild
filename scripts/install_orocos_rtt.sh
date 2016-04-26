@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "This script will create an orocos_ws in your robotology_superbuild folder."
+
 cd $ROBOTOLOGY_ROOT
 mkdir orocos_ws
 cd orocos_ws
@@ -18,7 +20,4 @@ rosdep install orocos_toolchain
 
 source src/env.sh
 catkin_make_isolated --install
-
-echo ". $ROBOTOLOGY_ROOT/orocos_ws/install_isolated/setup.bash" >> ~/.bashrc
-echo ". $ROBOTOLOGY_ROOT/orocos_ws/src/env.sh" >> ~/.bashrc
 
