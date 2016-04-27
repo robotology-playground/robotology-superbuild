@@ -6,7 +6,7 @@ set(YARP_TAG 2fae615)
 set(paramHelp_TAG de9f652)
 set(GazeboYARPPlugins_TAG caf5b45a8)
 set(iDynTree_TAG f0346c1)
-set(idynutils_TAG 79825b3d2)
+set(idynutils_TAG e3c3b1b0)
 set(OpenSoT_TAG 9f75009685)
 set(GYM_TAG e49bb522a)
 
