@@ -32,6 +32,8 @@ if [ -f ${ROBOTOLOGY_ROOT}/orocos_ws/install_isolated/setup.bash ]; then
        if [ -f ${ROBOTOLOGY_ROOT}/orocos_ws/src/env.sh ]; then
               source ${ROBOTOLOGY_ROOT}/orocos_ws/src/env.sh
        fi
+       export LD_LIBRARY_PATH=$ROBOTOLOGY_ROOT/orocos_ws/install_isolated/lib:$LD_LIBRARY_PATH
+       export LIBRARY_PATH=$ROBOTOLOGY_ROOT/orocos_ws/install_isolated/lib:$LIBRARY_PATH
 fi
 
 #gazebo setup
@@ -69,7 +71,7 @@ if [ -d $ROBOTOLOGY_ROOT/robots/openth/ynl-hydra-ros-pkg ]; then
 fi
 
 if [ -d $ROBOTOLOGY_ROOT/robots/iit-cogimon-ros-pkg ]; then
-        pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/robots/iit-cogimon-ros-pkg
+       pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/robots/iit-cogimon-ros-pkg
 	pathadd GAZEBO_MODEL_PATH $ROBOTOLOGY_ROOT/robots/iit-cogimon-ros-pkg/cogimon_gazebo/database
 fi
 
