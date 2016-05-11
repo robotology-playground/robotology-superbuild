@@ -110,6 +110,9 @@ IF(SUPERBUILD_cogimon_simulation_tests)
 	find_or_build_package(cogimon_simulation_tests)
 ENDIF(SUPERBUILD_cogimon_simulation_tests)
 
+# ---------------------
+# Compile orocos_tutorials
+# ---------------------
 set(SUPERBUILD_orocos_tutorials OFF CACHE BOOL "Flag to compile orocos_tutorials")
 IF(SUPERBUILD_orocos_tutorials)
        find_or_build_package(orocos_tutorials)

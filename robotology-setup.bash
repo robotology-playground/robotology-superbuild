@@ -27,6 +27,7 @@ if [ -f /opt/ros/indigo/setup.bash ]; then
     source /opt/ros/indigo/setup.bash
 fi
 
+#orocos
 if [ -f ${ROBOTOLOGY_ROOT}/orocos_ws/install_isolated/setup.bash ]; then
        source ${ROBOTOLOGY_ROOT}/orocos_ws/install_isolated/setup.bash
        if [ -f ${ROBOTOLOGY_ROOT}/orocos_ws/src/env.sh ]; then
@@ -34,7 +35,10 @@ if [ -f ${ROBOTOLOGY_ROOT}/orocos_ws/install_isolated/setup.bash ]; then
        fi
        export LD_LIBRARY_PATH=$ROBOTOLOGY_ROOT/orocos_ws/install_isolated/lib:$LD_LIBRARY_PATH
        export LIBRARY_PATH=$ROBOTOLOGY_ROOT/orocos_ws/install_isolated/lib:$LIBRARY_PATH
-       pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/external/orocos_tutorials
+
+       if [ -f ${ROBOTOLOGY_ROOT}/external/orocos_tutorials/CMakeLists.txt ]; then
+              pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/external/orocos_tutorials
+       fi
 fi
 
 #gazebo setup
