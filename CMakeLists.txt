@@ -281,6 +281,8 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
         IF(SUPERBUILD_locomanipulation)
             find_or_build_package(locomanipulation)
             find_or_build_package(locoman_utils)
+	    find_or_build_package(locoman_service_1)
+	    find_or_build_package(locoman_service_2)
         ENDIF(SUPERBUILD_locomanipulation)
 
         # --------------------------------------
