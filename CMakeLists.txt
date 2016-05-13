@@ -175,6 +175,38 @@ IF(SUPERBUILD_locoman_utils)
 ENDIF(SUPERBUILD_locoman_utils)
 
 # --------------------------------------
+# Compile drc_shared
+# --------------------------------------
+set(SUPERBUILD_drc_shared OFF CACHE BOOL "Flag to compile drc_shared")
+IF(SUPERBUILD_drc_shared)
+    find_or_build_package(drc_shared)
+ENDIF(SUPERBUILD_drc_shared)
+
+# --------------------------------------
+# Compile trajectory_generator
+# --------------------------------------
+set(SUPERBUILD_trajectory_generator OFF CACHE BOOL "Flag to compile trajectory_generator")
+IF(SUPERBUILD_trajectory_generator)
+    find_or_build_package(trajectory_generator)
+ENDIF(SUPERBUILD_trajectory_generator)
+
+# --------------------------------------
+# Compile drc_poses
+# --------------------------------------
+set(SUPERBUILD_drc_poses OFF CACHE BOOL "Flag to compile drc_poses")
+IF(SUPERBUILD_drc_poses)
+    find_or_build_package(drc_poses)
+ENDIF(SUPERBUILD_drc_poses)
+
+# --------------------------------------
+# Compile drc_plug
+# --------------------------------------
+set(SUPERBUILD_drc_plug OFF CACHE BOOL "Flag to compile drc_plug")
+IF(SUPERBUILD_drc_plug)
+    find_or_build_package(drc_plug)
+ENDIF(SUPERBUILD_drc_plug)
+
+# --------------------------------------
 # Compile pilot_interface
 # --------------------------------------
 set(SUPERBUILD_pilot_interface OFF CACHE BOOL "Flag to compile pilot_interface")
@@ -182,27 +214,18 @@ IF(SUPERBUILD_pilot_interface)
     find_or_build_package(pilot_interface)
 ENDIF(SUPERBUILD_pilot_interface)
 
+# --------------------------------------
+# Compile network
+# --------------------------------------
+set(SUPERBUILD_network OFF CACHE BOOL "Flag to compile network")
+IF(SUPERBUILD_network)
+    find_or_build_package(network)
+ENDIF(SUPERBUILD_network)
 
 IF(NOT USE_ONLY_OPEN_SOURCE)
 	# set ssh connection with gitlab using rsa keys.
 	set(YCM_GIT_GITLAB_ROBOTOLOGY_BASE_ADDRESS "ssh://git@gitlab.robotology.eu/" CACHE STRING "Address to use for Robotology Gitlab git repositories" FORCE)
 
-	# --------------------------------------
-        # Compile drc_shared
-        # --------------------------------------
-	set(SUPERBUILD_drc_shared ON CACHE BOOL "Flag to compile drc_shared")
-        IF(SUPERBUILD_drc_shared)
-            find_or_build_package(drc_shared)
-        ENDIF(SUPERBUILD_drc_shared)
-        
-        # --------------------------------------
-        # Compile trajectory_generator
-        # --------------------------------------
-        set(SUPERBUILD_trajectory_generator ON CACHE BOOL "Flag to compile trajectory_generator")
-        IF(SUPERBUILD_trajectory_generator)
-            find_or_build_package(trajectory_generator)
-        ENDIF(SUPERBUILD_trajectory_generator)
-        
         # --------------------------------------
         # Compile iit-bigman-ros-pkg
         # --------------------------------------
@@ -210,15 +233,7 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
         IF(SUPERBUILD_iit-bigman-ros-pkg)
             find_or_build_package(iit-bigman-ros-pkg)
         ENDIF(SUPERBUILD_iit-bigman-ros-pkg)
-        
-        # --------------------------------------
-        # Compile drc_poses
-        # --------------------------------------
-        set(SUPERBUILD_drc_poses OFF CACHE BOOL "Flag to compile drc_poses")
-        IF(SUPERBUILD_drc_poses)
-            find_or_build_package(drc_poses)
-        ENDIF(SUPERBUILD_drc_poses)
-        
+
         # --------------------------------------
         # Compile walking
         # --------------------------------------
@@ -234,24 +249,16 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
         IF(SUPERBUILD_drc_valve)
             find_or_build_package(drc_valve)
         ENDIF(SUPERBUILD_drc_valve)
-        
-        # --------------------------------------
-        # Compile drc_plug
-        # --------------------------------------
-        set(SUPERBUILD_drc_plug OFF CACHE BOOL "Flag to compile drc_plug")
-        IF(SUPERBUILD_drc_plug)
-            find_or_build_package(drc_plug)
-        ENDIF(SUPERBUILD_drc_plug)
 
-		# --------------------------------------
-        # Compile network
         # --------------------------------------
-        set(SUPERBUILD_network OFF CACHE BOOL "Flag to compile network")
-        IF(SUPERBUILD_network)
-            find_or_build_package(network)
-        ENDIF(SUPERBUILD_network)
+        # Compile drc_raise
+        # --------------------------------------
+        set(SUPERBUILD_drc_raise ON CACHE BOOL "Flag to compile drc_raise")
+        IF(SUPERBUILD_drc_raise)
+            find_or_build_package(drc_raise)
+        ENDIF(SUPERBUILD_drc_raise)
 
-	    # --------------------------------------
+        # --------------------------------------
         # Compile footstep_perception
         # --------------------------------------
         set(SUPERBUILD_footstep_perception OFF CACHE BOOL "Flag to compile footstep_perception")
@@ -267,7 +274,6 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
             find_or_build_package(drcsim)
         ENDIF(SUPERBUILD_drcsim)
 
-        
         # --------------------------------------
         # Compile locomanipulation
         # --------------------------------------
@@ -300,8 +306,6 @@ ENDIF(NOT USE_ONLY_OPEN_SOURCE)
 IF(YNL_HYDRA_TOKYO_UNIVERSITY)
 	find_or_build_package(openth)
 ENDIF(YNL_HYDRA_TOKYO_UNIVERSITY)
-
-
 
 set_package_properties(Git PROPERTIES TYPE RUNTIME)
 set_package_properties(Subversion PROPERTIES TYPE RUNTIME)
