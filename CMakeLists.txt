@@ -174,6 +174,14 @@ IF(SUPERBUILD_locoman_utils)
     find_or_build_package(locoman_utils)
 ENDIF(SUPERBUILD_locoman_utils)
 
+# --------------------------------------
+# Compile pilot_interface
+# --------------------------------------
+set(SUPERBUILD_pilot_interface OFF CACHE BOOL "Flag to compile pilot_interface")
+IF(SUPERBUILD_pilot_interface)
+    find_or_build_package(pilot_interface)
+ENDIF(SUPERBUILD_pilot_interface)
+
 
 IF(NOT USE_ONLY_OPEN_SOURCE)
 	# set ssh connection with gitlab using rsa keys.
