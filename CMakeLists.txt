@@ -259,6 +259,14 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
         ENDIF(SUPERBUILD_drc_raise)
 
         # --------------------------------------
+        # Compile arms_ik
+        # --------------------------------------
+        set(SUPERBUILD_arms_ik ON CACHE BOOL "Flag to compile arms_ik")
+        IF(SUPERBUILD_arms_ik)
+            find_or_build_package(arms_ik)
+        ENDIF(SUPERBUILD_arms_ik)
+
+        # --------------------------------------
         # Compile footstep_perception
         # --------------------------------------
         set(SUPERBUILD_footstep_perception OFF CACHE BOOL "Flag to compile footstep_perception")
