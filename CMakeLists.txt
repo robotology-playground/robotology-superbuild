@@ -261,7 +261,7 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
         # --------------------------------------
         # Compile arms_ik
         # --------------------------------------
-        set(SUPERBUILD_arms_ik ON CACHE BOOL "Flag to compile arms_ik")
+        set(SUPERBUILD_arms_ik OFF CACHE BOOL "Flag to compile arms_ik")
         IF(SUPERBUILD_arms_ik)
             find_or_build_package(arms_ik)
         ENDIF(SUPERBUILD_arms_ik)
