@@ -253,7 +253,7 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
         # --------------------------------------
         # Compile drc_raise
         # --------------------------------------
-        set(SUPERBUILD_drc_raise ON CACHE BOOL "Flag to compile drc_raise")
+        set(SUPERBUILD_drc_raise OFF CACHE BOOL "Flag to compile drc_raise")
         IF(SUPERBUILD_drc_raise)
             find_or_build_package(drc_raise)
         ENDIF(SUPERBUILD_drc_raise)
