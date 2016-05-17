@@ -51,6 +51,8 @@ set(USE_SYSTEM_OPENSOT OFF CACHE BOOL "Initial cache")
 set(USE_ONLY_OPEN_SOURCE ON CACHE BOOL "Only the open-source repo will be cloned and built")
 # Tokyo University HYDRA OFF by default
 set(YNL_HYDRA_TOKYO_UNIVERSITY OFF CACHE BOOL "Enable the download and usages of repos from University of Tokyo YNL Lab")
+# Using Walk-Man Demos related projects OFF by default
+set(USE_WALKMAN_DEMOS_PROJECTS OFF CACHE BOOL "Enable the download and usages of repos related to the Walk-Man project demos")
 
 # ------------------------------------
 # Superbuild CORE - compile it always.
@@ -325,6 +327,13 @@ ENDIF(NOT USE_ONLY_OPEN_SOURCE)
 IF(YNL_HYDRA_TOKYO_UNIVERSITY)
 	find_or_build_package(openth)
 ENDIF(YNL_HYDRA_TOKYO_UNIVERSITY)
+
+IF(USE_WALKMAN_DEMOS_PROJECTS)
+    find_or_build_package(drc_shared)
+    find_or_build_package(drc_raise)
+    find_or_build_package(iit-bigman-ros-pkg)
+    find_or_build_package(arms_ik)
+ENDIF(USE_WALKMAN_DEMOS_PROJECTS)
 
 set_package_properties(Git PROPERTIES TYPE RUNTIME)
 set_package_properties(Subversion PROPERTIES TYPE RUNTIME)
