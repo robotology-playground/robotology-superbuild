@@ -35,6 +35,7 @@ if [ -f ${ROBOTOLOGY_ROOT}/orocos_ws/install_isolated/setup.bash ]; then
        fi
        export LD_LIBRARY_PATH=$ROBOTOLOGY_ROOT/orocos_ws/install_isolated/lib:$LD_LIBRARY_PATH
        export LIBRARY_PATH=$ROBOTOLOGY_ROOT/orocos_ws/install_isolated/lib:$LIBRARY_PATH
+       pathadd RTT_COMPONENT_PATH /opt/ros/indigo/lib
 
        if [ -f ${ROBOTOLOGY_ROOT}/external/orocos_tutorials/CMakeLists.txt ]; then
               pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/external/orocos_tutorials

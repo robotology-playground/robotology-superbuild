@@ -120,6 +120,18 @@ IF(SUPERBUILD_orocos_tutorials)
        find_or_build_package(orocos_tutorials)
 ENDIF(SUPERBUILD_orocos_tutorials)
 
+# ---------------------
+# Compile rtt-gazebo-world-plugin
+# ---------------------
+set(SUPERBUILD_rtt_gazebo_world_plugin OFF CACHE BOOL "Flag to compile rtt-gazebo-world-plugin")
+IF(SUPERBUILD_rtt_gazebo_world_plugin)
+       find_or_build_package(RSC)
+       find_or_build_package(RSB_Protocol)
+       find_or_build_package(RSB)
+       find_or_build_package(RST)
+       #find_or_build_package(rtt-gazebo-world-plugin)
+ENDIF(SUPERBUILD_rtt_gazebo_world_plugin)
+
 
 # --------------------------------------
 # Compile centralized_inverse_kinematics
@@ -152,6 +164,7 @@ set(SUPERBUILD_yarp_ros_joint_state_publisher ON CACHE BOOL "Flag to compile yar
 IF(SUPERBUILD_yarp_ros_joint_state_publisher)
         find_or_build_package(yarp_ros_joint_state_publisher)
 ENDIF(SUPERBUILD_yarp_ros_joint_state_publisher)
+
 # --------------------------------------
 # Compile robot_state_publisher_ext
 # --------------------------------------
