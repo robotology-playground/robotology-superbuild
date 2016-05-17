@@ -222,6 +222,15 @@ IF(SUPERBUILD_network)
     find_or_build_package(network)
 ENDIF(SUPERBUILD_network)
 
+# --------------------------------------
+# Compile robotran predictor modules
+# --------------------------------------
+set(SUPERBUILD_robotran_predictor OFF CACHE BOOL "Flag to compile Robotran predictor modules")
+IF(SUPERBUILD_robotran_predictor)
+    find_or_build_package(robotran_predictor)
+    find_or_build_package(robotran_predictor_ctrl_test)
+ENDIF(SUPERBUILD_robotran_predictor)
+
 IF(NOT USE_ONLY_OPEN_SOURCE)
 	# set ssh connection with gitlab using rsa keys.
 	set(YCM_GIT_GITLAB_ROBOTOLOGY_BASE_ADDRESS "ssh://git@gitlab.robotology.eu/" CACHE STRING "Address to use for Robotology Gitlab git repositories" FORCE)

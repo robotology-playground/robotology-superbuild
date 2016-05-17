@@ -16,7 +16,7 @@ set(roboptim-core-plugin-ipopt_TAG v3.1)
 set(roboptim-capsule_TAG v3.1)
 
 # utils: put the SHA1 of the commit or the TAG, not the branch name.
-set(drc_shared_TAG fd9845435)
+set(drc_shared_TAG c44c1bdf9e)
 set(trajectory_generator_TAG 4bcf25603c)
 
 # ROS publisher: put the SHA1 of the commit or the TAG, not the branch name.
