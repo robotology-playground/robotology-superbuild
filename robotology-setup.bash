@@ -35,10 +35,21 @@ if [ -f ${ROBOTOLOGY_ROOT}/orocos_ws/install_isolated/setup.bash ]; then
        fi
        export LD_LIBRARY_PATH=$ROBOTOLOGY_ROOT/orocos_ws/install_isolated/lib:$LD_LIBRARY_PATH
        export LIBRARY_PATH=$ROBOTOLOGY_ROOT/orocos_ws/install_isolated/lib:$LIBRARY_PATH
-       pathadd RTT_COMPONENT_PATH /opt/ros/indigo/lib
+       pathadd RTT_COMPONENT_PATH /opt/ros/indigo/lib/orocos/gnulinux/ocl  
+       pathadd RTT_COMPONENT_PATH /opt/ros/indigo/lib/orocos/gnulinux/plugins  
+       pathadd RTT_COMPONENT_PATH /opt/ros/indigo/lib/orocos/gnulinux/rtt_ros  
+       pathadd RTT_COMPONENT_PATH /opt/ros/indigo/lib/orocos/gnulinux/types
 
        if [ -f ${ROBOTOLOGY_ROOT}/external/orocos_tutorials/CMakeLists.txt ]; then
               pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/external/orocos_tutorials
+       fi
+
+       if [ -f ${ROBOTOLOGY_ROOT}/external/rtt-gazebo-world-plugin/CMakeLists.txt ]; then
+              pathadd GAZEBO_PLUGIN_PATH $ROBOTOLOGY_ROOT/build/external/rtt-gazebo-world-plugin
+       fi
+
+       if [ -f ${ROBOTOLOGY_ROOT}/external/rtt-gazebo-clock-plugin/CMakeLists.txt ]; then
+              pathadd GAZEBO_PLUGIN_PATH $ROBOTOLOGY_ROOT/build/external/rtt-gazebo-clock-plugin
        fi
 fi
 
