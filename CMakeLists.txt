@@ -131,6 +131,7 @@ IF(SUPERBUILD_rtt_gazebo_plugins)
        find_or_build_package(RST)
        find_or_build_package(rtt-gazebo-world-plugin)
        find_or_build_package(rtt-gazebo-clock-plugin)
+       find_or_build_package(gazebo-rsb-model-state-plugin)
 ENDIF(SUPERBUILD_rtt_gazebo_plugins)
 
 
