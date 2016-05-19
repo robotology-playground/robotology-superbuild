@@ -123,14 +123,15 @@ ENDIF(SUPERBUILD_orocos_tutorials)
 # ---------------------
 # Compile rtt-gazebo-world-plugin
 # ---------------------
-set(SUPERBUILD_rtt_gazebo_world_plugin OFF CACHE BOOL "Flag to compile rtt-gazebo-world-plugin")
-IF(SUPERBUILD_rtt_gazebo_world_plugin)
+set(SUPERBUILD_rtt_gazebo_plugins OFF CACHE BOOL "Flag to compile rtt-gazebo-plugins")
+IF(SUPERBUILD_rtt_gazebo_plugins)
        find_or_build_package(RSC)
        find_or_build_package(RSB_Protocol)
        find_or_build_package(RSB)
        find_or_build_package(RST)
        find_or_build_package(rtt-gazebo-world-plugin)
-ENDIF(SUPERBUILD_rtt_gazebo_world_plugin)
+       find_or_build_package(rtt-gazebo-clock-plugin)
+ENDIF(SUPERBUILD_rtt_gazebo_plugins)
 
 
 # --------------------------------------

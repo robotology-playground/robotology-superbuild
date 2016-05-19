@@ -16,5 +16,4 @@ ycm_ep_helper(  rtt-gazebo-world-plugin
                 DEPENDS RSC
                         RSB
                         RST
-                INSTALL_COMMAND ""
             )
