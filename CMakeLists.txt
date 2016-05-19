@@ -129,7 +129,7 @@ IF(SUPERBUILD_rtt_gazebo_world_plugin)
        find_or_build_package(RSB_Protocol)
        find_or_build_package(RSB)
        find_or_build_package(RST)
-       #find_or_build_package(rtt-gazebo-world-plugin)
+       find_or_build_package(rtt-gazebo-world-plugin)
 ENDIF(SUPERBUILD_rtt_gazebo_world_plugin)
 
 
