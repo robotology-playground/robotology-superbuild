@@ -44,12 +44,20 @@ if [ -f ${ROBOTOLOGY_ROOT}/orocos_ws/install_isolated/setup.bash ]; then
               pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/external/orocos_tutorials
        fi
 
-       if [ -f ${ROBOTOLOGY_ROOT}/external/rtt-gazebo-world-plugin/CMakeLists.txt ]; then
-              pathadd GAZEBO_PLUGIN_PATH $ROBOTOLOGY_ROOT/build/external/rtt-gazebo-world-plugin
+       if [ -f ${ROBOTOLOGY_ROOT}/external/rtt-gazebo-embedded/CMakeLists.txt ]; then
+              pathadd RTT_COMPONENT_PATH $ROBOTOLOGY_ROOT/build/external/rtt-gazebo-embedded/orocos
        fi
 
        if [ -f ${ROBOTOLOGY_ROOT}/external/rtt-gazebo-clock-plugin/CMakeLists.txt ]; then
               pathadd GAZEBO_PLUGIN_PATH $ROBOTOLOGY_ROOT/build/external/rtt-gazebo-clock-plugin
+       fi
+
+       if [ -f ${ROBOTOLOGY_ROOT}/external/rtt-gazebo-lwr4plus-sim/CMakeLists.txt ]; then
+              pathadd RTT_COMPONENT_PATH $ROBOTOLOGY_ROOT/build/external/rtt-gazebo-lwr4plus-sim/orocos
+       fi
+
+       if [ -f ${ROBOTOLOGY_ROOT}/robots/cogimon-gazebo-models/database.config ]; then
+              pathadd GAZEBO_MODEL_PATH $ROBOTOLOGY_ROOT/robots/cogimon-gazebo-models
        fi
 fi
 
