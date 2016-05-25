@@ -59,6 +59,10 @@ if [ -f ${ROBOTOLOGY_ROOT}/orocos_ws/install_isolated/setup.bash ]; then
        if [ -f ${ROBOTOLOGY_ROOT}/robots/cogimon-gazebo-models/database.config ]; then
               pathadd GAZEBO_MODEL_PATH $ROBOTOLOGY_ROOT/robots/cogimon-gazebo-models
        fi
+
+       if [ -f ${ROBOTOLOGY_ROOT}/external/rtt-gazebo-coman-sim/CMakeLists.txt ]; then
+              pathadd RTT_COMPONENT_PATH $ROBOTOLOGY_ROOT/build/external/rtt-gazebo-coman-sim/orocos
+       fi
 fi
 
 #gazebo setup

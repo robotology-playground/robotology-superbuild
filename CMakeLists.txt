@@ -136,6 +136,11 @@ IF(SUPERBUILD_rtt_gazebo_plugins)
        find_or_build_package(rtt-gazebo-lwr4plus-sim)
 ENDIF(SUPERBUILD_rtt_gazebo_plugins)
 
+set(SUPERBUILD_rtt_gazebo_coman_sim OFF CACHE BOOL "Flag to compile rtt-gazebo-coman-sim")
+IF(SUPERBUILD_rtt_gazebo_coman_sim)
+       find_or_build_package(rtt-gazebo-coman-sim)
+ENDIF(SUPERBUILD_rtt_gazebo_coman_sim)
+
 
 # --------------------------------------
 # Compile centralized_inverse_kinematics
