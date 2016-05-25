@@ -60,8 +60,16 @@ if [ -f ${ROBOTOLOGY_ROOT}/orocos_ws/install_isolated/setup.bash ]; then
               pathadd GAZEBO_MODEL_PATH $ROBOTOLOGY_ROOT/robots/cogimon-gazebo-models
        fi
 
-       if [ -f ${ROBOTOLOGY_ROOT}/external/rtt-gazebo-coman-sim/CMakeLists.txt ]; then
-              pathadd RTT_COMPONENT_PATH $ROBOTOLOGY_ROOT/build/external/rtt-gazebo-coman-sim/orocos
+       if [ -f ${ROBOTOLOGY_ROOT}/external/rtt-gazebo-robot-sim/CMakeLists.txt ]; then
+              pathadd RTT_COMPONENT_PATH $ROBOTOLOGY_ROOT/build/external/rtt-gazebo-robot-sim/orocos
+       fi
+
+       if [ -f ${ROBOTOLOGY_ROOT}/external/rtt-rsb-transport/CMakeLists.txt ]; then
+              pathadd RTT_COMPONENT_PATH $ROBOTOLOGY_ROOT/build/external/rtt-rsb-transport/src/orocos
+       fi
+
+       if [ -f ${ROBOTOLOGY_ROOT}/external/rtt-rrct-typekit/CMakeLists.txt ]; then
+              pathadd RTT_COMPONENT_PATH $ROBOTOLOGY_ROOT/build/external/rtt-rrct-typekit/src/orocos
        fi
 fi
 

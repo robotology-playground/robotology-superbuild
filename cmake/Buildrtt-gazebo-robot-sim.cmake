@@ -1,13 +1,13 @@
-# rtt-gazebo-coman-sim
+# rtt-gazebo-robot-sim
 include(YCMEPHelper)
 include(FindOrBuildPackage)
 
 find_package(OROCOS-RTT QUIET)
 
-ycm_ep_helper(  rtt-gazebo-coman-sim
+ycm_ep_helper(  rtt-gazebo-robot-sim
                 TYPE GIT
                 STYLE GITHUB
-                REPOSITORY cogimon/rtt-gazebo-coman-sim.git
+                REPOSITORY cogimon/rtt-gazebo-robot-sim.git
                 TAG master
                 COMPONENT external
             )

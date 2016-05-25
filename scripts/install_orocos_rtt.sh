@@ -10,6 +10,7 @@ catkin_init_workspace
 
 export GIT_SSL_NO_VERIFY=1
 git clone --recursive -b toolchain-2.7 http://git.gitorious.org/orocos-toolchain/orocos_toolchain.git src
+git clone https://github.com/orocos/rtt_geometry.git src
 
 export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$ROBOTOLOGY_ROOT/orocos_ws/src
 
@@ -21,4 +22,7 @@ rosdep install orocos_toolchain
 
 source src/env.sh
 catkin_make_isolated --install -DENABLE_CORBA=ON -DCORBA_IMPLEMENTATION=OMNIORB
+catkin_make_isolated --install --pkg rtt_geometry
+catkin_make_isolated --install --pkg eigen_typekit
+catkin_make_isolated --install --pkg kdl_typekit
 

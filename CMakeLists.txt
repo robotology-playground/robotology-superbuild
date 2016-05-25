@@ -131,6 +131,7 @@ IF(SUPERBUILD_rtt_gazebo_plugins)
        find_or_build_package(RSB_Tools_cpp)
        find_or_build_package(RST)
        find_or_build_package(RST_RT)
+       find_or_build_package(rst-converters)
        find_or_build_package(rtt_gazebo_embedded)
        find_or_build_package(rtt-gazebo-clock-plugin)
        find_or_build_package(rtt-gazebo-lwr4plus-sim)
@@ -139,10 +140,10 @@ IF(SUPERBUILD_rtt_gazebo_plugins)
        find_or_build_package(rtt-rsb-transport)
 ENDIF(SUPERBUILD_rtt_gazebo_plugins)
 
-set(SUPERBUILD_rtt_gazebo_coman_sim OFF CACHE BOOL "Flag to compile rtt-gazebo-coman-sim")
+set(SUPERBUILD_rtt_gazebo_robot_sim OFF CACHE BOOL "Flag to compile rtt-gazebo-robot-sim")
 IF(SUPERBUILD_rtt_gazebo_coman_sim)
-       find_or_build_package(rtt-gazebo-coman-sim)
-ENDIF(SUPERBUILD_rtt_gazebo_coman_sim)
+       find_or_build_package(rtt-gazebo-robot-sim)
+ENDIF(SUPERBUILD_rtt_gazebo_robot_sim)
 
 
 # --------------------------------------
