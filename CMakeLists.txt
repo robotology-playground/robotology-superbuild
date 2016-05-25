@@ -134,6 +134,7 @@ IF(SUPERBUILD_rtt_gazebo_plugins)
        find_or_build_package(rtt_gazebo_embedded)
        find_or_build_package(rtt-gazebo-clock-plugin)
        find_or_build_package(rtt-gazebo-lwr4plus-sim)
+       find_or_build_package(cogimon-scenarios)
 ENDIF(SUPERBUILD_rtt_gazebo_plugins)
 
 set(SUPERBUILD_rtt_gazebo_coman_sim OFF CACHE BOOL "Flag to compile rtt-gazebo-coman-sim")
