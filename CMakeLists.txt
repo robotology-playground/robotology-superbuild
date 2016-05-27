@@ -138,6 +138,7 @@ IF(SUPERBUILD_rtt_gazebo_plugins)
        find_or_build_package(cogimon-scenarios)
        find_or_build_package(rtt-rrct-typekit)
        find_or_build_package(rtt-rsb-transport)
+       find_or_build_package(cogimon-experimental)
 ENDIF(SUPERBUILD_rtt_gazebo_plugins)
 
 set(SUPERBUILD_rtt_gazebo_robot_sim OFF CACHE BOOL "Flag to compile rtt-gazebo-robot-sim")
