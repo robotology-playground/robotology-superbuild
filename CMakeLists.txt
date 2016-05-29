@@ -142,7 +142,7 @@ IF(SUPERBUILD_rtt_gazebo_plugins)
 ENDIF(SUPERBUILD_rtt_gazebo_plugins)
 
 set(SUPERBUILD_rtt_gazebo_robot_sim OFF CACHE BOOL "Flag to compile rtt-gazebo-robot-sim")
-IF(SUPERBUILD_rtt_gazebo_coman_sim)
+IF(SUPERBUILD_rtt_gazebo_robot_sim)
        find_or_build_package(rtt-gazebo-robot-sim)
 ENDIF(SUPERBUILD_rtt_gazebo_robot_sim)
 
