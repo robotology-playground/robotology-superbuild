@@ -9,4 +9,5 @@ ycm_ep_helper(  cogimon-experimental
                 REPOSITORY corlab/cogimon-experimental.git
                 TAG master
                 COMPONENT external
+                INSTALL_COMMAND ""
             )
