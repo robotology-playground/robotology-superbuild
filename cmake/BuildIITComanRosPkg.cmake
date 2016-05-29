@@ -7,5 +7,5 @@ ycm_ep_helper(  IITComanRosPkg
                 REPOSITORY EnricoMingo/iit-coman-ros-pkg.git
                 TAG master
                 COMPONENT robots
-                #INSTALL_COMMAND ""
+                INSTALL_COMMAND ""
             )

@@ -2,6 +2,7 @@
 include(YCMEPHelper)
 include(FindOrBuildPackage)
 
+find_or_build_package(RSC QUIET)
 find_or_build_package(RSB_Protocol QUIET)
 
 ycm_ep_helper(  RSB
@@ -9,5 +10,6 @@ ycm_ep_helper(  RSB
                 STYLE NONE 
                 REPOSITORY https://code.cor-lab.org/git/rsb.git.cpp
                 TAG master
+		DEPENDS RSC
                 COMPONENT external
             )
