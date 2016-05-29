@@ -122,7 +122,8 @@ else
               libarmadillo-dev libblas-dev liblapack-dev  libflann-dev libmumps-seq-dev \
               libpng++-dev python-bs4 libsctp-dev mercurial ros-indigo-rviz-imu-plugin libhighgui2.4 \
               libopensplice64 cppcheck \
-              python3-empy python3-setuptools python3-nose python3-pip python3-vcstool
+              python3-empy python3-setuptools python3-nose python3-pip python3-vcstool \
+	      protobuf-compiler
             string="`uname -r`"
             word="enomai"
             if [ "${string#*$word}" != "$string" ]; then #if xenomai kernel...
