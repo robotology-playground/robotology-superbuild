@@ -41,3 +41,22 @@ find_or_build_package_with_tag(yarp_ros_joint_state_publisher ON)
 # --------------------------------------
 find_or_build_package_with_tag(robot_state_publisher_ext ON)
 
+# ---------------------
+# Compile simple_homing
+# ---------------------
+find_or_build_package_with_tag(simple_homing ON)
+
+# --------------------------------------
+# Compile not open-source robot related packages
+# --------------------------------------
+IF(NOT USE_ONLY_OPEN_SOURCE)
+       IF("${ROBOTOLOGY_PROFILE}" STREQUAL "ROBOT")
+	
+		find_or_build_package(comaninterface)
+    		find_or_build_package(comanmod)
+		find_or_build_package(comanapp)
+		find_or_build_package(COMAN_shared)
+
+	ENDIF("${ROBOTOLOGY_PROFILE}" STREQUAL "ROBOT")
+ENDIF(NOT USE_ONLY_OPEN_SOURCE)
+

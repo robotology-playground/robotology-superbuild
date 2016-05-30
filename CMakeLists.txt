@@ -63,15 +63,15 @@ set(USE_WALKMAN_DEMOS_PROJECTS OFF CACHE BOOL "Enable the download and usages of
 # COGIMON EU Project 
 set(COGIMON_EU OFF CACHE BOOL "Enable the download and usages of repos related to the CoGiMon project")
 
+IF(NOT USE_ONLY_OPEN_SOURCE)
+	# set ssh connection with gitlab using rsa keys.
+	set(YCM_GIT_GITLAB_ROBOTOLOGY_BASE_ADDRESS "ssh://git@gitlab.robotology.eu/" CACHE STRING "Address to use for Robotology Gitlab git repositories" FORCE)
+ENDIF(NOT USE_ONLY_OPEN_SOURCE)
+
 # --------------------------------------
 # Compile set of COMMON packages
 # --------------------------------------
 include(${CMAKE_CURRENT_SOURCE_DIR}/projects/CMakeLists.txt)
-
-# ---------------------
-# Compile simple_homing
-# ---------------------
-find_or_build_package_with_tag(simple_homing ON)
 
 # --------------------------------------
 # Compile centralized_inverse_kinematics
@@ -138,9 +138,6 @@ IF(SUPERBUILD_robotran_predictor)
 ENDIF(SUPERBUILD_robotran_predictor)
 
 IF(NOT USE_ONLY_OPEN_SOURCE)
-	# set ssh connection with gitlab using rsa keys.
-	set(YCM_GIT_GITLAB_ROBOTOLOGY_BASE_ADDRESS "ssh://git@gitlab.robotology.eu/" CACHE STRING "Address to use for Robotology Gitlab git repositories" FORCE)
-
         # --------------------------------------
         # Compile iit-bigman-ros-pkg
         # --------------------------------------
@@ -193,15 +190,6 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
         # --------------------------------------
         find_or_build_package_with_tag(yw_module OFF)
 
-	IF("${ROBOTOLOGY_PROFILE}" STREQUAL "ROBOT")
-	
-		find_or_build_package(comaninterface)
-    		find_or_build_package(comanmod)
-		find_or_build_package(comanapp)
-		find_or_build_package(COMAN_shared)
-
-	ENDIF("${ROBOTOLOGY_PROFILE}" STREQUAL "ROBOT")
-
 ENDIF(NOT USE_ONLY_OPEN_SOURCE)
 
 # --------------------------------------
@@ -211,8 +199,11 @@ IF(COGIMON_EU)
        include(${CMAKE_CURRENT_SOURCE_DIR}/projects/cogimon/CMakeLists.txt)
 ENDIF(COGIMON_EU)
 
+# --------------------------------------
+# Compile related TOKYO UNIVERSITY packages
+# --------------------------------------
 IF(YNL_HYDRA_TOKYO_UNIVERSITY)
-	find_or_build_package(openth)
+	include(${CMAKE_CURRENT_SOURCE_DIR}/projects/tokyo_university_ynl/CMakeLists.txt)
 ENDIF(YNL_HYDRA_TOKYO_UNIVERSITY)
 
 IF(USE_WALKMAN_DEMOS_PROJECTS)
