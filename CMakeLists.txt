@@ -60,6 +60,8 @@ set(USE_ONLY_OPEN_SOURCE ON CACHE BOOL "Only the open-source repo will be cloned
 set(YNL_HYDRA_TOKYO_UNIVERSITY OFF CACHE BOOL "Enable the download and usages of repos from University of Tokyo YNL Lab")
 # Using Walk-Man Demos related projects OFF by default
 set(USE_WALKMAN_DEMOS_PROJECTS OFF CACHE BOOL "Enable the download and usages of repos related to the Walk-Man project demos")
+# COGIMON EU Project 
+set(COGIMON_EU OFF CACHE BOOL "Enable the download and usages of repos related to the CoGiMon project")
 
 # ------------------------------------
 # Superbuild CORE - compile it always.
@@ -79,8 +81,6 @@ find_or_build_package(GazeboYARPPlugins)
 find_or_build_package_with_tag(IITComanRosPkg ON)
 # Compile iCub model
 find_or_build_package_with_tag(icub_gazebo ON)
-# Compile cogimon model
-find_or_build_package_with_tag(iit-cogimon-ros-pkg OFF)
 
 # -------------------------------------------
 # Compile CAPSULE for the collision avoidance
@@ -98,42 +98,6 @@ ENDIF(SUPERBUILD_CAPSULE)
 # Compile simple_homing
 # ---------------------
 find_or_build_package_with_tag(simple_homing ON)
-
-# ---------------------
-# Compile cogimon_simulation_tests
-# ---------------------
-find_or_build_package_with_tag(cogimon_simulation_tests OFF)
-
-# ---------------------
-# Compile orocos_tutorials
-# ---------------------
-find_or_build_package_with_tag(orocos_tutorials OFF)
-
-# ---------------------
-# Compile rtt-gazebo-world-plugin
-# ---------------------
-set(SUPERBUILD_rtt_gazebo_plugins OFF CACHE BOOL "Flag to compile rtt-gazebo-plugins")
-IF(SUPERBUILD_rtt_gazebo_plugins)
-       find_or_build_package(RSC)
-       find_or_build_package(RSB_Protocol)
-       find_or_build_package(RSB)
-       find_or_build_package(RSB_Tools_cpp)
-       find_or_build_package(RST)
-       find_or_build_package(RST_RT)
-       find_or_build_package(rst-converters)
-       find_or_build_package(rtt_gazebo_embedded)
-       find_or_build_package(rtt-gazebo-clock-plugin)
-       find_or_build_package(rtt-gazebo-lwr4plus-sim)
-       find_or_build_package(cogimon-scenarios)
-       find_or_build_package(rtt-rrct-typekit)
-       find_or_build_package(rtt-rsb-transport)
-       find_or_build_package(cogimon-experimental)
-ENDIF(SUPERBUILD_rtt_gazebo_plugins)
-
-# --------------------------------------
-# Compile rtt_gazebo_robot_sim
-# --------------------------------------
-find_or_build_package_with_tag(rtt_gazebo_robot_sim OFF)
 
 # --------------------------------------
 # Compile centralized_inverse_kinematics
@@ -275,6 +239,13 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
 	ENDIF("${ROBOTOLOGY_PROFILE}" STREQUAL "ROBOT")
 
 ENDIF(NOT USE_ONLY_OPEN_SOURCE)
+
+# --------------------------------------
+# Compile related COGIMON packages
+# --------------------------------------
+IF(COGIMON_EU)
+       include(${CMAKE_CURRENT_SOURCE_DIR}/projects/cogimon/CMakeLists.txt)
+ENDIF(COGIMON_EU)
 
 IF(YNL_HYDRA_TOKYO_UNIVERSITY)
 	find_or_build_package(openth)
