@@ -63,36 +63,10 @@ set(USE_WALKMAN_DEMOS_PROJECTS OFF CACHE BOOL "Enable the download and usages of
 # COGIMON EU Project 
 set(COGIMON_EU OFF CACHE BOOL "Enable the download and usages of repos related to the CoGiMon project")
 
-# ------------------------------------
-# Superbuild CORE - compile it always.
-# ------------------------------------
-find_or_build_package(YARP)
-find_or_build_package(iDynTree)
-find_or_build_package(idynutils)
-find_or_build_package(OpenSoT)
-find_or_build_package(GYM)
-find_or_build_package(paramHelp)
-find_or_build_package(GazeboYARPPlugins)
-
-#------
-# Model
-#------
-# Compile COMAN model
-find_or_build_package_with_tag(IITComanRosPkg ON)
-# Compile iCub model
-find_or_build_package_with_tag(icub_gazebo ON)
-
-# -------------------------------------------
-# Compile CAPSULE for the collision avoidance
-# -------------------------------------------
-set(SUPERBUILD_CAPSULE ON CACHE BOOL "Flag to compile roboptim-core, moveit_compute_default_collisions, roboptim-capsule, roboptim-core-plugin-ipopt, robot_capsule_generator")
-IF(SUPERBUILD_CAPSULE)
-	find_or_build_package(roboptim-core)
-	find_or_build_package(moveit_compute_default_collisions)
-	find_or_build_package(roboptim-capsule)
-	find_or_build_package(roboptim-core-plugin-ipopt)
-	find_or_build_package(robot_capsule_generator)
-ENDIF(SUPERBUILD_CAPSULE)
+# --------------------------------------
+# Compile set of COMMON packages
+# --------------------------------------
+include(${CMAKE_CURRENT_SOURCE_DIR}/projects/CMakeLists.txt)
 
 # ---------------------
 # Compile simple_homing
@@ -113,16 +87,6 @@ find_or_build_package_with_tag(testQPsolvers OFF)
 # Compile athletic - OFF by default
 # --------------------------------------
 find_or_build_package_with_tag(athletic OFF)
-
-# --------------------------------------
-# Compile yarp_ros_joint_state_publisher
-# --------------------------------------
-find_or_build_package_with_tag(yarp_ros_joint_state_publisher ON)
-
-# --------------------------------------
-# Compile robot_state_publisher_ext
-# --------------------------------------
-find_or_build_package_with_tag(robot_state_publisher_ext ON)
 
 # ---------------------
 # Compile ft_publisher
