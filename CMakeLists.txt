@@ -1,6 +1,13 @@
 cmake_minimum_required(VERSION 2.8.12)
 project(robotology NONE)
 
+macro(find_or_build_package_with_tag project_name enabled)
+       set(SUPERBUILD_${project_name} ${enabled} CACHE BOOL "Flag to compile ${project_name}")
+       IF(SUPERBUILD_${project_name})
+	       find_or_build_package(${project_name})
+       ENDIF(SUPERBUILD_${project_name})
+endmacro(find_or_build_package_with_tag) 
+
 ## we have to enable C because it is currently used
 ## by CMake to describe packages (in Config*.cmake files)
 enable_language(C)
@@ -69,20 +76,11 @@ find_or_build_package(GazeboYARPPlugins)
 # Model
 #------
 # Compile COMAN model
-set(SUPERBUILD_IITComanRosPkg ON CACHE BOOL "Flag to compile IITComanRosPkg")
-IF(SUPERBUILD_IITComanRosPkg)
-	find_or_build_package(IITComanRosPkg)
-ENDIF(SUPERBUILD_IITComanRosPkg)
+find_or_build_package_with_tag(IITComanRosPkg ON)
 # Compile iCub model
-set(SUPERBUILD_icub_gazebo ON CACHE BOOL "Flag to compile icub_gazebo")
-IF(SUPERBUILD_icub_gazebo)
-        find_or_build_package(icub_gazebo)
-ENDIF(SUPERBUILD_icub_gazebo)
+find_or_build_package_with_tag(icub_gazebo ON)
 # Compile cogimon model
-set(SUPERBUILD_iit-cogimon-ros-pkg OFF CACHE BOOL "Flag to compile iit-cogimon-ros-pkg")
-IF(SUPERBUILD_iit-cogimon-ros-pkg)
-        find_or_build_package(iit-cogimon-ros-pkg)
-ENDIF(SUPERBUILD_iit-cogimon-ros-pkg)
+find_or_build_package_with_tag(iit-cogimon-ros-pkg OFF)
 
 # -------------------------------------------
 # Compile CAPSULE for the collision avoidance
@@ -99,26 +97,17 @@ ENDIF(SUPERBUILD_CAPSULE)
 # ---------------------
 # Compile simple_homing
 # ---------------------
-set(SUPERBUILD_simple_homing ON CACHE BOOL "Flag to compile simple_homing")
-IF(SUPERBUILD_simple_homing)
-	find_or_build_package(simple_homing)
-ENDIF(SUPERBUILD_simple_homing)
+find_or_build_package_with_tag(simple_homing ON)
 
 # ---------------------
 # Compile cogimon_simulation_tests
 # ---------------------
-set(SUPERBUILD_cogimon_simulation_tests OFF CACHE BOOL "Flag to compile cogimon_simulation_tests")
-IF(SUPERBUILD_cogimon_simulation_tests)
-	find_or_build_package(cogimon_simulation_tests)
-ENDIF(SUPERBUILD_cogimon_simulation_tests)
+find_or_build_package_with_tag(cogimon_simulation_tests OFF)
 
 # ---------------------
 # Compile orocos_tutorials
 # ---------------------
-set(SUPERBUILD_orocos_tutorials OFF CACHE BOOL "Flag to compile orocos_tutorials")
-IF(SUPERBUILD_orocos_tutorials)
-       find_or_build_package(orocos_tutorials)
-ENDIF(SUPERBUILD_orocos_tutorials)
+find_or_build_package_with_tag(orocos_tutorials OFF)
 
 # ---------------------
 # Compile rtt-gazebo-world-plugin
@@ -141,115 +130,75 @@ IF(SUPERBUILD_rtt_gazebo_plugins)
        find_or_build_package(cogimon-experimental)
 ENDIF(SUPERBUILD_rtt_gazebo_plugins)
 
-set(SUPERBUILD_rtt_gazebo_robot_sim OFF CACHE BOOL "Flag to compile rtt-gazebo-robot-sim")
-IF(SUPERBUILD_rtt_gazebo_robot_sim)
-       find_or_build_package(rtt-gazebo-robot-sim)
-ENDIF(SUPERBUILD_rtt_gazebo_robot_sim)
-
+# --------------------------------------
+# Compile rtt_gazebo_robot_sim
+# --------------------------------------
+find_or_build_package_with_tag(rtt_gazebo_robot_sim OFF)
 
 # --------------------------------------
 # Compile centralized_inverse_kinematics
 # --------------------------------------
-set(SUPERBUILD_centralized_inverse_kinematics OFF CACHE BOOL "Flag to compile centralized_inverse_kinematics")
-IF(SUPERBUILD_centralized_inverse_kinematics)
-	find_or_build_package(centralized_inverse_kinematics)
-ENDIF(SUPERBUILD_centralized_inverse_kinematics)
+find_or_build_package_with_tag(centralized_inverse_kinematics OFF)
 
 # --------------------------------------
 # Compile testQPsolvers - OFF by default
 # --------------------------------------
-set(SUPERBUILD_testQPsolvers OFF CACHE BOOL "Flag to compile testQPsolvers")
-IF(SUPERBUILD_testQPsolvers)
-	find_or_build_package(testQPsolvers)
-ENDIF(SUPERBUILD_testQPsolvers)
+find_or_build_package_with_tag(testQPsolvers OFF)
 
 # --------------------------------------
 # Compile athletic - OFF by default
 # --------------------------------------
-set(SUPERBUILD_athletic OFF CACHE BOOL "Flag to compile athletic")
-IF(SUPERBUILD_athletic)
-	find_or_build_package(athletic)
-ENDIF(SUPERBUILD_athletic)
+find_or_build_package_with_tag(athletic OFF)
 
 # --------------------------------------
 # Compile yarp_ros_joint_state_publisher
 # --------------------------------------
-set(SUPERBUILD_yarp_ros_joint_state_publisher ON CACHE BOOL "Flag to compile yarp_ros_joint_state_publisher")
-IF(SUPERBUILD_yarp_ros_joint_state_publisher)
-        find_or_build_package(yarp_ros_joint_state_publisher)
-ENDIF(SUPERBUILD_yarp_ros_joint_state_publisher)
+find_or_build_package_with_tag(yarp_ros_joint_state_publisher ON)
 
 # --------------------------------------
 # Compile robot_state_publisher_ext
 # --------------------------------------
-set(SUPERBUILD_robot_state_publisher_ext ON CACHE BOOL "Flag to compile robot_state_publisher_ext")
-IF(SUPERBUILD_robot_state_publisher_ext)
-        find_or_build_package(robot_state_publisher_ext)
-ENDIF(SUPERBUILD_robot_state_publisher_ext)
+find_or_build_package_with_tag(robot_state_publisher_ext ON)
 
 # ---------------------
 # Compile ft_publisher
 # ---------------------
-set(SUPERBUILD_ft_publisher OFF CACHE BOOL "Flag to compile ft_publisher")
-IF(SUPERBUILD_ft_publisher)
-	find_or_build_package(ft_publisher)
-ENDIF(SUPERBUILD_ft_publisher)
+find_or_build_package_with_tag(ft_publisher OFF)
 
 # ---------------------
 # Compile locoman_utils
 # ---------------------
-set(SUPERBUILD_locoman_utils OFF CACHE BOOL "Flag to compile locoman_utils")
-IF(SUPERBUILD_locoman_utils)
-    find_or_build_package(locoman_utils)
-ENDIF(SUPERBUILD_locoman_utils)
+find_or_build_package_with_tag(locoman_utils OFF)
 
 # --------------------------------------
 # Compile drc_shared
 # --------------------------------------
-set(SUPERBUILD_drc_shared OFF CACHE BOOL "Flag to compile drc_shared")
-IF(SUPERBUILD_drc_shared)
-    find_or_build_package(drc_shared)
-ENDIF(SUPERBUILD_drc_shared)
+find_or_build_package_with_tag(drc_shared OFF)
 
 # --------------------------------------
 # Compile trajectory_generator
 # --------------------------------------
-set(SUPERBUILD_trajectory_generator OFF CACHE BOOL "Flag to compile trajectory_generator")
-IF(SUPERBUILD_trajectory_generator)
-    find_or_build_package(trajectory_generator)
-ENDIF(SUPERBUILD_trajectory_generator)
+find_or_build_package_with_tag(trajectory_generator OFF)
 
 # --------------------------------------
 # Compile drc_poses
 # --------------------------------------
-set(SUPERBUILD_drc_poses OFF CACHE BOOL "Flag to compile drc_poses")
-IF(SUPERBUILD_drc_poses)
-    find_or_build_package(drc_poses)
-ENDIF(SUPERBUILD_drc_poses)
+find_or_build_package_with_tag(drc_poses OFF)
 
 # --------------------------------------
 # Compile drc_plug
 # --------------------------------------
-set(SUPERBUILD_drc_plug OFF CACHE BOOL "Flag to compile drc_plug")
-IF(SUPERBUILD_drc_plug)
-    find_or_build_package(drc_plug)
-ENDIF(SUPERBUILD_drc_plug)
+find_or_build_package_with_tag(drc_plug OFF)
 
 # --------------------------------------
 # Compile pilot_interface
 # --------------------------------------
-set(SUPERBUILD_pilot_interface OFF CACHE BOOL "Flag to compile pilot_interface")
-IF(SUPERBUILD_pilot_interface)
-    find_or_build_package(pilot_interface)
-ENDIF(SUPERBUILD_pilot_interface)
+find_or_build_package_with_tag(pilot_interface OFF)
 
 # --------------------------------------
 # Compile network
 # --------------------------------------
-set(SUPERBUILD_network OFF CACHE BOOL "Flag to compile network")
-IF(SUPERBUILD_network)
-    find_or_build_package(network)
-ENDIF(SUPERBUILD_network)
+find_or_build_package_with_tag(network OFF)
 
 # --------------------------------------
 # Compile robotran predictor modules
@@ -267,58 +216,38 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
         # --------------------------------------
         # Compile iit-bigman-ros-pkg
         # --------------------------------------
-        set(SUPERBUILD_iit-bigman-ros-pkg ON CACHE BOOL "Flag to compile iit-bigman-ros-pkg")
-        IF(SUPERBUILD_iit-bigman-ros-pkg)
-            find_or_build_package(iit-bigman-ros-pkg)
-        ENDIF(SUPERBUILD_iit-bigman-ros-pkg)
-
+        find_or_build_package_with_tag(iit-bigman-ros-pkg ON)
+        
         # --------------------------------------
         # Compile walking
         # --------------------------------------
-        set(SUPERBUILD_walking OFF CACHE BOOL "Flag to compile walking")
-        IF(SUPERBUILD_walking)
-            find_or_build_package(walking)
-        ENDIF(SUPERBUILD_walking)
+        find_or_build_package_with_tag(walking OFF)
         
         # --------------------------------------
         # Compile drc_valve
         # --------------------------------------
-        set(SUPERBUILD_drc_valve OFF CACHE BOOL "Flag to compile drc_valve")
-        IF(SUPERBUILD_drc_valve)
-            find_or_build_package(drc_valve)
-        ENDIF(SUPERBUILD_drc_valve)
+        find_or_build_package_with_tag(drc_valve OFF)
 
         # --------------------------------------
         # Compile drc_raise
         # --------------------------------------
-        set(SUPERBUILD_drc_raise OFF CACHE BOOL "Flag to compile drc_raise")
-        IF(SUPERBUILD_drc_raise)
-            find_or_build_package(drc_raise)
-        ENDIF(SUPERBUILD_drc_raise)
+        find_or_build_package_with_tag(drc_raise OFF)
 
         # --------------------------------------
         # Compile arms_ik
         # --------------------------------------
-        set(SUPERBUILD_arms_ik OFF CACHE BOOL "Flag to compile arms_ik")
-        IF(SUPERBUILD_arms_ik)
-            find_or_build_package(arms_ik)
-        ENDIF(SUPERBUILD_arms_ik)
+        find_or_build_package_with_tag(arms_ik OFF)
 
         # --------------------------------------
         # Compile footstep_perception
         # --------------------------------------
-        set(SUPERBUILD_footstep_perception OFF CACHE BOOL "Flag to compile footstep_perception")
-        IF(SUPERBUILD_footstep_perception)
-            find_or_build_package(footstep_perception)
-        ENDIF(SUPERBUILD_footstep_perception)
+        find_or_build_package_with_tag(footstep_perception OFF)
 
         # --------------------------------------
         # Compile drcsim
         # --------------------------------------
-        set(SUPERBUILD_drcsim OFF CACHE BOOL "Flag to compile drcsim")
-        IF(SUPERBUILD_drcsim)
-            find_or_build_package(drcsim)
-        ENDIF(SUPERBUILD_drcsim)
+        find_or_build_package_with_tag(drcsim OFF)
+
 
         # --------------------------------------
         # Compile locomanipulation
@@ -334,11 +263,7 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
         # --------------------------------------
         # Compile yw_module
         # --------------------------------------
-        set(SUPERBUILD_yw_module OFF CACHE BOOL "Flag to compile yw_module")
-        IF(SUPERBUILD_yw_module)
-            find_or_build_package(yw_module)
-        ENDIF(SUPERBUILD_yw_module)        
-        
+        find_or_build_package_with_tag(yw_module OFF)
 
 	IF("${ROBOTOLOGY_PROFILE}" STREQUAL "ROBOT")
 	
