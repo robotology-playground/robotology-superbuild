@@ -17,7 +17,7 @@ cd ..
 export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$ROBOTOLOGY_ROOT/orocos_ws/src
 
 sudo apt-get install ruby ruby-dev
-sudo apt-get install omniorb-idl omniorb omniorb-nameserver omniidl
+sudo apt-get install libomniorb4-dev omniorb-idl omniorb omniorb-nameserver omniidl
 sudo gem install rake hoe
 
 rosdep install orocos_toolchain
