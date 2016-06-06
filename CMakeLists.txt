@@ -164,6 +164,14 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
         find_or_build_package_with_tag(arms_ik OFF)
 
         # --------------------------------------
+        # Compile multicontact_planning
+        # --------------------------------------
+        set(SUPERBUILD_multicontact_planning OFF CACHE BOOL "Flag to compile multicontact_planning")
+        IF(SUPERBUILD_multicontact_planning)
+            find_or_build_package(multicontact_planning)
+        ENDIF(SUPERBUILD_multicontact_planning)
+
+        # --------------------------------------
         # Compile footstep_perception
         # --------------------------------------
         find_or_build_package_with_tag(footstep_perception OFF)
@@ -216,6 +224,7 @@ IF(USE_WALKMAN_DEMOS_PROJECTS)
     find_or_build_package(iit-bigman-ros-pkg)
     find_or_build_package(locoman_utils)
     find_or_build_package(arms_ik)
+    find_or_build_package(multicontact_planning)
 ENDIF(USE_WALKMAN_DEMOS_PROJECTS)
 
 set_package_properties(Git PROPERTIES TYPE RUNTIME)
