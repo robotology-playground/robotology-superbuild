@@ -173,6 +173,10 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
         # --------------------------------------
         find_or_build_package_with_tag(drcsim OFF)
 
+        # --------------------------------------
+        # Compile sensors-description
+        # --------------------------------------
+        find_or_build_package_with_tag(sensors-description OFF)
 
         # --------------------------------------
         # Compile locomanipulation
