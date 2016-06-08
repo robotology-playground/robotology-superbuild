@@ -6,7 +6,7 @@ ycm_ep_helper(robotran_predictor  TYPE GIT
                                   STYLE GITLAB_ROBOTOLOGY
                                   REPOSITORY walkman-drc/robotran_predictor.git
                                   TAG master
-                                  COMPONENT     drc
+                                  COMPONENT     robots
                                   DEPENDS       drc_shared
                                                 idynutils
                                                 GYM
