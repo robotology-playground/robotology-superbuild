@@ -137,6 +137,11 @@ IF(SUPERBUILD_robotran_predictor)
     find_or_build_package(robotran_predictor_ctrl_test)
 ENDIF(SUPERBUILD_robotran_predictor)
 
+# --------------------------------------
+# Compile supervisor
+# --------------------------------------
+find_or_build_package_with_tag(supervisor OFF)
+
 IF(NOT USE_ONLY_OPEN_SOURCE)
         # --------------------------------------
         # Compile iit-bigman-ros-pkg
