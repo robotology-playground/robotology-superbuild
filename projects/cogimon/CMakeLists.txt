@@ -41,4 +41,14 @@ ENDIF(SUPERBUILD_rtt_gazebo_plugins)
 # --------------------------------------
 find_or_build_package_with_tag(rtt-gazebo-robot-sim OFF)
 
+# --------------------------------------
+# Compile rtt-core-extensions
+# --------------------------------------
+find_or_build_package_with_tag(rtt-core-extensions OFF)
+
+# --------------------------------------
+# Compile rtt-component-template
+# --------------------------------------
+find_or_build_package_with_tag(rtt-component-template OFF)
+
 
