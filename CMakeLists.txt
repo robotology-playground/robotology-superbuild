@@ -57,7 +57,7 @@ set(USE_SYSTEM_OPENSOT OFF CACHE BOOL "Initial cache")
 # Only open source repo by default
 set(USE_ONLY_OPEN_SOURCE ON CACHE BOOL "Only the open-source repo will be cloned and built")
 # CORE packages
-set(USE_CORE_PACKAGES OFF CACHE BOOL "CORE packages for robotology-superbuild")
+set(USE_CORE_PACKAGES ON CACHE BOOL "CORE packages for robotology-superbuild")
 # Tokyo University HYDRA OFF by default
 set(YNL_HYDRA_TOKYO_UNIVERSITY OFF CACHE BOOL "Enable the download and usages of repos from University of Tokyo YNL Lab")
 # Using Walk-Man Demos related projects OFF by default
