@@ -15,9 +15,9 @@ find_or_build_package(GazeboYARPPlugins)
 # Model
 #------
 # Compile COMAN model
-find_or_build_package_with_tag(IITComanRosPkg ON)
+find_or_build_package_with_tag(IITComanRosPkg OFF)
 # Compile iCub model
-find_or_build_package_with_tag(icub_gazebo ON)
+find_or_build_package_with_tag(icub_gazebo OFF)
 
 # -------------------------------------------
 # Compile CAPSULE for the collision avoidance
@@ -34,17 +34,17 @@ ENDIF(SUPERBUILD_CAPSULE)
 # --------------------------------------
 # Compile yarp_ros_joint_state_publisher
 # --------------------------------------
-find_or_build_package_with_tag(yarp_ros_joint_state_publisher ON)
+find_or_build_package_with_tag(yarp_ros_joint_state_publisher OFF)
 
 # --------------------------------------
 # Compile robot_state_publisher_ext
 # --------------------------------------
-find_or_build_package_with_tag(robot_state_publisher_ext ON)
+find_or_build_package_with_tag(robot_state_publisher_ext OFF)
 
 # ---------------------
 # Compile simple_homing
 # ---------------------
-find_or_build_package_with_tag(simple_homing ON)
+find_or_build_package_with_tag(simple_homing OFF)
 
 # --------------------------------------
 # Compile not open-source robot related packages

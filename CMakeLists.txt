@@ -56,6 +56,8 @@ set(USE_SYSTEM_OPENSOT OFF CACHE BOOL "Initial cache")
 
 # Only open source repo by default
 set(USE_ONLY_OPEN_SOURCE ON CACHE BOOL "Only the open-source repo will be cloned and built")
+# CORE packages
+set(USE_CORE_PACKAGES OFF CACHE BOOL "CORE packages for robotology-superbuild")
 # Tokyo University HYDRA OFF by default
 set(YNL_HYDRA_TOKYO_UNIVERSITY OFF CACHE BOOL "Enable the download and usages of repos from University of Tokyo YNL Lab")
 # Using Walk-Man Demos related projects OFF by default
@@ -69,9 +71,11 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
 ENDIF(NOT USE_ONLY_OPEN_SOURCE)
 
 # --------------------------------------
-# Compile set of COMMON packages
+# Compile set of CORE packages
 # --------------------------------------
-include(${CMAKE_CURRENT_SOURCE_DIR}/projects/CMakeLists.txt)
+IF(USE_CORE_PACKAGES)
+	include(${CMAKE_CURRENT_SOURCE_DIR}/projects/CMakeLists.txt)
+ENDIF(USE_CORE_PACKAGES)
 
 # --------------------------------------
 # Compile centralized_inverse_kinematics
