@@ -83,11 +83,6 @@ ENDIF(USE_CORE_PACKAGES)
 find_or_build_package_with_tag(centralized_inverse_kinematics OFF)
 
 # --------------------------------------
-# Compile testQPsolvers - OFF by default
-# --------------------------------------
-find_or_build_package_with_tag(testQPsolvers OFF)
-
-# --------------------------------------
 # Compile athletic - OFF by default
 # --------------------------------------
 find_or_build_package_with_tag(athletic OFF)

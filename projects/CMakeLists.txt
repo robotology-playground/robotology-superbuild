@@ -60,3 +60,8 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
 	ENDIF("${ROBOTOLOGY_PROFILE}" STREQUAL "ROBOT")
 ENDIF(NOT USE_ONLY_OPEN_SOURCE)
 
+# --------------------------------------
+# Compile testQPsolvers - OFF by default
+# --------------------------------------
+find_or_build_package_with_tag(testQPsolvers OFF)
+
