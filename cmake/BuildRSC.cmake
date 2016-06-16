@@ -6,6 +6,6 @@ ycm_ep_helper(  RSC
                 TYPE GIT
                 STYLE NONE 
                 REPOSITORY https://code.cor-lab.org/git/rsc.git
-                TAG master
-                COMPONENT external
+                TAG 0.14
+                COMPONENT RSB
             )

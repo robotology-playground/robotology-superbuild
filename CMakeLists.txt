@@ -175,10 +175,7 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
         # --------------------------------------
         # Compile multicontact_planning
         # --------------------------------------
-        set(SUPERBUILD_multicontact_planning OFF CACHE BOOL "Flag to compile multicontact_planning")
-        IF(SUPERBUILD_multicontact_planning)
-            find_or_build_package(multicontact_planning)
-        ENDIF(SUPERBUILD_multicontact_planning)
+        find_or_build_package_with_tag(multicontact_planning OFF)
 
         # --------------------------------------
         # Compile footstep_perception

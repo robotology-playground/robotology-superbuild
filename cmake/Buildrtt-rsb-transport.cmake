@@ -9,5 +9,5 @@ ycm_ep_helper(  rtt-rsb-transport
                 STYLE GITHUB
                 REPOSITORY corlab/rtt-rsb-transport.git
                 TAG master
-                COMPONENT external
+                COMPONENT RSB
             )

@@ -7,5 +7,5 @@ ycm_ep_helper(  RST_RT
                 STYLE GITHUB 
                 REPOSITORY corlab/rst-rt.git
                 TAG master
-                COMPONENT external
+                COMPONENT RSB
             )

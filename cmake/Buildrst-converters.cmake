@@ -7,6 +7,6 @@ ycm_ep_helper(  rst-converters
                 STYLE NONE 
                 REPOSITORY https://code.cor-lab.org/git/rst.git.converters.git
                 TAG iit-superbuild
-                COMPONENT external
+                COMPONENT RSB
                 CMAKE_CACHE_ARGS -DBUILD_TESTS:BOOL=OFF
             )

@@ -6,6 +6,6 @@ ycm_ep_helper(  RSB_Tools_cpp
                 TYPE GIT
                 STYLE NONE 
                 REPOSITORY https://code.cor-lab.org/git/rsb.git.tools-cpp
-                TAG master
-                COMPONENT external
+                TAG 0.14
+                COMPONENT RSB
             )
