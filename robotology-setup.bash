@@ -40,6 +40,8 @@ if [ -f ${ROBOTOLOGY_ROOT}/orocos_ws/install_isolated/setup.bash ]; then
        pathadd RTT_COMPONENT_PATH /opt/ros/indigo/lib/orocos/gnulinux/rtt_ros  
        pathadd RTT_COMPONENT_PATH /opt/ros/indigo/lib/orocos/gnulinux/types
 
+       pathadd RTT_COMPONENT_PATH /opt/ros/indigo/lib/orocos/gnulinux/rtt_sensor_msgs
+       pathadd RTT_COMPONENT_PATH /opt/ros/indigo/lib/orocos/gnulinux/rtt_std_msgs
 
        pathadd RTT_COMPONENT_PATH $ROBOTOLOGY_ROOT/build/install/lib/orocos
 
@@ -55,6 +57,7 @@ if [ -f ${ROBOTOLOGY_ROOT}/orocos_ws/install_isolated/setup.bash ]; then
               pathadd GAZEBO_PLUGIN_PATH $ROBOTOLOGY_ROOT/build/install/lib/orocos/gnulinux/rtt_gazebo_system
        fi           
        
+
 fi
 
 #gazebo setup

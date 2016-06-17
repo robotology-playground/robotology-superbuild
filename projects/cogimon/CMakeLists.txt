@@ -62,4 +62,9 @@ find_or_build_package_with_tag(rtt-component-template OFF)
 # --------------------------------------
 find_or_build_package_with_tag(rtt-gazebo-lwr4plus-sim OFF)
 
+# --------------------------------------
+# Compile orocos_ros_joint_state_publisher
+# --------------------------------------
+find_or_build_package_with_tag(orocos_ros_joint_state_publisher OFF)
+
 

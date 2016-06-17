@@ -12,6 +12,8 @@ export GIT_SSL_NO_VERIFY=1
 git clone --recursive -b toolchain-2.7 http://git.gitorious.org/orocos-toolchain/orocos_toolchain.git src
 cd src
 git clone https://github.com/orocos/rtt_geometry.git
+cd src
+git clone https://github.com/orocos/rtt_ros_integration.git
 cd ..
 
 export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$ROBOTOLOGY_ROOT/orocos_ws/src
@@ -27,4 +29,13 @@ catkin_make_isolated --install -DENABLE_CORBA=ON -DCORBA_IMPLEMENTATION=OMNIORB
 catkin_make_isolated --install --pkg rtt_geometry
 catkin_make_isolated --install --pkg eigen_typekit
 catkin_make_isolated --install --pkg kdl_typekit
+
+catkin_make_isolated --install --pkg rtt_ros
+catkin_make_isolated --install --pkg rtt_rosnode
+catkin_make_isolated --install --pkg rtt_roscomm
+catkin_make_isolated --install --pkg rtt_rosclock
+catkin_make_isolated --install --pkg rtt_sensors_msgs
+
+
+
 
