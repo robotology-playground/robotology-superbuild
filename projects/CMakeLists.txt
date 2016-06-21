@@ -65,3 +65,8 @@ ENDIF(NOT USE_ONLY_OPEN_SOURCE)
 # --------------------------------------
 find_or_build_package_with_tag(testQPsolvers OFF)
 
+# --------------------------------------
+# Compile srdfdom_advr - OFF by default
+# --------------------------------------
+find_or_build_package_with_tag(srdfdom_advr OFF)
+
