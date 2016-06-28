@@ -228,6 +228,7 @@ IF(USE_WALKMAN_DEMOS_PROJECTS)
     find_or_build_package(multicontact_planning)
     find_or_build_package(walking)
     find_or_build_package(supervisor)
+    find_or_build_package(psearch_control_interface)
 ENDIF(USE_WALKMAN_DEMOS_PROJECTS)
 
 set_package_properties(Git PROPERTIES TYPE RUNTIME)
