@@ -141,6 +141,11 @@ ENDIF(SUPERBUILD_robotran_predictor)
 # --------------------------------------
 find_or_build_package_with_tag(supervisor OFF)
 
+# --------------------------------------
+# basic_ik
+# --------------------------------------
+find_or_build_package_with_tag(basic_ik OFF)
+
 IF(NOT USE_ONLY_OPEN_SOURCE)
         # --------------------------------------
         # Compile iit-bigman-ros-pkg
