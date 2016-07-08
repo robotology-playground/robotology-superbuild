@@ -146,6 +146,11 @@ find_or_build_package_with_tag(supervisor OFF)
 # --------------------------------------
 find_or_build_package_with_tag(basic_ik OFF)
 
+# --------------------------------------
+# generic_manipulation
+# --------------------------------------
+find_or_build_package_with_tag(generic_manipulation OFF)
+
 IF(NOT USE_ONLY_OPEN_SOURCE)
         # --------------------------------------
         # Compile iit-bigman-ros-pkg
