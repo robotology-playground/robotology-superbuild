@@ -75,3 +75,8 @@ find_or_build_package_with_tag(srdfdom_advr OFF)
 # --------------------------------------
 find_or_build_package_with_tag(xbotcoremodel OFF)
 
+# --------------------------------------
+# Compile trajectory_utils - OFF by default
+# --------------------------------------
+find_or_build_package_with_tag(trajectory_utils OFF)
+
