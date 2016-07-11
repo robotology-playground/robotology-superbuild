@@ -110,7 +110,7 @@ fi
 export COMAN_ROOT=${ROBOTOLOGY_ROOT}/build/install
 
 # TODO add a switch here to select correct robot
-export YARP_ROBOT_NAME=coman
+export YARP_ROBOT_NAME=bigman
 export YARP_COLORED_OUTPUT=1
 export YARP_DATA_DIRS=${ROBOTOLOGY_ROOT}/build/install/share/yarp/
 
