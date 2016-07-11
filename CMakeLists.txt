@@ -53,6 +53,8 @@ set(USE_SYSTEM_KDL_CODYCO OFF CACHE BOOL "Initial cache")
 set(USE_SYSTEM_IDYNTREE OFF CACHE BOOL "Initial cache")
 set(USE_SYSTEM_PARAMHELP OFF CACHE BOOL "Initial cache")
 set(USE_SYSTEM_OPENSOT OFF CACHE BOOL "Initial cache")
+set(USE_SYSTEM_IDYNUTILS OFF CACHE BOOL "Initial cache")
+set(USE_SYSTEM_GYM OFF CACHE BOOL "Initial cache")
 
 # Only open source repo by default
 set(USE_ONLY_OPEN_SOURCE ON CACHE BOOL "Only the open-source repo will be cloned and built")
