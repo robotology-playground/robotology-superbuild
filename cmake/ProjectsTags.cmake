@@ -6,9 +6,9 @@ set(YARP_TAG ecd0040)
 set(paramHelp_TAG de9f652)
 set(GazeboYARPPlugins_TAG caf5b45a8)
 set(iDynTree_TAG f0346c1)
-set(idynutils_TAG e3c3b1b0)
-set(OpenSoT_TAG 9f75009685)
-set(GYM_TAG e49bb522a)
+set(idynutils_TAG 96972f0)
+set(OpenSoT_TAG f49c1720b)
+set(GYM_TAG 3cd0f41a91)
 
 # CAPSULE: put the SHA1 of the commit or the TAG, not the branch name.
 set(roboptim-core_TAG v3.1)
