@@ -174,6 +174,11 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
         # --------------------------------------
         find_or_build_package_with_tag(drc_raise OFF)
 
+	# --------------------------------------
+        # Compile drc_door
+        # --------------------------------------
+        find_or_build_package_with_tag(drc_door OFF)
+
         # --------------------------------------
         # Compile arms_ik
         # --------------------------------------
