@@ -151,4 +151,8 @@ if [ -d $ROBOTOLOGY_ROOT/build/install/share/robots ]; then
 else
 	unset ROBOTOLOGY_ROBOTS
 fi
- 
+
+# vigir plugin
+if [ -d $ROBOTOLOGY_ROOT/catkin_pkg/vigir_pluginlib ]; then
+	pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/catkin_pkg/vigir_pluginlib 
+fi
