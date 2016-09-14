@@ -155,8 +155,8 @@ else
 
 
     # needed by SoT demos
-    sudo apt-get install -y --force-yes --fix-missing python-pip
-    sudo pip install svg.path
+    sudo apt-get install -y --force-yes --fix-missing python-pip python-pygraphviz
+    sudo pip install svg.path transitions
 
     # TODO this is a [quickfix]
     echo "Adding robotology-setup.bash to your .bashrc"
