@@ -220,6 +220,12 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
         # --------------------------------------
         find_or_build_package_with_tag(yw_module OFF)
 
+	# --------------------------------------
+	# cemtralized_manipulation
+	# --------------------------------------
+	find_or_build_package_with_tag(centralized_manipulation OFF)
+
+
 ENDIF(NOT USE_ONLY_OPEN_SOURCE)
 
 # --------------------------------------
