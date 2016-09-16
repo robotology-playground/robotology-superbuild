@@ -12,6 +12,6 @@ ycm_ep_helper(  wholebody_ik
                 STYLE GITHUB
                 REPOSITORY CentroEPiaggio/wholebody_ik.git
                 TAG master
-                COMPONENT robots
+                COMPONENT modules
                 DEPENDS drc_shared idynutils GYM
             )

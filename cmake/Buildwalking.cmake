@@ -12,7 +12,7 @@ ycm_ep_helper(  walking
                 STYLE GITLAB_ROBOTOLOGY
                 REPOSITORY walkman-drc/walking.git
                 TAG master
-                COMPONENT robots
+                COMPONENT drc
                 DEPENDS iDynTree
                         GYM
 			drc_shared

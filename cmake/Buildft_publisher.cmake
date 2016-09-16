@@ -11,5 +11,5 @@ ycm_ep_helper(ft_publisher TYPE GIT
                            STYLE GITHUB
                            REPOSITORY liesrock/ft_publisher.git 
                            TAG master
-                           COMPONENT robots
+                           COMPONENT modules
                            DEPENDS GYM)

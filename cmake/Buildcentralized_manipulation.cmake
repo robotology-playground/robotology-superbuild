@@ -11,7 +11,7 @@ ycm_ep_helper(  centralized_manipulation
                 STYLE GITLAB_ROBOTOLOGY
                 REPOSITORY luca.muratore/centralized_manipulation.git
                 TAG master
-                COMPONENT robots
+                COMPONENT modules
                 DEPENDS OpenSoT
 			GYM
 			trajectory_utils

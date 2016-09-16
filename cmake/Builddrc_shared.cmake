@@ -12,6 +12,6 @@ ycm_ep_helper(  drc_shared
                 STYLE GITLAB_ROBOTOLOGY
                 REPOSITORY walkman-drc/drc_shared.git
                 TAG master
-                COMPONENT robots
+                COMPONENT drc
                 DEPENDS YARP
             )

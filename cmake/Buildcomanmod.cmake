@@ -10,7 +10,7 @@ ycm_ep_helper(  comanmod
                 STYLE GITLAB_ROBOTOLOGY
                 REPOSITORY walkman-drc/comanmod.git
                 TAG master
-                COMPONENT robots
+                COMPONENT drc
                 DEPENDS COMAN_shared
                         YARP
                 CMAKE_CACHE_ARGS    -DYARP_USE_GTK2:BOOL=ON

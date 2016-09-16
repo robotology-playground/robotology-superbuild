@@ -11,6 +11,6 @@ ycm_ep_helper(  simple_homing
                 STYLE GITLAB_ROBOTOLOGY
                 REPOSITORY walkman-drc/simple_homing.git
                 TAG master
-                COMPONENT robots
+                COMPONENT drc
                 DEPENDS GYM
              )

@@ -11,6 +11,6 @@ ycm_ep_helper(  arms_ik
                 STYLE GITLAB_ROBOTOLOGY
                 REPOSITORY walkman-drc/arms_ik.git
                 TAG master
-                COMPONENT robots
+                COMPONENT drc
                 DEPENDS drc_shared
             )

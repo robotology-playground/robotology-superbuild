@@ -15,7 +15,7 @@ ycm_ep_helper(footstep_perception TYPE GIT
                                   STYLE GITLAB_ROBOTOLOGY
                                   REPOSITORY walkman-drc/footstep_perception.git
                                   TAG master
-                                  COMPONENT robots
+                                  COMPONENT drc
                                   DEPENDS YARP
                                           drc_shared
                                           GYM

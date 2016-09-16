@@ -9,11 +9,11 @@ find_or_build_package(locoman_service_2 QUIET)
 
 
 ycm_ep_helper(locomanipulation 	TYPE GIT
-                    		STYLE GITLAB_ROBOTOLOGY 
-                    		REPOSITORY walkman-drc/locomanipulation.git
-                    		TAG new_master
-				COMPONENT robots
-                    		DEPENDS	GYM
-					locoman_utils
-					locoman_service_1
-					locoman_service_2)
+                                STYLE GITLAB_ROBOTOLOGY 
+                                REPOSITORY walkman-drc/locomanipulation.git
+                                TAG new_master
+                                COMPONENT drc
+                                DEPENDS	GYM
+                                        locoman_utils
+                                        locoman_service_1
+                                        locoman_service_2)

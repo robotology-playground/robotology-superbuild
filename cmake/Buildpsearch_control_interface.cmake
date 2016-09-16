@@ -11,6 +11,6 @@ ycm_ep_helper(  psearch_control_interface
                 STYLE GITLAB_ROBOTOLOGY
                 REPOSITORY walkman-drc/psearch_control_interface.git
                 TAG master
-                COMPONENT robots
+                COMPONENT drc
                 DEPENDS drc_shared
             )

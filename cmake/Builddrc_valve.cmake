@@ -12,7 +12,7 @@ ycm_ep_helper(  drc_valve
                 STYLE GITLAB_ROBOTOLOGY
                 REPOSITORY walkman-drc/drc_valve.git
                 TAG master
-                COMPONENT robots
+                COMPONENT drc
                 DEPENDS drc_shared
                         GYM
                         OpenSoT

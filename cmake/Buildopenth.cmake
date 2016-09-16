@@ -8,6 +8,6 @@ ycm_ep_helper(openth TYPE GIT
                              STYLE GITHUB
                              REPOSITORY OpenTheta/openth.git
                              TAG master
-                             COMPONENT robots
+                             COMPONENT external
                              DEPENDS moveit_compute_default_collisions
                              INSTALL_COMMAND "")

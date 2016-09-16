@@ -9,6 +9,6 @@ ycm_ep_helper(  comanapp
                 STYLE GITLAB_ROBOTOLOGY
                 REPOSITORY walkman-drc/comanapp.git
                 TAG master
-                COMPONENT robots
+                COMPONENT drc
                 DEPENDS YARP
             )

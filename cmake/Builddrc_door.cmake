@@ -13,7 +13,7 @@ ycm_ep_helper(drc_door TYPE GIT
                         STYLE GITLAB_ROBOTOLOGY
                         REPOSITORY walkman-drc/drc_door.git
                         TAG master
-                        COMPONENT robots
+                        COMPONENT drc
                         DEPENDS OpenSoT
                                 drc_shared
                                 idynutils

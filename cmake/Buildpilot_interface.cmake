@@ -11,7 +11,7 @@ ycm_ep_helper(  pilot_interface
                 STYLE GITLAB_ROBOTOLOGY
                 REPOSITORY walkman-drc/pilot_interface.git
                 TAG master
-                COMPONENT robots
+                COMPONENT drc
                 DEPENDS drc_shared
                         GYM
                         trajectory_generator

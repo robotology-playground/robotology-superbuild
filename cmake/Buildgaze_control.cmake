@@ -10,6 +10,6 @@ ycm_ep_helper(  gaze_control
                 STYLE GITLAB_ROBOTOLOGY
                 REPOSITORY walkman-drc/gaze_control.git
                 TAG master
-                COMPONENT robots
+                COMPONENT drc
                 DEPENDS drc_shared
             )

@@ -9,6 +9,6 @@ ycm_ep_helper(locoman_service_2 TYPE GIT
                                 STYLE GITLAB_ROBOTOLOGY 
                                 REPOSITORY walkman-drc/locoman_service_2.git
                                 TAG master
-                                COMPONENT robots
+                                COMPONENT drc
                                 DEPENDS GYM
                                         locoman_utils)

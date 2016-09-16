@@ -9,7 +9,7 @@ ycm_ep_helper(  centralized_inverse_kinematics
                 STYLE GITLAB_ROBOTOLOGY
                 REPOSITORY walkman-drc/centralized_inverse_kinematics.git
                 TAG master
-                COMPONENT robots
+                COMPONENT drc
                 INSTALL_COMMAND ""
                 DEPENDS OpenSoT
             )

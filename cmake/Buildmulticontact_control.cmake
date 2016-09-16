@@ -12,6 +12,6 @@ ycm_ep_helper(  multicontact_control
                 STYLE GITHUB
                 REPOSITORY CentroEPiaggio/multicontact_control.git
                 TAG master
-                COMPONENT robots
+                COMPONENT modules
                 DEPENDS drc_shared idynutils GYM
             )

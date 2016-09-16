@@ -10,7 +10,7 @@ ycm_ep_helper(  generic_manipulation
                 STYLE GITLAB_ROBOTOLOGY
                 REPOSITORY luca.muratore/generic_manipulation.git
                 TAG actions
-                COMPONENT robots
+                COMPONENT modules
                 DEPENDS OpenSoT
-			GYM
-            )
+                        GYM
+              )

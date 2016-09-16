@@ -11,7 +11,7 @@ ycm_ep_helper(  drc_poses
                 STYLE GITLAB_ROBOTOLOGY
                 REPOSITORY walkman-drc/drc_poses.git
                 TAG master
-                COMPONENT robots
+                COMPONENT drc
                 DEPENDS drc_shared
                         GYM
 			trajectory_generator
