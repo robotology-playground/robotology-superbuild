@@ -244,7 +244,6 @@ ENDIF(YNL_HYDRA_TOKYO_UNIVERSITY)
 
 IF(USE_WALKMAN_DEMOS_PROJECTS)
     find_or_build_package(drc_shared)
-    find_or_build_package(drc_raise)
     find_or_build_package(iit-bigman-ros-pkg)
     find_or_build_package(locoman_utils)
     find_or_build_package(arms_ik)
