@@ -159,7 +159,7 @@ else
             sudo apt install -y --allow-unauthenticated --fix-missing build-essential cmake cmake-curses-gui  \
               git subversion doxygen graphviz  \
               libace-dev libgsl0-dev libgtkmm-2.4-dev libgoocanvasmm-2.0-dev libsqlite3-dev swig  \
-              icub-common libdc1394-22-dev libtinyxml2-dev \
+              icub-common libdc1394-22-dev libgtkdataboxmm-0.9-0 libgtkdataboxmm-dev libtinyxml2-dev \
               libeigen3-dev libyaml-cpp-dev libxml2-dev  \
               ros-kinetic-desktop ros-kinetic-srdfdom ros-kinetic-cmake-modules libfcl-dev \
               ros-kinetic-openni2-* ros-kinetic-moveit-* ros-kinetic-joy* ros-kinetic-octomap* \
