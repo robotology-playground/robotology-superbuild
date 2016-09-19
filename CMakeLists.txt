@@ -45,12 +45,12 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
                          COMMAND awk -F= "{ print $2 }"
                          COMMAND tr "\n" " "
                          COMMAND sed "s/ //"
-                         OUTPUT_VARIABLE UBUTU_VERSION
+                         OUTPUT_VARIABLE UBUNTU_VERSION
                          RESULT_VARIABLE UBUNTU_VERSION_RESULT
          )
      endif(EXISTS "/etc/lsb-release")
      
-     message(STATUS "Configuring Superbuild to be built on Ubuntu ${UBUTU_VERSION}")
+     message(STATUS "Configuring Superbuild to be built on Ubuntu ${UBUNTU_VERSION}")
 endif(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 
 set(YCM_GIT_GITLAB_ROBOTOLOGY_BASE_ADDRESS "https://gitlab.robotology.eu/" CACHE STRING "Address to use for Robotology Gitlab git repositories" FORCE)

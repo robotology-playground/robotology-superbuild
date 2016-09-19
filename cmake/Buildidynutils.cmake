@@ -4,6 +4,7 @@ include(FindOrBuildPackage)
 
 find_or_build_package(YARP QUIET)
 find_or_build_package(iDynTree QUIET)
+find_or_build_package(fcl QUIET)
 
 ycm_ep_helper(  idynutils
                 TYPE GIT
@@ -13,4 +14,5 @@ ycm_ep_helper(  idynutils
                 COMPONENT external
                 DEPENDS YARP
                         iDynTree
+                        fcl
             )

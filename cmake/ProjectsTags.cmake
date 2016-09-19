@@ -9,6 +9,7 @@ set(iDynTree_TAG f0346c1)
 set(idynutils_TAG 4d7fe28012ea)
 set(OpenSoT_TAG f992366773)
 set(GYM_TAG cc2e32787)
+set(fcl_TAG fcl-0.5)
 
 # CAPSULE: put the SHA1 of the commit or the TAG, not the branch name.
 set(roboptim-core_TAG v3.1)

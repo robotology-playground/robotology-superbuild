@@ -31,8 +31,8 @@ if [ -f /opt/ros/kinetic/setup.bash ]; then
     source /opt/ros/kinetic/setup.bash
 fi
 
-if [ -f ${ROBOTOLOGY_ROOT}/external/moveit/devel/setup.bash ]; then
-    source ${ROBOTOLOGY_ROOT}/external/moveit/devel/setup.bash
+if [ -f ${ROBOTOLOGY_ROOT}/external/moveit/install/setup.bash ]; then
+    source ${ROBOTOLOGY_ROOT}/external/moveit/install/setup.bash
 fi
 
 #orocos
