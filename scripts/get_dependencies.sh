@@ -173,6 +173,7 @@ else
               python3-empy python3-setuptools python3-nose python3-pip python3-vcstool \
               protobuf-compiler
             sudo apt install -y ros-kinetic-gazebo-* gazebo7 libgazebo7-dev
+            sh $ROBOTOLOGY_ROOT/scripts/get_moveit_kinetic.sh
 
         else
 
