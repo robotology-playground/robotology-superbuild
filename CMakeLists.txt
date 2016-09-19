@@ -240,6 +240,12 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
         # --------------------------------------
         find_or_build_package_with_tag(yw_module OFF)
 
+	# --------------------------------------
+	# cemtralized_manipulation
+	# --------------------------------------
+	find_or_build_package_with_tag(centralized_manipulation OFF)
+
+
 ENDIF(NOT USE_ONLY_OPEN_SOURCE)
 
 # --------------------------------------
@@ -258,11 +264,11 @@ ENDIF(YNL_HYDRA_TOKYO_UNIVERSITY)
 
 IF(USE_WALKMAN_DEMOS_PROJECTS)
     find_or_build_package(drc_shared)
-    find_or_build_package(drc_raise)
     find_or_build_package(iit-bigman-ros-pkg)
     find_or_build_package(locoman_utils)
     find_or_build_package(arms_ik)
     find_or_build_package(wholebody_ik)
+    find_or_build_package(multicontact_control)
     find_or_build_package(multicontact_planning)
     find_or_build_package(walking)
     find_or_build_package(supervisor)
