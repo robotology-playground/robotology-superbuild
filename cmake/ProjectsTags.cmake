@@ -6,8 +6,8 @@ set(YARP_TAG ecd0040)
 set(paramHelp_TAG de9f652)
 set(GazeboYARPPlugins_TAG caf5b45a8)
 set(iDynTree_TAG f0346c1)
-set(idynutils_TAG 4d7fe28012ea)
-set(OpenSoT_TAG f992366773)
+set(idynutils_TAG bb1fff2)
+set(OpenSoT_TAG 1c294e5d)
 set(GYM_TAG cc2e32787)
 
 # CAPSULE: put the SHA1 of the commit or the TAG, not the branch name.
