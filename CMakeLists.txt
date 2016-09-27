@@ -37,28 +37,18 @@ set(YCM_EP_MAINTAINER_MODE FALSE)
 include(CTest)
 include(FeatureSummary)
 
-# Detect Linux Distribution 
-if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-     if(EXISTS "/etc/lsb-release")
-         execute_process(COMMAND cat /etc/lsb-release
-                         COMMAND grep DISTRIB_CODENAME
-                         COMMAND awk -F= "{ print $2 }"
-                         COMMAND tr "\n" " "
-                         COMMAND sed "s/ //"
-                         OUTPUT_VARIABLE UBUNTU_VERSION
-                         RESULT_VARIABLE UBUNTU_VERSION_RESULT
-         )
-     endif(EXISTS "/etc/lsb-release")
-     
-     message(STATUS "Configuring Superbuild to be built on Ubuntu ${UBUNTU_VERSION}")
-endif(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-
 set(YCM_GIT_GITLAB_ROBOTOLOGY_BASE_ADDRESS "https://gitlab.robotology.eu/" CACHE STRING "Address to use for Robotology Gitlab git repositories" FORCE)
-if(${UBUNTU_VERSION} MATCHES "xenial")
+
+if(UBUNTU_XENIAL)
     set(YCM_USE_CMAKE_PROPOSED FALSE CACHE BOOL "Use files including unmerged cmake patches")
-else(${UBUNTU_VERSION} MATCHES "xenial")
+
+    set(PYTHON_VERSION "2.7" CACHE STRING "Python Version" FORCE)
+    set(PYTHON_EXECUTABLE "/usr/bin/python2.7" CACHE STRING "Python Executable Path" FORCE)
+    set(PYTHON_INCLUDE_DIR "/usr/include/python2.7" CACHE STRING "Python Include Folder Path" FORCE)
+    set(PYTHON_LIBRARY "/usr/lib/x86_64-linux-gnu/libpython2.7.so" CACHE STRING "Python Library Folder Path" FORCE)
+else(UBUNTU_XENIAL)
     set(YCM_USE_CMAKE_PROPOSED TRUE CACHE BOOL "Use files including unmerged cmake patches")
-endif(${UBUNTU_VERSION} MATCHES "xenial")
+endif(UBUNTU_XENIAL)
 
 include(ProjectsTags OPTIONAL)
 
