@@ -11,7 +11,7 @@ ycm_ep_helper(  cogimon_simulation_tests
                 STYLE GITLAB_ROBOTOLOGY
                 REPOSITORY cogimon/cogimon_simulation_tests.git
                 TAG master
-                COMPONENT robots
+                COMPONENT cogimon
                 DEPENDS GYM
 			walking
 			OpenSoT

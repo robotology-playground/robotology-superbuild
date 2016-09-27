@@ -10,7 +10,7 @@ ycm_ep_helper(  basic_ik
                 STYLE GITLAB_ROBOTOLOGY
                 REPOSITORY luca.muratore/basic_ik.git
                 TAG master
-                COMPONENT modules
+                COMPONENT advr
                 DEPENDS OpenSoT
 			GYM
             )

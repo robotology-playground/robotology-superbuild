@@ -8,6 +8,6 @@ ycm_ep_helper(testQPsolvers TYPE GIT
                              STYLE GITHUB
                              REPOSITORY EnricoMingo/testQPsolvers.git
                              TAG master
-                             COMPONENT tests
+                             COMPONENT advr
                              DEPENDS OpenSoT
                              INSTALL_COMMAND "")
