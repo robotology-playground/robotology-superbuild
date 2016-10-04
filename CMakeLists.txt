@@ -27,7 +27,7 @@ endif()
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
-set(ROBOTOLOGY_MAJOR_VERSION 1)
+set(ROBOTOLOGY_MAJOR_VERSION 2)
 set(ROBOTOLOGY_MINOR_VERSION 0)
 set(ROBOTOLOGY_PATCH_VERSION 0)
 set(ROBOTOLOGY_VERSION ${ROBOTOLOGY_MAJOR_VERSION}.${ROBOTOLOGY_MINOR_VERSION}.${ROBOTOLOGY_PATCH_VERSION})
@@ -59,11 +59,13 @@ set(USE_SYSTEM_GYM OFF CACHE BOOL "Initial cache")
 # Only open source repo by default
 set(USE_ONLY_OPEN_SOURCE ON CACHE BOOL "Only the open-source repo will be cloned and built")
 # CORE packages
-set(USE_CORE_PACKAGES ON CACHE BOOL "CORE packages for robotology-superbuild")
+set(USE_CORE_PACKAGES OFF CACHE BOOL "CORE packages for robotology-superbuild")
 # Tokyo University HYDRA OFF by default
 set(YNL_HYDRA_TOKYO_UNIVERSITY OFF CACHE BOOL "Enable the download and usages of repos from University of Tokyo YNL Lab")
 # Using Walk-Man Demos related projects OFF by default
 set(USE_WALKMAN_DEMOS_PROJECTS OFF CACHE BOOL "Enable the download and usages of repos related to the Walk-Man project demos")
+# CENTAURO EU Project 
+set(CENTAURO_EU OFF CACHE BOOL "Enable the download and usages of repos related to the CENTAURO project")
 # COGIMON EU Project 
 set(COGIMON_EU OFF CACHE BOOL "Enable the download and usages of repos related to the CoGiMon project")
 
@@ -80,153 +82,11 @@ IF(USE_CORE_PACKAGES)
 ENDIF(USE_CORE_PACKAGES)
 
 # --------------------------------------
-# Compile centralized_inverse_kinematics
+# Compile related CENTAURO packages
 # --------------------------------------
-find_or_build_package_with_tag(centralized_inverse_kinematics OFF)
-
-# --------------------------------------
-# Compile athletic - OFF by default
-# --------------------------------------
-find_or_build_package_with_tag(athletic OFF)
-
-# ---------------------
-# Compile ft_publisher
-# ---------------------
-find_or_build_package_with_tag(ft_publisher OFF)
-
-# ---------------------
-# Compile locoman_utils
-# ---------------------
-find_or_build_package_with_tag(locoman_utils OFF)
-
-# --------------------------------------
-# Compile drc_shared
-# --------------------------------------
-find_or_build_package_with_tag(drc_shared OFF)
-
-# --------------------------------------
-# Compile trajectory_generator
-# --------------------------------------
-find_or_build_package_with_tag(trajectory_generator OFF)
-
-# --------------------------------------
-# Compile drc_poses
-# --------------------------------------
-find_or_build_package_with_tag(drc_poses OFF)
-
-# --------------------------------------
-# Compile drc_plug
-# --------------------------------------
-find_or_build_package_with_tag(drc_plug OFF)
-
-# --------------------------------------
-# Compile pilot_interface
-# --------------------------------------
-find_or_build_package_with_tag(pilot_interface OFF)
-
-# --------------------------------------
-# Compile network
-# --------------------------------------
-find_or_build_package_with_tag(network OFF)
-
-# --------------------------------------
-# Compile robotran predictor modules
-# --------------------------------------
-set(SUPERBUILD_robotran_predictor OFF CACHE BOOL "Flag to compile Robotran predictor modules")
-IF(SUPERBUILD_robotran_predictor)
-    find_or_build_package(robotran_predictor)
-    find_or_build_package(robotran_predictor_ctrl_test)
-ENDIF(SUPERBUILD_robotran_predictor)
-
-# --------------------------------------
-# Compile supervisor
-# --------------------------------------
-find_or_build_package_with_tag(supervisor OFF)
-
-# --------------------------------------
-# basic_ik
-# --------------------------------------
-find_or_build_package_with_tag(basic_ik OFF)
-
-# --------------------------------------
-# generic_manipulation
-# --------------------------------------
-find_or_build_package_with_tag(generic_manipulation OFF)
-
-IF(NOT USE_ONLY_OPEN_SOURCE)
-        # --------------------------------------
-        # Compile iit-bigman-ros-pkg
-        # --------------------------------------
-        find_or_build_package_with_tag(iit-bigman-ros-pkg ON)
-        
-        # --------------------------------------
-        # Compile walking
-        # --------------------------------------
-        find_or_build_package_with_tag(walking OFF)
-        
-        # --------------------------------------
-        # Compile drc_valve
-        # --------------------------------------
-        find_or_build_package_with_tag(drc_valve OFF)
-
-        # --------------------------------------
-        # Compile drc_raise
-        # --------------------------------------
-        find_or_build_package_with_tag(drc_raise OFF)
-
-	# --------------------------------------
-        # Compile drc_door
-        # --------------------------------------
-        find_or_build_package_with_tag(drc_door OFF)
-
-        # --------------------------------------
-        # Compile arms_ik
-        # --------------------------------------
-        find_or_build_package_with_tag(arms_ik OFF)
-
-        # --------------------------------------
-        # Compile multicontact_planning
-        # --------------------------------------
-        find_or_build_package_with_tag(multicontact_planning OFF)
-
-        # --------------------------------------
-        # Compile footstep_perception
-        # --------------------------------------
-        find_or_build_package_with_tag(footstep_perception OFF)
-
-        # --------------------------------------
-        # Compile drcsim
-        # --------------------------------------
-        find_or_build_package_with_tag(drcsim OFF)
-
-        # --------------------------------------
-        # Compile sensors-description
-        # --------------------------------------
-        find_or_build_package_with_tag(sensors-description OFF)
-
-        # --------------------------------------
-        # Compile locomanipulation
-        # --------------------------------------
-        set(SUPERBUILD_locomanipulation OFF CACHE BOOL "Flag to compile locomanipulation")
-        IF(SUPERBUILD_locomanipulation)
-            find_or_build_package(locomanipulation)
-            find_or_build_package(locoman_utils)
-	    find_or_build_package(locoman_service_1)
-	    find_or_build_package(locoman_service_2)
-        ENDIF(SUPERBUILD_locomanipulation)
-
-        # --------------------------------------
-        # Compile yw_module
-        # --------------------------------------
-        find_or_build_package_with_tag(yw_module OFF)
-
-	# --------------------------------------
-	# cemtralized_manipulation
-	# --------------------------------------
-	find_or_build_package_with_tag(centralized_manipulation OFF)
-
-
-ENDIF(NOT USE_ONLY_OPEN_SOURCE)
+IF(CENTAURO_EU)
+       include(${CMAKE_CURRENT_SOURCE_DIR}/projects/centauro/CMakeLists.txt)
+ENDIF(CENTAURO_EU)
 
 # --------------------------------------
 # Compile related COGIMON packages
