@@ -66,9 +66,9 @@ find_or_build_package_with_tag(testQPsolvers OFF)
 find_or_build_package_with_tag(srdfdom_advr OFF)
 
 # --------------------------------------
-# Compile xbotcoremodel - OFF by default
+# Compile XBotCoreModel - OFF by default
 # --------------------------------------
-find_or_build_package_with_tag(xbotcoremodel OFF)
+find_or_build_package_with_tag(XBotCoreModel OFF)
 
 # --------------------------------------
 # Compile trajectory_utils - OFF by default
