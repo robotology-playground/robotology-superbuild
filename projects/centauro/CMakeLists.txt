@@ -17,4 +17,8 @@ find_or_build_package_with_tag(srdfdom_advr OFF)
 # ---------------------
 find_or_build_package_with_tag(XBotCoreModel OFF)
 
+# --------------------------
+# Compile centauro-simulator
+# --------------------------
+find_or_build_package_with_tag(centauro-simulator OFF)
 
