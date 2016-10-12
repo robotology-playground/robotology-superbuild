@@ -27,3 +27,11 @@ find_or_build_package_with_tag(centauro-simulator OFF)
 # ------------------
 find_or_build_package_with_tag(sharedlibpp OFF)
 
+# -------------------------
+# Compile RobotInterfaceROS
+# -------------------------
+find_or_build_package_with_tag(RobotInterfaceROS OFF)
+
+
+
+
