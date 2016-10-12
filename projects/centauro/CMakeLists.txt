@@ -22,3 +22,8 @@ find_or_build_package_with_tag(XBotCoreModel OFF)
 # --------------------------
 find_or_build_package_with_tag(centauro-simulator OFF)
 
+# ------------------
+# Compile sharedlibpp
+# ------------------
+find_or_build_package_with_tag(sharedlibpp OFF)
+
