@@ -120,6 +120,11 @@ IF(USE_WALKMAN_DEMOS_PROJECTS)
     find_or_build_package(upper_body_control)
 ENDIF(USE_WALKMAN_DEMOS_PROJECTS)
 
+# --------------------------------------
+# Compile ReactiveWalk
+# --------------------------------------
+find_or_build_package_with_tag(ReactiveWalk OFF)
+
 set_package_properties(Git PROPERTIES TYPE RUNTIME)
 set_package_properties(Subversion PROPERTIES TYPE RUNTIME)
 set_package_properties(PkgConfig PROPERTIES TYPE RUNTIME)
