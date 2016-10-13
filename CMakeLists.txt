@@ -116,6 +116,7 @@ IF(USE_WALKMAN_DEMOS_PROJECTS)
     find_or_build_package(gaze_control)
     find_or_build_package(pilot_interface)
     find_or_build_package(network)
+    find_or_build_package(yarp_ros_joint_state_publisher)
     find_or_build_package(upper_body_control)
 ENDIF(USE_WALKMAN_DEMOS_PROJECTS)
 
