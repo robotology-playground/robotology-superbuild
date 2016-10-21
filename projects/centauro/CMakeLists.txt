@@ -32,6 +32,11 @@ find_or_build_package_with_tag(sharedlibpp OFF)
 # -------------------------
 find_or_build_package_with_tag(RobotInterfaceROS OFF)
 
+# ------------
+# Compile rbdl
+# ------------
+find_or_build_package_with_tag(rbdl OFF)
+
 # -------------------------
 # Compile ModelInterfaceRBDL
 # -------------------------
