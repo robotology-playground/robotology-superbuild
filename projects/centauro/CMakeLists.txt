@@ -32,6 +32,11 @@ find_or_build_package_with_tag(sharedlibpp OFF)
 # -------------------------
 find_or_build_package_with_tag(RobotInterfaceROS OFF)
 
+# -------------------------
+# Compile RobotInterfaceDUMMY
+# -------------------------
+find_or_build_package_with_tag(RobotInterfaceDUMMY OFF)
+
 # ------------
 # Compile rbdl
 # ------------
