@@ -3,6 +3,7 @@ include(YCMEPHelper)
 include(FindOrBuildPackage)
 
 find_or_build_package(YARP QUIET)
+find_or_build_package(XBotInterface QUIET)
 
 ycm_ep_helper(  RobotInterfaceYARP
                 TYPE GIT
@@ -11,4 +12,5 @@ ycm_ep_helper(  RobotInterfaceYARP
                 TAG master
                 COMPONENT external
                 DEPENDS YARP
+			XBotInterface
             )

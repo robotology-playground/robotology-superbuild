@@ -1,6 +1,9 @@
-# RobotInterfaceROS
+# RobotInterfaceRBDL
 include(YCMEPHelper)
 include(FindOrBuildPackage)
+
+find_or_build_package(rbdl QUIET)
+find_or_build_package(XBotInterface QUIET)
 
 ycm_ep_helper(  ModelInterfaceRBDL
                 TYPE GIT
@@ -8,4 +11,6 @@ ycm_ep_helper(  ModelInterfaceRBDL
                 REPOSITORY advr_humanoids/modelinterfacerbdl.git
                 TAG master
                 COMPONENT external
+		DEPENDS rbdl
+			XBotInterface
              )
