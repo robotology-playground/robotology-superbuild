@@ -15,4 +15,14 @@ find_or_build_package_with_tag(athletic OFF)
 # --------------------------------------
 find_or_build_package_with_tag(generic_manipulation OFF)
 
+# --------------------------------------
+# basic_ik
+# --------------------------------------
+find_or_build_package_with_tag(basic_ik OFF)
+
+# --------------------------------------
+# Compile drc_valve
+# --------------------------------------
+find_or_build_package_with_tag(drc_valve OFF)
+
 

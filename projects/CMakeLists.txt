@@ -170,11 +170,6 @@ ENDIF(SUPERBUILD_robotran_predictor)
 find_or_build_package_with_tag(supervisor OFF)
 
 # --------------------------------------
-# basic_ik
-# --------------------------------------
-find_or_build_package_with_tag(basic_ik OFF)
-
-# --------------------------------------
 # Compile ReactiveWalk
 # --------------------------------------
 find_or_build_package_with_tag(ReactiveWalk OFF)
@@ -190,11 +185,6 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
         # --------------------------------------
         find_or_build_package_with_tag(walking OFF)
         
-        # --------------------------------------
-        # Compile drc_valve
-        # --------------------------------------
-        find_or_build_package_with_tag(drc_valve OFF)
-
         # --------------------------------------
         # Compile drc_raise
         # --------------------------------------
