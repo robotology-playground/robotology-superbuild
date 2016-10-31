@@ -115,16 +115,6 @@ find_or_build_package_with_tag(vigir_pluginlib_msgs OFF)
 # --------------------------------------
 find_or_build_package_with_tag(vigir_pluginlib_manager OFF)
 
-# --------------------------------------
-# Compile centralized_inverse_kinematics
-# --------------------------------------
-find_or_build_package_with_tag(centralized_inverse_kinematics OFF)
-
-# --------------------------------------
-# Compile athletic - OFF by default
-# --------------------------------------
-find_or_build_package_with_tag(athletic OFF)
-
 # ---------------------
 # Compile ft_publisher
 # ---------------------
@@ -185,9 +175,9 @@ find_or_build_package_with_tag(supervisor OFF)
 find_or_build_package_with_tag(basic_ik OFF)
 
 # --------------------------------------
-# generic_manipulation
+# Compile ReactiveWalk
 # --------------------------------------
-find_or_build_package_with_tag(generic_manipulation OFF)
+find_or_build_package_with_tag(ReactiveWalk OFF)
 
 IF(NOT USE_ONLY_OPEN_SOURCE)
         # --------------------------------------

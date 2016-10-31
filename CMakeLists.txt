@@ -68,6 +68,8 @@ set(USE_WALKMAN_DEMOS_PROJECTS OFF CACHE BOOL "Enable the download and usages of
 set(CENTAURO_EU OFF CACHE BOOL "Enable the download and usages of repos related to the CENTAURO project")
 # COGIMON EU Project 
 set(COGIMON_EU OFF CACHE BOOL "Enable the download and usages of repos related to the CoGiMon project")
+# DEPRECATED packages 
+set(DEPRECATED_PACKAGES OFF CACHE BOOL "Enable the download and usages of repos from all the projects that are considered as DEPRECATED and not longer maintained")
 
 IF(NOT USE_ONLY_OPEN_SOURCE)
 	# set ssh connection with gitlab using rsa keys.
@@ -120,10 +122,9 @@ IF(USE_WALKMAN_DEMOS_PROJECTS)
     find_or_build_package(upper_body_control)
 ENDIF(USE_WALKMAN_DEMOS_PROJECTS)
 
-# --------------------------------------
-# Compile ReactiveWalk
-# --------------------------------------
-find_or_build_package_with_tag(ReactiveWalk OFF)
+IF(DEPRECATED_PACKAGES)
+       include(${CMAKE_CURRENT_SOURCE_DIR}/projects/DEPRECATED/CMakeLists.txt)
+ENDIF(DEPRECATED_PACKAGES)
 
 set_package_properties(Git PROPERTIES TYPE RUNTIME)
 set_package_properties(Subversion PROPERTIES TYPE RUNTIME)
