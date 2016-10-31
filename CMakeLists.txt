@@ -62,14 +62,14 @@ set(USE_ONLY_OPEN_SOURCE ON CACHE BOOL "Only the open-source repo will be cloned
 set(USE_CORE_PACKAGES OFF CACHE BOOL "CORE packages for robotology-superbuild")
 # Tokyo University HYDRA OFF by default
 set(YNL_HYDRA_TOKYO_UNIVERSITY OFF CACHE BOOL "Enable the download and usages of repos from University of Tokyo YNL Lab")
-# Using Walk-Man Demos related projects OFF by default
-set(USE_WALKMAN_DEMOS_PROJECTS OFF CACHE BOOL "Enable the download and usages of repos related to the Walk-Man project demos")
 # CENTAURO EU Project 
 set(CENTAURO_EU OFF CACHE BOOL "Enable the download and usages of repos related to the CENTAURO project")
 # COGIMON EU Project 
 set(COGIMON_EU OFF CACHE BOOL "Enable the download and usages of repos related to the CoGiMon project")
 # DEPRECATED packages 
 set(DEPRECATED_PACKAGES OFF CACHE BOOL "Enable the download and usages of repos from all the projects that are considered as DEPRECATED and not longer maintained")
+# WALK-MAN EU Project 
+set(WALKMAN_EU OFF CACHE BOOL "Enable the download and usages of repos related to the WALK-MAN project")
 
 IF(NOT USE_ONLY_OPEN_SOURCE)
 	# set ssh connection with gitlab using rsa keys.
@@ -98,30 +98,22 @@ IF(COGIMON_EU)
 ENDIF(COGIMON_EU)
 
 # --------------------------------------
+# Compile related WALK-MAN packages
+# --------------------------------------
+IF(WALKMAN_EU)
+       include(${CMAKE_CURRENT_SOURCE_DIR}/projects/walkman/CMakeLists.txt)
+ENDIF(WALKMAN_EU)
+
+# --------------------------------------
 # Compile related TOKYO UNIVERSITY packages
 # --------------------------------------
 IF(YNL_HYDRA_TOKYO_UNIVERSITY)
 	include(${CMAKE_CURRENT_SOURCE_DIR}/projects/tokyo_university_ynl/CMakeLists.txt)
 ENDIF(YNL_HYDRA_TOKYO_UNIVERSITY)
 
-IF(USE_WALKMAN_DEMOS_PROJECTS)
-    find_or_build_package(drc_shared)
-    find_or_build_package(iit-bigman-ros-pkg)
-    find_or_build_package(locoman_utils)
-    find_or_build_package(arms_ik)
-    find_or_build_package(wholebody_ik)
-    find_or_build_package(multicontact_control)
-    find_or_build_package(multicontact_planning)
-    find_or_build_package(walking)
-    find_or_build_package(supervisor)
-    find_or_build_package(psearch_control_interface)
-    find_or_build_package(gaze_control)
-    find_or_build_package(pilot_interface)
-    find_or_build_package(network)
-    find_or_build_package(yarp_ros_joint_state_publisher)
-    find_or_build_package(upper_body_control)
-ENDIF(USE_WALKMAN_DEMOS_PROJECTS)
-
+# --------------------------------------
+# Compile DEPRECATED packages
+# --------------------------------------
 IF(DEPRECATED_PACKAGES)
        include(${CMAKE_CURRENT_SOURCE_DIR}/projects/DEPRECATED/CMakeLists.txt)
 ENDIF(DEPRECATED_PACKAGES)

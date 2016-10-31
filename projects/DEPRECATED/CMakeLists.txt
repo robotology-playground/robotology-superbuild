@@ -25,4 +25,18 @@ find_or_build_package_with_tag(basic_ik OFF)
 # --------------------------------------
 find_or_build_package_with_tag(drc_valve OFF)
 
+# --------------------------------------
+# Compile drc_raise
+# --------------------------------------
+find_or_build_package_with_tag(drc_raise OFF)
+
+# --------------------------------------
+# Compile drc_door
+# --------------------------------------
+find_or_build_package_with_tag(drc_door OFF)
+
+# --------------------------------------
+# Compile drc_plug
+# --------------------------------------
+find_or_build_package_with_tag(drc_plug OFF)
 

@@ -141,11 +141,6 @@ find_or_build_package_with_tag(trajectory_generator OFF)
 find_or_build_package_with_tag(drc_poses OFF)
 
 # --------------------------------------
-# Compile drc_plug
-# --------------------------------------
-find_or_build_package_with_tag(drc_plug OFF)
-
-# --------------------------------------
 # Compile pilot_interface
 # --------------------------------------
 find_or_build_package_with_tag(pilot_interface OFF)
@@ -185,16 +180,6 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
         # --------------------------------------
         find_or_build_package_with_tag(walking OFF)
         
-        # --------------------------------------
-        # Compile drc_raise
-        # --------------------------------------
-        find_or_build_package_with_tag(drc_raise OFF)
-
-        # --------------------------------------
-        # Compile drc_door
-        # --------------------------------------
-        find_or_build_package_with_tag(drc_door OFF)
-
         # --------------------------------------
         # Compile arms_ik
         # --------------------------------------
