@@ -24,7 +24,8 @@ set(robot_state_publisher_ext_TAG 90ffac07f)
 set(yarp_ros_joint_state_publisher_TAG 101ddfb3c)
 
 # XBotInterface
-set(XBotCoreModel_TAG alpha0.1.0)
-set(XBotInterface_TAG alpha0.1.0)
+set(srdfdom_advr_TAG alpha0.1.0)
+set(XBotCoreModel_TAG alpha0.1.1)
+set(XBotInterface_TAG alpha0.1.1)
 set(RobotInterfaceYARP_TAG alpha0.1.0)
 set(ModelInterfaceRBDL_TAG alpha0.1.0)
