@@ -7,5 +7,6 @@ ycm_ep_helper(  rbdl
                 STYLE BITBUCKET
                 REPOSITORY rbdl/rbdl
                 TAG default
+		CMAKE_CACHE_ARGS -DRBDL_BUILD_ADDON_URDFREADER:BOOL=ON
                 COMPONENT external
             )
