@@ -13,5 +13,5 @@ ycm_ep_helper(  upper_body_control
                 REPOSITORY CentroEPiaggio/upper_body_control.git
                 TAG master
                 COMPONENT robots
-                DEPENDS drc_shared idynutils GYM
+                DEPENDS drc_shared idynutils GYM XBotCoreModel XBotInterface RobotInterfaceYARP ModelInterfaceRBDL
             )

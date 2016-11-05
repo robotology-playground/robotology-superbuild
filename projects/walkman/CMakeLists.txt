@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 2.8.12)
 
+set(YCM_GIT_GITLAB_ADVRCLOUD_BASE_ADDRESS "ssh://git@gitlab.advrcloud.iit.it/" CACHE STRING "Address to use for ADVR cloud Gitlab git repositories" FORCE)
+
 # Using Walk-Man Demos related projects OFF by default
 set(USE_WALKMAN_DEMOS_PROJECTS OFF CACHE BOOL "Enable the download and usages of repos related to the Walk-Man project demos")
 
@@ -19,5 +21,6 @@ IF(USE_WALKMAN_DEMOS_PROJECTS)
     find_or_build_package(network)
     find_or_build_package(yarp_ros_joint_state_publisher)
     find_or_build_package(upper_body_control)
+    find_or_build_package(ModelInterfaceRBDL)
 ENDIF(USE_WALKMAN_DEMOS_PROJECTS)
 
