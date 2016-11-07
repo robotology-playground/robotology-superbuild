@@ -1,13 +1,15 @@
-# vigir_footstep_planning_msgs
+# vigir_terrain_classifier
 include(YCMEPHelper)
 include(FindOrBuildPackage)
 
 find_package(catkin QUIET)
 find_package(roscpp QUIET)
-ycm_ep_helper(  vigir_footstep_planning_msgs
+find_package(vigir_generic_params QUIET)
+
+ycm_ep_helper ( vigir_terrain_classifier
                 TYPE GIT
                 STYLE GITHUB
-                REPOSITORY team-vigir/vigir_footstep_planning_msgs.git
+                REPOSITORY ADVRHumanoids/vigir_terrain_classifier.git
                 TAG master
                 COMPONENT vigir
-            )
+                )
