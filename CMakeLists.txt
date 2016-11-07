@@ -68,6 +68,8 @@ set(CENTAURO_EU OFF CACHE BOOL "Enable the download and usages of repos related 
 set(COGIMON_EU OFF CACHE BOOL "Enable the download and usages of repos related to the CoGiMon project")
 # DEPRECATED packages 
 set(DEPRECATED_PACKAGES OFF CACHE BOOL "Enable the download and usages of repos from all the projects that are considered as DEPRECATED and not longer maintained")
+# VIGIR Project 
+set(VIGIR OFF CACHE BOOL "Enable the download and usages of repos related to vigir robot team")
 # WALK-MAN EU Project 
 set(WALKMAN_EU OFF CACHE BOOL "Enable the download and usages of repos related to the WALK-MAN project")
 
@@ -96,6 +98,14 @@ ENDIF(CENTAURO_EU)
 IF(COGIMON_EU)
        include(${CMAKE_CURRENT_SOURCE_DIR}/projects/cogimon/CMakeLists.txt)
 ENDIF(COGIMON_EU)
+
+# --------------------------------------
+# Compile related VIGIR packages
+# --------------------------------------
+IF(VIGIR)
+       include(${CMAKE_CURRENT_SOURCE_DIR}/projects/vigir/CMakeLists.txt)
+ENDIF(VIGIR)
+
 
 # --------------------------------------
 # Compile related WALK-MAN packages
