@@ -13,5 +13,5 @@ ycm_ep_helper(  multicontact_control
                 REPOSITORY CentroEPiaggio/multicontact_control.git
                 TAG master
                 COMPONENT robots
-                DEPENDS drc_shared idynutils GYM
+                DEPENDS drc_shared idynutils GYM wholebody_ik
             )

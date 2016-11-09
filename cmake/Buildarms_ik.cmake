@@ -15,4 +15,5 @@ ycm_ep_helper(  arms_ik
                 COMPONENT robots
                 DEPENDS drc_shared
 			locoman_utils
+			trajectory_generator
             )
