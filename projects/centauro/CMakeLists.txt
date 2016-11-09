@@ -55,8 +55,4 @@ find_or_build_package_with_tag(YARP OFF)
 # --------------------------
 find_or_build_package_with_tag(RobotInterfaceYARP OFF)
 
-# ----------------
-# Compile bprinter
-# ----------------
-find_or_build_package_with_tag(bprinter OFF)
 
