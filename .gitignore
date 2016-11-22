@@ -2,6 +2,7 @@
 /orocos_ws/
 /external/
 /ros_messages/
+/configs/
 /robots/
 /documentation/
 /templates/
