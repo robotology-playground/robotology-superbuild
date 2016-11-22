@@ -67,4 +67,9 @@ find_or_build_package_with_tag(rtt-gazebo-lwr4plus-sim OFF)
 # --------------------------------------
 find_or_build_package_with_tag(orocos_ros_joint_state_publisher OFF)
 
+# --------------------------------------
+# Compile rtt_coman
+# --------------------------------------
+find_or_build_package_with_tag(rtt_coman OFF)
+
 

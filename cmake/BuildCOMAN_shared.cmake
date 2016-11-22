@@ -8,9 +8,9 @@ endif()
 
 ycm_ep_helper(  COMAN_shared
                 TYPE GIT
-                STYLE GITLAB_ROBOTOLOGY
-                REPOSITORY walkman-drc/coman_shared.git
-                TAG emergency
-                COMPONENT external
+                STYLE GITLAB_ADVRCLOUD
+                REPOSITORY amargan/coman_shared.git
+                TAG amargan
+                COMPONENT robots
                 DEPENDS YamlCpp
             )
