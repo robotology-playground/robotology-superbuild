@@ -53,8 +53,6 @@ include(YCMBootstrap)
 include(FindOrBuildPackage)
 include(YCMEPHelper)
 
-message("++++++++++++++++++++++${YCM_MODULE_PATH}")
-
 #set(USE_SYSTEM_YARP OFF CACHE BOOL "Initial cache")
 #set(USE_SYSTEM_KDL_CODYCO OFF CACHE BOOL "Initial cache")
 #set(USE_SYSTEM_IDYNTREE OFF CACHE BOOL "Initial cache")
