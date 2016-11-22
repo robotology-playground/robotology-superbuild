@@ -29,11 +29,6 @@ find_or_build_package_with_tag(sharedlibpp OFF)
 find_or_build_package_with_tag(RobotInterfaceROS OFF)
 
 # -------------------------
-# Compile rbdl
-# ------------
-find_or_build_package_with_tag(rbdl OFF)
-
-# -------------------------
 # Compile ModelInterfaceRBDL
 # -------------------------
 find_or_build_package_with_tag(ModelInterfaceRBDL OFF)
@@ -43,14 +38,13 @@ find_or_build_package_with_tag(ModelInterfaceRBDL OFF)
 # -------------------------
 find_or_build_package_with_tag(RobotInterfaceDUMMY OFF)
 
-# ------------
-# Compile YARP
-# ------------
-find_or_build_package_with_tag(YARP OFF)
-
 # --------------------------
 # Compile RobotInterfaceYARP
 # --------------------------
 find_or_build_package_with_tag(RobotInterfaceYARP OFF)
 
+# -------------------
+# Compile ADVR_shared
+# -------------------
+find_or_build_package_with_tag(ADVR_shared OFF)
 
