@@ -67,8 +67,12 @@ set(USE_ONLY_OPEN_SOURCE ON CACHE BOOL "Only the open-source repo will be cloned
 set(USE_CORE_PACKAGES OFF CACHE BOOL "CORE packages for robotology-superbuild")
 # Tokyo University HYDRA OFF by default
 set(YNL_HYDRA_TOKYO_UNIVERSITY OFF CACHE BOOL "Enable the download and usages of repos from University of Tokyo YNL Lab")
+# ADVR-CORE packages
+set(ADVR-CORE OFF CACHE BOOL "Enable the download and usages of ADVR core packages")
 # CENTAURO EU Project 
 set(CENTAURO_EU OFF CACHE BOOL "Enable the download and usages of repos related to the CENTAURO project")
+# WALKMAN-ROS
+set(WALKMAN-ROS OFF CACHE BOOL "Enable the download and usages of walkman-ros packages")
 # COGIMON EU Project 
 set(COGIMON_EU OFF CACHE BOOL "Enable the download and usages of repos related to the CoGiMon project")
 # DEPRECATED packages 
@@ -89,11 +93,25 @@ IF(USE_CORE_PACKAGES)
 ENDIF(USE_CORE_PACKAGES)
 
 # --------------------------------------
+# Compile related ADVR-CORE packages
+# --------------------------------------
+IF(ADVR-CORE)
+       include(${CMAKE_CURRENT_SOURCE_DIR}/projects/advr-core/CMakeLists.txt)
+ENDIF(ADVR-CORE)
+
+# --------------------------------------
 # Compile related CENTAURO packages
 # --------------------------------------
 IF(CENTAURO_EU)
        add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/projects/centauro)
 ENDIF(CENTAURO_EU)
+
+# --------------------------------------
+# Compile related WALKMAN-ROS packages
+# --------------------------------------
+IF(WALKMAN-ROS)
+       include(${CMAKE_CURRENT_SOURCE_DIR}/projects/walkman-ros/CMakeLists.txt)
+ENDIF(WALKMAN-ROS)
 
 # --------------------------------------
 # Compile related COGIMON packages
