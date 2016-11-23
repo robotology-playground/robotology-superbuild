@@ -17,7 +17,6 @@ find_or_build_package_with_tag(srdfdom_advr OFF)
 # ---------------------
 find_or_build_package_with_tag(XBotCoreModel OFF)
 
-
 # ------------------
 # Compile sharedlibpp
 # ------------------
@@ -48,3 +47,14 @@ find_or_build_package_with_tag(RobotInterfaceYARP OFF)
 # -------------------
 find_or_build_package_with_tag(ADVR_shared OFF)
 
+# ----------------
+# Compile XBotCore
+# ----------------
+set(SUPERBUILD_XBotCore OFF CACHE BOOL "Flag to compile XBotCore and his dependencies: XBotCoreModel, soem_advr, walkman-master-ecat, ec_master_test")
+if(SUPERBUILD_XBotCore)
+	find_or_build_package(XBotCore)
+	find_or_build_package(XBotCoreModel)
+	find_or_build_package(soem_advr)
+	find_or_build_package(walkman-master-ecat)
+	find_or_build_package(ec_master_test)
+endif(SUPERBUILD_XBotCore)
