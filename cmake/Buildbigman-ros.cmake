@@ -7,6 +7,6 @@ ycm_ep_helper(  bigman-ros
                 TYPE GIT
                 STYLE GITLAB
                 REPOSITORY xinsongyan/bigman.git
-                TAG master
+                TAG yangwei_test
                 COMPONENT external
              )
