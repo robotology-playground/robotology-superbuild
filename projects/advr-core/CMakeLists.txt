@@ -58,3 +58,8 @@ if(SUPERBUILD_XBotCore)
 	find_or_build_package(walkman-master-ecat)
 	find_or_build_package(ec_master_test)
 endif(SUPERBUILD_XBotCore)
+
+# ------------------------
+# Compile GazeboXBotPlugin
+# ------------------------
+find_or_build_package_with_tag(GazeboXBotPlugin OFF)
