@@ -32,15 +32,21 @@ find_or_build_package_with_tag(RobotInterfaceROS OFF)
 # -------------------------
 find_or_build_package_with_tag(ModelInterfaceRBDL OFF)
 
-# -------------------------
-# Compile ModelInterfaceDUMMY
-# -------------------------
+# ---------------------------
+# Compile RobotInterfaceDUMMY
+# ---------------------------
 find_or_build_package_with_tag(RobotInterfaceDUMMY OFF)
 
 # --------------------------
 # Compile RobotInterfaceYARP
 # --------------------------
 find_or_build_package_with_tag(RobotInterfaceYARP OFF)
+
+# ----------------------------
+# Compile RobotInterfaceXBotRT
+# ----------------------------
+find_or_build_package_with_tag(RobotInterfaceXBotRT OFF)
+
 
 # -------------------
 # Compile ADVR_shared
