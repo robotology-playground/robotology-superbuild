@@ -1,6 +1,11 @@
 cmake_minimum_required(VERSION 2.8.12)
 project(robotology NONE)
 
+if(COMMAND cmake_policy)
+    cmake_policy(SET CMP0054 OLD)
+    cmake_policy(SET CMP0064 OLD)
+endif(COMMAND cmake_policy)
+
 macro(find_or_build_package_with_tag project_name enabled)
        set(SUPERBUILD_${project_name} ${enabled} CACHE BOOL "Flag to compile ${project_name}")
        IF(SUPERBUILD_${project_name})
@@ -62,8 +67,12 @@ set(USE_ONLY_OPEN_SOURCE ON CACHE BOOL "Only the open-source repo will be cloned
 set(USE_CORE_PACKAGES OFF CACHE BOOL "CORE packages for robotology-superbuild")
 # Tokyo University HYDRA OFF by default
 set(YNL_HYDRA_TOKYO_UNIVERSITY OFF CACHE BOOL "Enable the download and usages of repos from University of Tokyo YNL Lab")
+# ADVR-CORE packages
+set(ADVR-CORE OFF CACHE BOOL "Enable the download and usages of ADVR core packages")
 # CENTAURO EU Project 
 set(CENTAURO_EU OFF CACHE BOOL "Enable the download and usages of repos related to the CENTAURO project")
+# WALKMAN-ROS
+set(WALKMAN-ROS OFF CACHE BOOL "Enable the download and usages of walkman-ros packages")
 # COGIMON EU Project 
 set(COGIMON_EU OFF CACHE BOOL "Enable the download and usages of repos related to the CoGiMon project")
 # DEPRECATED packages 
@@ -80,42 +89,56 @@ ENDIF(NOT USE_ONLY_OPEN_SOURCE)
 # Compile set of CORE packages
 # --------------------------------------
 IF(USE_CORE_PACKAGES)
-	include(${CMAKE_CURRENT_SOURCE_DIR}/projects/CMakeLists.txt)
+	add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/projects)
 ENDIF(USE_CORE_PACKAGES)
+
+# --------------------------------------
+# Compile related ADVR-CORE packages
+# --------------------------------------
+IF(ADVR-CORE)
+       include(${CMAKE_CURRENT_SOURCE_DIR}/projects/advr-core/CMakeLists.txt)
+ENDIF(ADVR-CORE)
 
 # --------------------------------------
 # Compile related CENTAURO packages
 # --------------------------------------
 IF(CENTAURO_EU)
-       include(${CMAKE_CURRENT_SOURCE_DIR}/projects/centauro/CMakeLists.txt)
+       add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/projects/centauro)
 ENDIF(CENTAURO_EU)
+
+# --------------------------------------
+# Compile related WALKMAN-ROS packages
+# --------------------------------------
+IF(WALKMAN-ROS)
+       include(${CMAKE_CURRENT_SOURCE_DIR}/projects/walkman-ros/CMakeLists.txt)
+ENDIF(WALKMAN-ROS)
 
 # --------------------------------------
 # Compile related COGIMON packages
 # --------------------------------------
 IF(COGIMON_EU)
-       include(${CMAKE_CURRENT_SOURCE_DIR}/projects/cogimon/CMakeLists.txt)
+       add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/projects/cogimon)
 ENDIF(COGIMON_EU)
 
 # --------------------------------------
 # Compile related WALK-MAN packages
 # --------------------------------------
 IF(WALKMAN_EU)
-       include(${CMAKE_CURRENT_SOURCE_DIR}/projects/walkman/CMakeLists.txt)
+       add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/projects/walkman)
 ENDIF(WALKMAN_EU)
 
 # --------------------------------------
 # Compile related TOKYO UNIVERSITY packages
 # --------------------------------------
 IF(YNL_HYDRA_TOKYO_UNIVERSITY)
-	include(${CMAKE_CURRENT_SOURCE_DIR}/projects/tokyo_university_ynl/CMakeLists.txt)
+	add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/projects/tokyo_university_ynl)
 ENDIF(YNL_HYDRA_TOKYO_UNIVERSITY)
 
 # --------------------------------------
 # Compile DEPRECATED packages
 # --------------------------------------
 IF(DEPRECATED_PACKAGES)
-       include(${CMAKE_CURRENT_SOURCE_DIR}/projects/DEPRECATED/CMakeLists.txt)
+       add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/projects/DEPRECATED)
 ENDIF(DEPRECATED_PACKAGES)
 
 set_package_properties(Git PROPERTIES TYPE RUNTIME)
