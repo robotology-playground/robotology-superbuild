@@ -68,7 +68,7 @@ set(USE_CORE_PACKAGES OFF CACHE BOOL "CORE packages for robotology-superbuild")
 # Tokyo University HYDRA OFF by default
 set(YNL_HYDRA_TOKYO_UNIVERSITY OFF CACHE BOOL "Enable the download and usages of repos from University of Tokyo YNL Lab")
 # ADVR-CORE packages
-set(ADVR-CORE OFF CACHE BOOL "Enable the download and usages of ADVR core packages")
+set(ADVR-CORE ON CACHE BOOL "Enable the download and usages of ADVR core packages")
 # CENTAURO EU Project 
 set(CENTAURO_EU OFF CACHE BOOL "Enable the download and usages of repos related to the CENTAURO project")
 # WALKMAN-ROS
