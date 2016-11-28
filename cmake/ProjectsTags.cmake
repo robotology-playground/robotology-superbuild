@@ -1,5 +1,5 @@
 #superbuild
-set(YCM_TAG b327e753)
+set(YCM_TAG v0.2.2)
 
 # Superbuild CORE: put the SHA1 of the commit or the TAG, not the branch name.
 set(YARP_TAG ecd0040)
@@ -23,8 +23,13 @@ set(robot_state_publisher_ext_TAG 90ffac07f)
 set(yarp_ros_joint_state_publisher_TAG 101ddfb3c)
 
 # XBotInterface
-set(srdfdom_advr_TAG alpha0.1.0)
-set(XBotCoreModel_TAG alpha0.1.1)
-set(XBotInterface_TAG alpha0.1.1)
-set(RobotInterfaceYARP_TAG alpha0.1.0)
-set(ModelInterfaceRBDL_TAG alpha0.1.0)
+set(sharedlibpp_TAG beta2.0.0)
+set(srdfdom_advr_TAG beta2.0.0)
+set(XBotCoreModel_TAG beta2.0.0)
+set(XBotInterface_TAG beta2.0.0)
+set(RobotInterfaceYARP_TAG beta2.0.0)
+set(RobotInterfaceROS_TAG beta2.0.0)
+set(RobotInterfaceROS_CustomCmndInterface_TAG beta2.0.0)
+set(RobotInterfaceROS_CommandArray_TAG beta2.0.0)
+set(ModelInterfaceRBDL_TAG beta2.0.0)
+set(RobotInterfaceDUMMY_TAG beta2.0.0)

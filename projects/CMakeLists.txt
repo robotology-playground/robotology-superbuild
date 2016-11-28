@@ -47,28 +47,9 @@ find_or_build_package_with_tag(robot_state_publisher_ext OFF)
 find_or_build_package_with_tag(simple_homing OFF)
 
 # --------------------------------------
-# Compile not open-source robot related packages
-# --------------------------------------
-IF(NOT USE_ONLY_OPEN_SOURCE)
-	IF("${ROBOTOLOGY_PROFILE}" STREQUAL "ROBOT")
-	
-	ENDIF("${ROBOTOLOGY_PROFILE}" STREQUAL "ROBOT")
-ENDIF(NOT USE_ONLY_OPEN_SOURCE)
-
-# --------------------------------------
 # Compile testQPsolvers - OFF by default
 # --------------------------------------
 find_or_build_package_with_tag(testQPsolvers OFF)
-
-# --------------------------------------
-# Compile srdfdom_advr - OFF by default
-# --------------------------------------
-find_or_build_package_with_tag(srdfdom_advr OFF)
-
-# --------------------------------------
-# Compile XBotCoreModel - OFF by default
-# --------------------------------------
-find_or_build_package_with_tag(XBotCoreModel OFF)
 
 # --------------------------------------
 # Compile trajectory_utils - OFF by default
@@ -159,11 +140,6 @@ ENDIF(SUPERBUILD_robotran_predictor)
 # --------------------------------------
 find_or_build_package_with_tag(supervisor OFF)
 
-# --------------------------------------
-# Compile ReactiveWalk
-# --------------------------------------
-find_or_build_package_with_tag(ReactiveWalk OFF)
-
 IF(NOT USE_ONLY_OPEN_SOURCE)
         # --------------------------------------
         # Compile iit-bigman-ros-pkg
@@ -220,12 +196,9 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
     	# centralized_manipulation
     	# --------------------------------------
     	find_or_build_package_with_tag(centralized_manipulation OFF)
-
-	# --------------------------------------
-        # RobotInterfaceYARP
-        # --------------------------------------
-        find_or_build_package_with_tag(RobotInterfaceYARP OFF)
-
-
+       # --------------------------------------
+       # COMAN_shared
+       # --------------------------------------
+       find_or_build_package_with_tag(COMAN_shared OFF)
 
 ENDIF(NOT USE_ONLY_OPEN_SOURCE)

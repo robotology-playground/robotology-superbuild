@@ -24,3 +24,12 @@ IF(USE_WALKMAN_DEMOS_PROJECTS)
     find_or_build_package(ModelInterfaceRBDL)
 ENDIF(USE_WALKMAN_DEMOS_PROJECTS)
 
+# --------------------------------------
+# Compile ReactiveWalk
+# --------------------------------------
+find_or_build_package_with_tag(ReactiveWalk OFF)
+
+# --------------------------------------
+# Compile reactive_walking
+# --------------------------------------
+find_or_build_package_with_tag(reactive_walking OFF)
