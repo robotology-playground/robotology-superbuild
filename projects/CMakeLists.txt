@@ -52,16 +52,6 @@ find_or_build_package_with_tag(simple_homing OFF)
 find_or_build_package_with_tag(testQPsolvers OFF)
 
 # --------------------------------------
-# Compile srdfdom_advr - OFF by default
-# --------------------------------------
-find_or_build_package_with_tag(srdfdom_advr OFF)
-
-# --------------------------------------
-# Compile XBotCoreModel - OFF by default
-# --------------------------------------
-find_or_build_package_with_tag(XBotCoreModel OFF)
-
-# --------------------------------------
 # Compile trajectory_utils - OFF by default
 # --------------------------------------
 find_or_build_package_with_tag(trajectory_utils OFF)
@@ -211,12 +201,6 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
     	# centralized_manipulation
     	# --------------------------------------
     	find_or_build_package_with_tag(centralized_manipulation OFF)
-
-	# --------------------------------------
-       # RobotInterfaceYARP
-       # --------------------------------------
-       find_or_build_package_with_tag(RobotInterfaceYARP OFF)
-
        # --------------------------------------
        # COMAN_shared
        # --------------------------------------
