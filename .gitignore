@@ -9,5 +9,6 @@
 /examples/
 /drc/
 /build/
+/vigir/
 *.orig
 *~

@@ -1,4 +1,4 @@
-# vigir_pluginlib
+# vigir_terrain_classifier
 include(YCMEPHelper)
 include(FindOrBuildPackage)
 
@@ -6,12 +6,10 @@ find_package(catkin QUIET)
 find_package(roscpp QUIET)
 find_package(vigir_generic_params QUIET)
 
-ycm_ep_helper ( vigir_pluginlib
+ycm_ep_helper ( vigir_terrain_classifier
                 TYPE GIT
                 STYLE GITHUB
-                REPOSITORY ADVRHumanoids/vigir_pluginlib.git
+                REPOSITORY ADVRHumanoids/vigir_terrain_classifier.git
                 TAG master
                 COMPONENT vigir
-		DEPENDS vigir_generic_params
-              )
-
+                )
