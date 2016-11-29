@@ -8,7 +8,7 @@ find_package(roscpp QUIET)
 ycm_ep_helper(  vigir_generic_params
                 TYPE GIT
                 STYLE GITHUB
-                REPOSITORY team-vigir/vigir_generic_params.git
+                REPOSITORY ADVRHumanoids/vigir_generic_params.git
                 TAG master
-                COMPONENT external
+                COMPONENT vigir
             )

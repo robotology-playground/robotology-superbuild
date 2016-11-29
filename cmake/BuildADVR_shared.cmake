@@ -8,5 +8,6 @@ ycm_ep_helper(  ADVR_shared
                 REPOSITORY advr_humanoids/advr_shared.git
                 TAG master
                 COMPONENT configs
+		BUILD_COMMAND ""
 		INSTALL_COMMAND ""
             )

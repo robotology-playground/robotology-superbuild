@@ -52,16 +52,6 @@ find_or_build_package_with_tag(simple_homing OFF)
 find_or_build_package_with_tag(testQPsolvers OFF)
 
 # --------------------------------------
-# Compile srdfdom_advr - OFF by default
-# --------------------------------------
-find_or_build_package_with_tag(srdfdom_advr OFF)
-
-# --------------------------------------
-# Compile XBotCoreModel - OFF by default
-# --------------------------------------
-find_or_build_package_with_tag(XBotCoreModel OFF)
-
-# --------------------------------------
 # Compile trajectory_utils - OFF by default
 # --------------------------------------
 find_or_build_package_with_tag(trajectory_utils OFF)
@@ -69,42 +59,37 @@ find_or_build_package_with_tag(trajectory_utils OFF)
 # --------------------------------------
 # Compile vigir_footstep_planning_msgs - OFF by default
 # --------------------------------------
-find_or_build_package_with_tag(vigir_footstep_planning_msgs OFF)
+#find_or_build_package_with_tag(vigir_footstep_planning_msgs OFF)
 
 # --------------------------------------
 # Compile vigir_footstep_planning_core - OFF by default
 # --------------------------------------
-find_or_build_package_with_tag(vigir_footstep_planning_core OFF)
+#find_or_build_package_with_tag(vigir_footstep_planning_core OFF)
 
 # --------------------------------------
 # Compile vigir_footstep_planning_basics - OFF by default
 # --------------------------------------
-find_or_build_package_with_tag(vigir_footstep_planning_basics OFF)
+#find_or_build_package_with_tag(vigir_footstep_planning_basics OFF)
 
 # --------------------------------------
 # Compile vigir_footstep_planning_lib - OFF by default
 # --------------------------------------
-find_or_build_package_with_tag(vigir_footstep_planning_lib OFF)
+#find_or_build_package_with_tag(vigir_footstep_planning_lib OFF)
 
 # --------------------------------------
 # Compile vigir_generic_params - OFF by default
 # --------------------------------------
-find_or_build_package_with_tag(vigir_generic_params OFF)
-
-# --------------------------------------
-# Compile vigir_pluginlib - OFF by default
-# --------------------------------------
-find_or_build_package_with_tag(vigir_pluginlib OFF)
+#find_or_build_package_with_tag(vigir_generic_params OFF)
 
 # --------------------------------------
 # Compile vigir_pluginlib_msgs - OFF by default
 # --------------------------------------
-find_or_build_package_with_tag(vigir_pluginlib_msgs OFF)
+#find_or_build_package_with_tag(vigir_pluginlib_msgs OFF)
 
 # --------------------------------------
 # Compile vigir_pluginlib_manager - OFF by default
 # --------------------------------------
-find_or_build_package_with_tag(vigir_pluginlib_manager OFF)
+#find_or_build_package_with_tag(vigir_pluginlib_manager OFF)
 
 # ---------------------
 # Compile ft_publisher
@@ -211,12 +196,6 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
     	# centralized_manipulation
     	# --------------------------------------
     	find_or_build_package_with_tag(centralized_manipulation OFF)
-
-	# --------------------------------------
-       # RobotInterfaceYARP
-       # --------------------------------------
-       find_or_build_package_with_tag(RobotInterfaceYARP OFF)
-
        # --------------------------------------
        # COMAN_shared
        # --------------------------------------
