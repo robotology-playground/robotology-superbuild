@@ -107,6 +107,27 @@ if [ -d $ROBOTOLOGY_ROOT/external/robot_state_publisher_ext ]; then
 	pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/external/robot_state_publisher_ext
 fi
 
+# vigir stuffs
+if [ -d $ROBOTOLOGY_ROOT/vigir/vigir_footstep_planning_basics ]; then
+        pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/vigir/vigir_footstep_planning_basics
+fi
+if [ -d $ROBOTOLOGY_ROOT/vigir/vigir_footstep_planning_core ]; then
+        pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/vigir/vigir_footstep_planning_core
+fi
+if [ -d $ROBOTOLOGY_ROOT/vigir/vigir_footstep_planning_msgs ]; then
+        pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/vigir/vigir_footstep_planning_msgs
+fi
+if [ -d $ROBOTOLOGY_ROOT/vigir/vigir_generic_params ]; then
+        pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/vigir/vigir_generic_params
+fi
+if [ -d $ROBOTOLOGY_ROOT/vigir/vigir_pluginlib ]; then
+        pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/vigir/vigir_pluginlib
+fi
+if [ -d $ROBOTOLOGY_ROOT/vigir/vigir_terrain_classifier ]; then
+        pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/vigir/vigir_terrain_classifier
+fi
+
+
 export COMAN_ROOT=${ROBOTOLOGY_ROOT}/build/install
 
 # TODO add a switch here to select correct robot
