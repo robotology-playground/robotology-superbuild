@@ -9,7 +9,7 @@ cd orocos_ws
 catkin_init_workspace
 
 export GIT_SSL_NO_VERIFY=1
-git clone --recursive -b toolchain-2.7 http://git.gitorious.org/orocos-toolchain/orocos_toolchain.git src
+git clone --recursive -b toolchain-2.7 https://github.com/orocos-toolchain/orocos_toolchain.git src
 cd src
 git clone https://github.com/orocos/rtt_geometry.git
 cd src
