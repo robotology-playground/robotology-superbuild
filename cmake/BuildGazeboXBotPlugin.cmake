@@ -11,4 +11,5 @@ ycm_ep_helper(  GazeboXBotPlugin
                 TAG master
                 COMPONENT external
                 DEPENDS XBotCore
+                        XBotInterface
              )

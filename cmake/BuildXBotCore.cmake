@@ -17,4 +17,5 @@ ycm_ep_helper(  XBotCore
 			soem_advr
 			walkman-master-ecat
 			ec_master_test
+                        XBotInterface
             )
