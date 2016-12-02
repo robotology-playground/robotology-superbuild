@@ -9,7 +9,7 @@ ycm_ep_helper(  XCM
                 TYPE GIT
                 STYLE GITLAB_ADVRCLOUD
                 REPOSITORY advr_humanoids/XCM.git
-                TAG master
+                TAG centauro_bonn_review_2016
                 COMPONENT external
 		DEPENDS XBotInterface
 			XBotCore
