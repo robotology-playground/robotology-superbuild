@@ -11,7 +11,7 @@ ycm_ep_helper(  XBotCore
                 TYPE GIT
                 STYLE GITLAB_ROBOTOLOGY
                 REPOSITORY luca.muratore/xbotcore.git
-                TAG devel
+                TAG centauro_bonn_review_2016
                 COMPONENT external
                 DEPENDS XBotCoreModel
 			soem_advr

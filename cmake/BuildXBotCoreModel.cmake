@@ -8,7 +8,7 @@ ycm_ep_helper(  XBotCoreModel
                 TYPE GIT
                 STYLE GITLAB_ROBOTOLOGY
                 REPOSITORY walkman-drc/xbotcoremodel.git
-                TAG master
+                TAG centauro_bonn_review_2016
                 COMPONENT external
                 DEPENDS srdfdom_advr
             )

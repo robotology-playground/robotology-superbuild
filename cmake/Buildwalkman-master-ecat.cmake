@@ -8,7 +8,7 @@ ycm_ep_helper(  walkman-master-ecat
                 TYPE GIT
                 STYLE GITLAB_ADVRCLOUD
                 REPOSITORY amargan/walkman-master-ecat.git
-                TAG walkman_stable
+                TAG centauro_bonn_review_2016
                 COMPONENT external
 		DEPENDS soem_advr
              )

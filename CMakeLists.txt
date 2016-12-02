@@ -1,11 +1,6 @@
 cmake_minimum_required(VERSION 2.8.12)
 project(robotology NONE)
 
-if(COMMAND cmake_policy)
-    cmake_policy(SET CMP0054 OLD)
-    cmake_policy(SET CMP0064 OLD)
-endif(COMMAND cmake_policy)
-
 macro(find_or_build_package_with_tag project_name enabled)
        set(SUPERBUILD_${project_name} ${enabled} CACHE BOOL "Flag to compile ${project_name}")
        IF(SUPERBUILD_${project_name})
