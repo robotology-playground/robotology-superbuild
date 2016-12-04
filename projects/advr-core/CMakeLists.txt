@@ -62,7 +62,7 @@ find_or_build_package_with_tag(ADVR_shared OFF)
 # ----------------
 set(SUPERBUILD_XBotCore OFF CACHE BOOL "Flag to compile XBotCore and his dependencies: XBotCoreModel, soem_advr, walkman-master-ecat, ec_master_test")
 if(SUPERBUILD_XBotCore)
-	find_or_build_package(XBotCore)
+find_or_build_package(XBotCore)
 	find_or_build_package(XBotCoreModel)
 	find_or_build_package(soem_advr)
 	find_or_build_package(walkman-master-ecat)
@@ -73,3 +73,8 @@ endif(SUPERBUILD_XBotCore)
 # Compile GazeboXBotPlugin
 # ------------------------
 find_or_build_package_with_tag(GazeboXBotPlugin OFF)
+
+# ----------------
+# Compile XBotCore-interfaces
+# ----------------
+find_or_build_package_with_tag(XBotCore-interfaces OFF)
