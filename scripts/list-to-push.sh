@@ -6,6 +6,7 @@ actual_dir=`pwd`
 
 robots_dir="$ROBOTOLOGY_ROOT/robots"
 external_dir="$ROBOTOLOGY_ROOT/external"
+configs_dir="$ROBOTOLOGY_ROOT/configs"
 
 echo -e "\nROBOTOLOGY superbuild repo where you have to push your commits: \n"
 suffix="/"
@@ -31,6 +32,18 @@ do
     fi
     cd ..
 done
+
+# configs dir for each
+for f in `cd $configs_dir && ls -d -- */`
+do  
+    cd "$configs_dir/$f"
+	 if  git status | grep -q push ;  then 
+        to_print=${f%$suffix} 
+        echo -e "\e[32m$to_print \e[39m"        
+    fi
+    cd ..
+done
+
 
 # come back to the dir where the script was executed
 cd $actual_dir

@@ -6,6 +6,7 @@ actual_dir=`pwd`
 
 robots_dir="$ROBOTOLOGY_ROOT/robots"
 external_dir="$ROBOTOLOGY_ROOT/external"
+configs_dir="$ROBOTOLOGY_ROOT/configs"
 
 #robots dir for each
 for f in `cd $robots_dir && ls -d -- */`
@@ -22,6 +23,15 @@ do
     echo -e "\e[31m$f \e[39m --> `git status` \n"
     cd ..
 done
+
+#configs dir for each
+for f in `cd $configs_dir && ls -d -- */`
+do  
+    cd "$configs_dir/$f"
+    echo -e "\e[31m$f \e[39m --> `git status` \n"
+    cd ..
+done
+
 
 # come back to the dir where the script was executed
 cd $actual_dir
