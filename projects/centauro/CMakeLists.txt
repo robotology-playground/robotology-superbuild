@@ -13,4 +13,9 @@ find_or_build_package_with_tag(centauro-simulator OFF)
 # -------------------------
 find_or_build_package_with_tag(RobotInterfaceROS_CustomCmndInterface OFF)
 
+# -------------------------
+# Compile centauro_bonn_review_plugins
+# -------------------------
+find_or_build_package_with_tag(centauro_bonn_review_plugins OFF)
+
 
