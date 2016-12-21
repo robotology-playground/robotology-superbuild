@@ -3,6 +3,7 @@ include(YCMEPHelper)
 include(FindOrBuildPackage)
 
 find_or_build_package(XBotCore-interfaces QUIET)
+find_or_build_package(sharedlibpp QUIET)
 
 ycm_ep_helper(  GazeboXBotPlugin
                 TYPE GIT
@@ -11,4 +12,5 @@ ycm_ep_helper(  GazeboXBotPlugin
                 TAG master
                 COMPONENT external
                 DEPENDS XBotCore-interfaces
+			sharedlibpp
              )
