@@ -1,11 +1,11 @@
-# soem_advr
+# centauro-udp
 include(YCMEPHelper)
 include(FindOrBuildPackage)
 
-ycm_ep_helper(  soem_advr
+ycm_ep_helper(  CentauroUDP
                 TYPE GIT
                 STYLE GITLAB_ADVRCLOUD
-                REPOSITORY amargan/soem_advr.git
-                TAG centauro_bonn_review_2016
+                REPOSITORY centauro-simulator-control/centauro-udp.git
+                TAG master
                 COMPONENT external
              )

@@ -1,11 +1,11 @@
-# soem_advr
+# KeyboardControl
 include(YCMEPHelper)
 include(FindOrBuildPackage)
 
-ycm_ep_helper(  soem_advr
+ycm_ep_helper(  KeyboardControl
                 TYPE GIT
                 STYLE GITLAB_ADVRCLOUD
-                REPOSITORY amargan/soem_advr.git
-                TAG centauro_bonn_review_2016
+		REPOSITORY centauro-simulator-control/keyboardcontrol.git
+                TAG master
                 COMPONENT external
              )

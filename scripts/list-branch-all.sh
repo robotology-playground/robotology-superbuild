@@ -6,8 +6,9 @@ actual_dir=`pwd`
 
 robots_dir="$ROBOTOLOGY_ROOT/robots"
 external_dir="$ROBOTOLOGY_ROOT/external"
+configs_dir="$ROBOTOLOGY_ROOT/configs"
 
-#drc dir for each
+# robots dir for each
 for f in `cd $robots_dir && ls -d -- */`
 do
     cd "$robots_dir/$f"
@@ -15,13 +16,22 @@ do
     cd ..
 done
 
-#external dir for each
+# external dir for each
 for f in `cd $external_dir && ls -d -- */`
 do  
     cd "$external_dir/$f"
     echo -e "\e[31m$f \e[39m --> `git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'` "
     cd ..
 done
+
+# configs dir for each
+for f in `cd $configs_dir && ls -d -- */`
+do  
+    cd "$configs_dir/$f"
+    echo -e "\e[31m$f \e[39m --> `git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'` "
+    cd ..
+done
+
 
 # come back to the dir where the script was executed
 cd $actual_dir
