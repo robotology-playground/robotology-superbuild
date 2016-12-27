@@ -28,3 +28,7 @@ find_or_build_package_with_tag(centauro_bonn_review_plugins OFF)
 # -------------------------
 find_or_build_package_with_tag(KeyboardControl OFF)
 
+# -------------------------
+# Compile KeyboardControl
+# -------------------------
+find_or_build_package_with_tag(InverseKinematics OFF)
