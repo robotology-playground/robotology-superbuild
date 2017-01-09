@@ -1,15 +1,20 @@
 cmake_minimum_required(VERSION 2.8.12)
 
 # ----------------
-# Superbuild CORE 
+# DRC CORE 
 # ----------------
-find_or_build_package(YARP)
-find_or_build_package(iDynTree)
-find_or_build_package(idynutils)
-find_or_build_package(OpenSoT)
-find_or_build_package(GYM)
-find_or_build_package(paramHelp)
-find_or_build_package(GazeboYARPPlugins)
+set(SUPERBUILD_DRC_CORE OFF CACHE BOOL "Flag to compile DRC_CORE repos: YARP, iDynTree, idynutils, OpenSoT, GYM, paramHelp")
+IF(SUPERBUILD_DRC_CORE)
+	find_or_build_package(YARP)
+	find_or_build_package(iDynTree)
+	find_or_build_package(idynutils)
+	find_or_build_package(OpenSoT)
+	find_or_build_package(GYM)
+	find_or_build_package(paramHelp)
+ENDIF(SUPERBUILD_DRC_CORE)
+
+
+
 
 #------
 # Model
@@ -18,6 +23,8 @@ find_or_build_package(GazeboYARPPlugins)
 find_or_build_package_with_tag(IITComanRosPkg OFF)
 # Compile iCub model
 find_or_build_package_with_tag(icub_gazebo OFF)
+# Compile Gazebo YARP plugin
+find_or_build_package_with_tag(GazeboYARPPlugins OFF)
 
 # -------------------------------------------
 # Compile CAPSULE for the collision avoidance
