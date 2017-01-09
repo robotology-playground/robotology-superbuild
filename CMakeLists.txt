@@ -64,7 +64,7 @@ include(YCMEPHelper)
 # Only open source repo by default
 set(USE_ONLY_OPEN_SOURCE ON CACHE BOOL "Only the open-source repo will be cloned and built")
 # CORE packages
-set(USE_CORE_PACKAGES OFF CACHE BOOL "CORE packages for robotology-superbuild")
+set(USE_DRC_CORE_PACKAGES OFF CACHE BOOL "CORE packages for robotology-superbuild")
 # Tokyo University HYDRA OFF by default
 set(YNL_HYDRA_TOKYO_UNIVERSITY OFF CACHE BOOL "Enable the download and usages of repos from University of Tokyo YNL Lab")
 # ADVR-CORE packages
@@ -90,9 +90,9 @@ ENDIF(NOT USE_ONLY_OPEN_SOURCE)
 # --------------------------------------
 # Compile set of CORE packages
 # --------------------------------------
-IF(USE_CORE_PACKAGES)
+IF(USE_DRC_CORE_PACKAGES)
 	add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/projects)
-ENDIF(USE_CORE_PACKAGES)
+ENDIF(USE_DRC_CORE_PACKAGES)
 
 # --------------------------------------
 # Compile related ADVR-CORE packages
