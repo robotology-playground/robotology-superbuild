@@ -160,7 +160,7 @@ else
               git subversion doxygen graphviz  \
               libace-dev libgsl0-dev libgtkmm-2.4-dev libgoocanvasmm-2.0-dev libsqlite3-dev swig  \
               icub-common libdc1394-22-dev libgtkdataboxmm-0.9-0 libgtkdataboxmm-dev libtinyxml2-dev \
-              libeigen3-dev libyaml-cpp-dev libxml2-dev libccd-dev \
+              libeigen3-dev coinor-libipopt-dev libyaml-cpp-dev libxml2-dev libccd-dev \
               ros-kinetic-desktop ros-kinetic-srdfdom ros-kinetic-cmake-modules ros-kinetic-rviz-visual-tools \
               ros-kinetic-openni2-* ros-kinetic-moveit-* ros-kinetic-joy* ros-kinetic-octomap* \
               ros-kinetic-urdfdom-py ros-kinetic-libg2o ros-kinetic-pcl-ros  ros-kinetic-pcl-conversions \
