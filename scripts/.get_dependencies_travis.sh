@@ -36,17 +36,16 @@ else
             sudo apt-get install -y --force-yes --fix-missing \
               build-essential cmake cmake-curses-gui  \
               git subversion doxygen graphviz  \
-              libace-dev libgsl0-dev libgtkmm-2.4-dev libgoocanvasmm-dev libsqlite3-dev python3.2-dev swig  \
-              icub-common libtinyxml2-dev \
+              libace-dev libgsl0-dev libgtkmm-2.4-dev libgoocanvasmm-dev libsqlite3-dev swig  \
+              icub-common \
               libeigen3-dev libxml2-dev  \
               ros-hydro-roscpp-core ros-hydro-srdfdom ros-hydro-cmake-modules  \
               ros-hydro-openni2-*  ros-hydro-moveit-full ros-hydro-joy*  \
               ros-hydro-urdfdom-py ros-hydro-libg2o ros-hydro-octomap* \
-              python3-sip-dev python-numpy python-scipy python-matplotlib python-pandas  \
+              python-numpy python-scipy python-matplotlib python-pandas  \
               libarmadillo-dev libblas-dev liblapack-dev  libflann-dev\
               libpng++-dev python-bs4 libsctp-dev mercurial ros-hydro-rviz-imu-plugin libhighgui2.4 \
-              libopensplice64 cppcheck \
-              python3-empy python3-setuptools python3-nose python3-pip python3-vcstool
+              libopensplice64 cppcheck
             sudo apt-get install -y --force-yes --fix-missing ros-hydro-ros-base
 
             git config --global http.sslverify false
@@ -74,6 +73,9 @@ else
             
         # 14.04
         elif [ "`lsb_release -cs`" = 'trusty' ]; then
+            sudo add-apt-repository ppa:v-launchpad-jochen-sprickerhof-de/pcl -y
+            sudo apt-get update
+
             sudo apt-get install -y --force-yes --fix-missing build-essential cmake cmake-curses-gui  \
               git subversion doxygen graphviz  \
               libace-dev libgsl0-dev libgtkmm-2.4-dev libgoocanvasmm-dev libsqlite3-dev swig  \
@@ -89,26 +91,13 @@ else
               libopensplice64 cppcheck \
               python3-empy python3-setuptools python3-nose python3-pip python3-vcstool \
               protobuf-compiler
-            string="`uname -r`"
-            word="enomai"
-            if [ "${string#*$word}" != "$string" ]; then #if xenomai kernel...
-                if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" = 'ROBOT' ]; then
-                    #No uncommon packages for xenomai
-                echo
-            fi
-        else
-            if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" = 'ROBOT' ]; then
-                sudo apt-get install -y --force-yes --fix-missing linux-lowlatency
-            fi
-        fi
 
-        if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" != 'ROBOT' ]; then
-	    # clean up previous versions
-	    sudo apt-get remove gazebo*
-	    # install gazebo 5 and the dev
-            sudo apt-get install -y --force-yes --fix-missing ros-indigo-gazebo5-* libgazebo5-dev
-        fi
-
+              if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" != 'ROBOT' ]; then
+                # clean up previous versions
+                sudo apt-get remove gazebo*
+                # install gazebo 5 and the dev
+                sudo apt-get install -y --force-yes --fix-missing ros-indigo-gazebo5-* libgazebo5-dev
+              fi
       else
 
          echo
