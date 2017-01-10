@@ -96,6 +96,9 @@ else
                 # install gazebo 5 and the dev
                 sudo apt-get install -y --force-yes --fix-missing ros-indigo-gazebo5-* libgazebo5-dev
               fi
+
+              sudo pip3 install -U setuptools
+              source get_python_transitions.sh
       else
 
          echo
@@ -110,8 +113,6 @@ else
     sudo apt-get install -y --force-yes --fix-missing python-pip python-pygraphviz
     sudo pip install svg.path 
 
-    . $ROBOTOLOGY_ROOT/robotology-setup.bash
-
     # A fresh installaion of ROS would require the following two commands
     # NOT TESTED, please verify!
     sudo rosdep init
@@ -125,12 +126,7 @@ else
         # call the script to insall PCL from sources commented
         # sh $ROBOTOLOGY_ROOT/scripts/admin/get_pcl.sh
 
-	sudo apt-get install libpcl*
-    fi
-
-    if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" = 'ROBOT' ]; then
-        #Install IMU drivers
-        sh $ROBOTOLOGY_ROOT/scripts/admin/get_Ftd2xx.sh
+        sudo apt-get install libpcl*
     fi
 
     if [ -d $ROBOTOLOGY_ROOT/build/ ]; then
@@ -140,9 +136,5 @@ else
     fi
 
     sudo ldconfig
-
-    sudo pip3 install -U setuptools
-
-    source get_python_transitions.sh
 
 fi
