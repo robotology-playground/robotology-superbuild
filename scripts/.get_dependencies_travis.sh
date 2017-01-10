@@ -27,8 +27,6 @@ else
         sudo apt-get remove --purge -y `dpkg-query -W --showformat='${binary:Package} \\ \n' | grep ca-certificates-icub-org`
         #sudo apt-get remove --purge ca-certificates-icub-org
         sudo apt-get update
-
-        sudo apt-get dist-upgrade -y --force-yes --fix-missing
         
         # 12.04
         if [ "`lsb_release -cs`" = 'precise' ]; then
