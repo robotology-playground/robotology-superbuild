@@ -16,7 +16,6 @@ else
     # we are on Ubutntu
     if [ "`lsb_release -is`" = 'Ubuntu' ]; then
         sudo apt-add-repository ppa:robotology/ppa -y
-        sudo add-apt-repository ppa:v-launchpad-jochen-sprickerhof-de/pcl -y
         sudo sh -c 'echo "deb http://www.icub.org/ubuntu `lsb_release -cs` contrib/science" > /etc/apt/sources.list.d/icub.list'
         sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-latest.list'
         wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
@@ -37,14 +36,19 @@ else
               libace-dev libgsl0-dev libgtkmm-2.4-dev libgoocanvasmm-dev libsqlite3-dev swig  \
               icub-common libtinyxml-dev \
               libeigen3-dev libxml2-dev  \
-              ros-hydro-roscpp-core ros-hydro-srdfdom ros-hydro-cmake-modules  \
-              ros-hydro-openni2-*  ros-hydro-moveit-full ros-hydro-joy*  \
-              ros-hydro-urdfdom-py ros-hydro-libg2o ros-hydro-octomap* \
+              ros-hydro-roscpp-core ros-hydro-srdfdom ros-hydro-urdfdom ros-hydro-urdfdom-py ros-hydro-cmake-modules \
+              ros-hydro-moveit-core ros-hydro-octomap-ros ros-hydro-tf-conversions ros-hydro-pcl-ros ros-hydro-rviz
+            sudo apt-get install -y --force-yes --fix missing \
               python-numpy python-scipy python-matplotlib python-pandas  \
               libarmadillo-dev libblas-dev liblapack-dev  libflann-dev\
-              libpng++-dev python-bs4 libsctp-dev mercurial ros-hydro-rviz-imu-plugin libhighgui2.4 \
+              libpng++-dev python-bs4 libsctp-dev mercurial libhighgui2.4 \
               libopensplice64 cppcheck
             sudo apt-get install -y --force-yes --fix-missing ros-hydro-ros-base
+            sudo apt-get install -y --force-yes --fix-missing ros-hydro-moveit-full
+            sudo apt-get install -y --force-yes --fix-missing \
+              ros-hydro-openni2-*  ros-hydro-joy*  \
+              ros-hydro-libg2o ros-hydro-octomap* ros-hydro-rviz-imu-plugin
+            
 
             git config --global http.sslverify false
             
