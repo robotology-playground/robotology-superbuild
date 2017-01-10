@@ -12,7 +12,7 @@ set(GYM_TAG cc2e32787)
 set(fcl_TAG fcl-0.5)
 
 # CAPSULE: put the SHA1 of the commit or the TAG, not the branch name.
-set(roboptim-core_TAG v3.1)
+#set(roboptim-core_TAG v3.1)
 set(roboptim-core-plugin-ipopt_TAG v3.1)
 set(roboptim-capsule_TAG v3.1)
 
