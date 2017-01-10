@@ -44,11 +44,6 @@ else
               libpng++-dev python-bs4 libsctp-dev mercurial libhighgui2.4 \
               libopensplice64 cppcheck
             sudo apt-get install -y --force-yes --fix-missing ros-hydro-ros-base
-            sudo apt-get install -y --force-yes --fix-missing ros-hydro-moveit-full
-            sudo apt-get install -y --force-yes --fix-missing \
-              ros-hydro-openni2-*  ros-hydro-joy*  \
-              ros-hydro-libg2o ros-hydro-octomap* ros-hydro-rviz-imu-plugin
-            
 
             git config --global http.sslverify false
             
