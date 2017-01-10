@@ -12,9 +12,9 @@ set(GYM_TAG cc2e32787)
 set(fcl_TAG fcl-0.5)
 
 # CAPSULE: put the SHA1 of the commit or the TAG, not the branch name.
-#set(roboptim-core_TAG v3.1)
-set(roboptim-core-plugin-ipopt_TAG v3.1)
-set(roboptim-capsule_TAG v3.1)
+set(roboptim-core_TAG 9f95efdc6) # need masters on 16.04
+set(roboptim-core-plugin-ipopt_TAG 2e04f69e497) # needs master on 16.04
+set(roboptim-capsule_TAG 7ac32a4c) # needs master on 16.04
 
 # utils: put the SHA1 of the commit or the TAG, not the branch name.
 #set(drc_shared_TAG 8289f4fed1dd)
