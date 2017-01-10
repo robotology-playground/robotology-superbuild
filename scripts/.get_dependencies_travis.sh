@@ -37,7 +37,7 @@ else
               icub-common libtinyxml-dev \
               libeigen3-dev libxml2-dev  \
               ros-hydro-roscpp-core ros-hydro-srdfdom ros-hydro-urdfdom ros-hydro-urdfdom-py ros-hydro-cmake-modules \
-              ros-hydro-moveit-core ros-hydro-octomap-ros ros-hydro-tf-conversions ros-hydro-pcl-ros ros-hydro-rviz
+              ros-hydro-moveit-core ros-hydro-octomap-ros ros-hydro-tf-conversions ros-hydro-pcl-ros ros-hydro-interactive-markers
             sudo apt-get install -y --force-yes --fix missing \
               python-numpy python-scipy python-matplotlib python-pandas  \
               libarmadillo-dev libblas-dev liblapack-dev  libflann-dev\
