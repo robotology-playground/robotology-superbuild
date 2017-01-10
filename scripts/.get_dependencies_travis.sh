@@ -49,6 +49,7 @@ else
             
             #call the script to install yaml-cpp from sources
             sh $ROBOTOLOGY_ROOT/scripts/admin/get_yaml-cpp.sh
+            sh $ROBOTOLOGY_ROOT/scripts/admin/.get_pcl_travis.sh
             
         # 13.04
         elif [ "`lsb_release -cs`" = 'raring' ]; then
