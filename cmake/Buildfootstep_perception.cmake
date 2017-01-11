@@ -2,7 +2,7 @@
 include(YCMEPHelper)
 include(FindOrBuildPackage)
 
-find_package(catkin QUIET)
+#find_package(catkin QUIET)
 find_package(roscpp QUIET)
 find_package(rospy QUIET)
 find_package(Boost COMPONENTS system QUIET)
