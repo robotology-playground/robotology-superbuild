@@ -1,4 +1,8 @@
 cmake_minimum_required(VERSION 2.8.12)
+if(COMMAND cmake_policy)
+    cmake_policy(SET CMP0064 OLD)
+endif(COMMAND cmake_policy)
+
 project(robotology NONE)
 
 macro(find_or_build_package_with_tag project_name enabled)
