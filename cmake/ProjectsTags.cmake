@@ -37,3 +37,8 @@ set(XCM_TAG 37819cdbd)
 set(GazeboXBotPlugin_TAG 1723ed79b98b)
 set(RobotInterfaceXBotRT_TAG edb6a022c4) 
 set(ADVR_shared_TAG 7a2eb8393)
+set(XBotCore-interfaces_TAG bb4f80027b5a63f18efcae94)
+
+
+
+
