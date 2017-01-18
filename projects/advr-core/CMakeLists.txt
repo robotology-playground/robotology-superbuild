@@ -84,3 +84,9 @@ find_or_build_package_with_tag(GazeboXBotPlugin OFF)
 # Compile XBotCore-interfaces
 # ----------------
 find_or_build_package_with_tag(XBotCore-interfaces OFF)
+
+
+# ----------------
+# Compile OpenSoT
+# ----------------
+find_or_build_package_with_tag(OpenSoT OFF)
