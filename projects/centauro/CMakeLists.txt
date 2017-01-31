@@ -32,3 +32,8 @@ find_or_build_package_with_tag(KeyboardControl OFF)
 # Compile KeyboardControl
 # -------------------------
 find_or_build_package_with_tag(InverseKinematics OFF)
+
+# -------------------------
+# QPPVM_RT_plugin
+# -------------------------
+find_or_build_package_with_tag(QPPVM_RT_plugin OFF)

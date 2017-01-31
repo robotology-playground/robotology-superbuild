@@ -84,3 +84,13 @@ find_or_build_package_with_tag(GazeboXBotPlugin OFF)
 # Compile XBotCore-interfaces
 # ----------------
 find_or_build_package_with_tag(XBotCore-interfaces OFF)
+
+# ----------------
+# Compile EtherCAT_tools
+# ----------------
+find_or_build_package_with_tag(EtherCAT_tools OFF)
+
+# ----------------
+# Compile XBotYARP
+# ----------------
+find_or_build_package_with_tag(XBotYARP OFF)
