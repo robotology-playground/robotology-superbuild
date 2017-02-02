@@ -15,6 +15,9 @@ set(roboptim-core_TAG v3.1)
 set(roboptim-core-plugin-ipopt_TAG v3.1)
 set(roboptim-capsule_TAG v3.1)
 
+# old modules
+set(drc_door_TAG 89f229f51)
+
 # utils: put the SHA1 of the commit or the TAG, not the branch name.
 #set(drc_shared_TAG 8289f4fed1dd)
 
