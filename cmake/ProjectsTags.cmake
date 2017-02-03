@@ -17,6 +17,10 @@ set(roboptim-capsule_TAG v3.1)
 
 # old modules
 set(drc_door_TAG 89f229f51)
+set(arms_ik_TAG 5d83c506a1)
+set(locoman_service_1_TAG 572d134df5)
+set(locoman_service_2_TAG e810d67d9cb)
+set(locoman_utils_TAG 89cd9b83582a)
 
 # utils: put the SHA1 of the commit or the TAG, not the branch name.
 #set(drc_shared_TAG 8289f4fed1dd)
