@@ -11,4 +11,5 @@ ycm_ep_helper(  vigir_footstep_planning_basics
                 REPOSITORY ADVRHumanoids/vigir_footstep_planning_basics.git
                 TAG master
                 COMPONENT vigir
+                DEPEND vigir_pluginlib
             )

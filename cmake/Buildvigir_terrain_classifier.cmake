@@ -12,4 +12,7 @@ ycm_ep_helper ( vigir_terrain_classifier
                 REPOSITORY ADVRHumanoids/vigir_terrain_classifier.git
                 TAG master
                 COMPONENT vigir
+                DEPENDS vigir_footstep_planning_basics
+                        #vigir_footstep_planning_core
+                        vigir_footstep_planning_msgs
                 )
