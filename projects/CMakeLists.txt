@@ -11,6 +11,10 @@ IF(SUPERBUILD_DRC_CORE)
 	find_or_build_package(OpenSoT)
 	find_or_build_package(GYM)
 	find_or_build_package(paramHelp)
+
+	find_or_build_package(comanapp)
+	find_or_build_package(comaninterface)
+	find_or_build_package(comanmod)
 ENDIF(SUPERBUILD_DRC_CORE)
 
 
