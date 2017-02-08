@@ -15,6 +15,7 @@ IF(SUPERBUILD_DRC_CORE)
 	find_or_build_package(comanapp)
 	find_or_build_package(comaninterface)
 	find_or_build_package(comanmod)
+        find_or_build_package(coman_launch)
 ENDIF(SUPERBUILD_DRC_CORE)
 
 
@@ -211,5 +212,10 @@ IF(NOT USE_ONLY_OPEN_SOURCE)
        # COMAN_shared
        # --------------------------------------
        find_or_build_package_with_tag(COMAN_shared OFF)
+
+       # --------------------------------------
+       # walkman-drc_COMAN_shared
+       # --------------------------------------
+       find_or_build_package_with_tag(walkman-drc_COMAN_shared OFF)
 
 ENDIF(NOT USE_ONLY_OPEN_SOURCE)

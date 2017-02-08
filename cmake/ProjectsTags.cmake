@@ -10,6 +10,10 @@ set(idynutils_TAG bb1fff2)
 set(OpenSoT_TAG 1c294e5d)
 set(GYM_TAG 825a36ed7ae)
 
+set(comaninterface_TAG VVV15)
+set(comanapp_TAG VVV15)
+set(comanmod_TAG VVV15)
+
 # CAPSULE: put the SHA1 of the commit or the TAG, not the branch name.
 set(roboptim-core_TAG v3.1)
 set(roboptim-core-plugin-ipopt_TAG v3.1)
