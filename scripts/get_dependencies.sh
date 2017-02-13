@@ -189,7 +189,9 @@ else
       fi
     fi
 
-
+    # needed by XBOTCore logger
+    sudo apt-get install libmatio-dev
+    
     # needed by SoT demos
     sudo apt-get install -y --force-yes --fix-missing python-pip python-pygraphviz
     sudo pip install svg.path 
