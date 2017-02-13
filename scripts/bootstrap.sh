@@ -62,7 +62,21 @@ if [ -f /tmp/active_profile ]; then
 fi
 
 cd $ROBOTOLOGY_ROOT/build
-cmake .. -DYCM_EP_MAINTAINER_MODE=ON
+cmake .. -DYCM_EP_MAINTAINER_MODE=ON \
+-DADVR-CORE:BOOL=ON \
+-DCENTAURO_EU:BOOL=ON \
+-DUSE_ONLY_OPEN_SOURCE:BOOL=OFF \
+-DSUPERBUILD_ADVR_shared:BOOL=ON \
+-DSUPERBUILD_GazeboXBotPlugin:BOOL=ON \
+-DSUPERBUILD_RobotInterfaceXBotRT:BOOL=ON \
+-DSUPERBUILD_ModelInterfaceRBDL:BOOL=ON \
+-DSUPERBUILD_XBotCore-interfaces:BOOL=ON \
+-DSUPERBUILD_XBotCoreModel:BOOL=ON \
+-DSUPERBUILD_XBotInterface:BOOL=ON \
+-DSUPERBUILD_XCM:BOOL=ON \
+-DSUPERBUILD_sharedlibpp:BOOL=ON \
+-DSUPERBUILD_srdfdom_advr:BOOL=ON \
+-DSUPERBUILD_wbc_tde:BOOL=ON
 make update-all 
 make -ik; make;
 
