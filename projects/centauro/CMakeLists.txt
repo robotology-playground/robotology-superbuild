@@ -37,3 +37,8 @@ find_or_build_package_with_tag(InverseKinematics OFF)
 # QPPVM_RT_plugin
 # -------------------------
 find_or_build_package_with_tag(QPPVM_RT_plugin OFF)
+
+# -------------------------
+# wbc_tde
+# -------------------------
+find_or_build_package_with_tag(wbc_tde OFF)
