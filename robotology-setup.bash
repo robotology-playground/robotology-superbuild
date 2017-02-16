@@ -118,6 +118,10 @@ if [ -d ${ROBOTOLOGY_ROOT}/external/ros_orocos_joints_gui ]; then
        pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/external/ros_orocos_joints_gui/python
 fi
 
+if [ -d ${ROBOTOLOGY_ROOT}/robots/centauro-simulator ]; then
+       pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/robots/centauro-simulator
+fi
+
 # vigir stuffs
 if [ -d $ROBOTOLOGY_ROOT/vigir/vigir_footstep_planning_basics ]; then
         pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/vigir/vigir_footstep_planning_basics
