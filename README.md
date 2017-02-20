@@ -11,5 +11,5 @@ To download and compile the WBC-TDE èrpkect
 When following the installation instructions, instead of `cmake ..` run the automatic bootstrap script from the main superbuild folder:
 
 ```
-sh ./scripts/bootstrap.sh
+bash ./scripts/bootstrap.sh
 ```
