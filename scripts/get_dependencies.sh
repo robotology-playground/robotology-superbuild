@@ -238,6 +238,6 @@ else
 
     sudo pip install -U setuptools
 
-    source get_python_transitions.sh
+    source $ROBOTOLOGY_ROOT/scripts/get_python_transitions.sh
 
 fi
