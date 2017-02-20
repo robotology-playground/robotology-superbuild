@@ -2,7 +2,7 @@
 include(YCMEPHelper)
 include(FindOrBuildPackage)
 
-find_package(catkin QUIET)
+#find_package(catkin QUIET)
 find_package(roscpp QUIET)
 
 ycm_ep_helper(  vigir_footstep_planning_basics
@@ -11,4 +11,5 @@ ycm_ep_helper(  vigir_footstep_planning_basics
                 REPOSITORY ADVRHumanoids/vigir_footstep_planning_basics.git
                 TAG master
                 COMPONENT vigir
+                DEPEND vigir_pluginlib
             )

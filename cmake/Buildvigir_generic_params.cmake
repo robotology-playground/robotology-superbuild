@@ -2,7 +2,7 @@
 include(YCMEPHelper)
 include(FindOrBuildPackage)
 
-find_package(catkin QUIET)
+#find_package(catkin QUIET)
 find_package(roscpp QUIET)
 
 ycm_ep_helper(  vigir_generic_params

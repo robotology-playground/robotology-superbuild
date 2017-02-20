@@ -7,7 +7,6 @@ find_or_build_package(drc_shared QUIET)
 find_or_build_package(idynutils QUIET)
 find_or_build_package(GYM QUIET)
 find_or_build_package(trajectory_generator QUIET)
-find_or_build_package(walking QUIET)
 
 ycm_ep_helper(drc_door TYPE GIT
                         STYLE GITLAB_ROBOTOLOGY
@@ -19,5 +18,4 @@ ycm_ep_helper(drc_door TYPE GIT
                                 idynutils
                                 GYM
                                 trajectory_generator
-                                walking)
-
+				)
