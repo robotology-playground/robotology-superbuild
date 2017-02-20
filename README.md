@@ -8,9 +8,10 @@ Please take a look at the [wiki](https://github.com/robotology-playground/roboto
 _________________________________________________
 To download and compile the WBC-TDE èrpkect
 -----------------------------------
-When following the installation instructions, after cloning, you can install dependencies and then run the automatic bootstrap script from the main superbuild folder:
+When following the installation instructions, *after cloning* the project, you can check-out this branch, install dependencies and then run the automatic bootstrap script. From the main superbuild folder, run:
 
 ```
+git checkout wbc_tde
 bash ./scripts/get_dependencies.sh
 bash ./scripts/bootstrap.sh
 ```
