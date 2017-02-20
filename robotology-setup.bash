@@ -27,6 +27,14 @@ if [ -f /opt/ros/indigo/setup.bash ]; then
     source /opt/ros/indigo/setup.bash
 fi
 
+if [ -f /opt/ros/kinetic/setup.bash ]; then
+    source /opt/ros/kinetic/setup.bash
+fi
+
+if [ -f ${ROBOTOLOGY_ROOT}/external/moveit/install/setup.bash ]; then
+    source ${ROBOTOLOGY_ROOT}/external/moveit/install/setup.bash
+fi
+
 #orocos
 if [ -f ${ROBOTOLOGY_ROOT}/orocos_ws/install_isolated/setup.bash ]; then
        source ${ROBOTOLOGY_ROOT}/orocos_ws/install_isolated/setup.bash

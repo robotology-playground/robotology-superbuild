@@ -15,9 +15,9 @@ set(comanapp_TAG VVV15)
 set(comanmod_TAG VVV15)
 
 # CAPSULE: put the SHA1 of the commit or the TAG, not the branch name.
-set(roboptim-core_TAG v3.1)
-set(roboptim-core-plugin-ipopt_TAG v3.1)
-set(roboptim-capsule_TAG v3.1)
+set(roboptim-core_TAG 9f95efdc6) # need masters on 16.04
+set(roboptim-core-plugin-ipopt_TAG 2e04f69e497) # needs master on 16.04
+set(roboptim-capsule_TAG 7ac32a4c) # needs master on 16.04
 
 # old modules
 set(drc_door_TAG 89f229f51)
@@ -28,6 +28,7 @@ set(locoman_utils_TAG 89cd9b83582a)
 
 # utils: put the SHA1 of the commit or the TAG, not the branch name.
 #set(drc_shared_TAG 8289f4fed1dd)
+set(trajectory_generator_TAG 4bcf25603c)
 
 # ROS publisher: put the SHA1 of the commit or the TAG, not the branch name.
 set(robot_state_publisher_ext_TAG 90ffac07f)
