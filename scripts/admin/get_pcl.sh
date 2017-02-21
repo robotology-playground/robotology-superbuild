@@ -8,7 +8,7 @@ then
     mkdir -p $ROBOTOLOGY_ROOT/external/
     cd $ROBOTOLOGY_ROOT/external/
     #clone the pcl repo
-    git clone https://github.com/PointCloudLibrary/pcl.git -b pcl-1.7.1 --depth 1 PCL
+    git clone https://github.com/PointCloudLibrary/pcl.git -b pcl-1.8.0 --depth 1 PCL
 
     mkdir -p $ROBOTOLOGY_ROOT/external/PCL/build
     cd $ROBOTOLOGY_ROOT/external/PCL/build

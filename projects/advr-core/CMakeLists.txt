@@ -33,6 +33,11 @@ find_or_build_package_with_tag(RobotInterfaceROS OFF)
 # -------------------------
 find_or_build_package_with_tag(ModelInterfaceRBDL OFF)
 
+# -------------------------
+# Compile ModelInterfaceIDYNUTILS
+# -------------------------
+find_or_build_package_with_tag(ModelInterfaceIDYNUTILS OFF)
+
 # ---------------------------
 # Compile RobotInterfaceDUMMY
 # ---------------------------
