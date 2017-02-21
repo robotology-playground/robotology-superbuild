@@ -9,6 +9,7 @@ set(iDynTree_TAG f0346c1)
 set(idynutils_TAG bb1fff2)
 set(OpenSoT_TAG 1c294e5d)
 set(GYM_TAG 825a36ed7ae)
+set(fcl_TAG 54e9619bc2b)
 
 set(comaninterface_TAG VVV15)
 set(comanapp_TAG VVV15)
