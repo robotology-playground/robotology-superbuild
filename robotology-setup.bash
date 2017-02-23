@@ -31,6 +31,11 @@ if [ -f /opt/ros/kinetic/setup.bash ]; then
     source /opt/ros/kinetic/setup.bash
 fi
 
+# hack to fix rbdl compilation issues
+if [ ! -z $ROS_DISTRO ]; then
+    export CPATH=$CPATH:/opt/ros/$ROS_DISTRO/include
+fi
+
 if [ -f ${ROBOTOLOGY_ROOT}/external/moveit/install/setup.bash ]; then
     source ${ROBOTOLOGY_ROOT}/external/moveit/install/setup.bash
 fi

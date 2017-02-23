@@ -165,7 +165,7 @@ else
               ros-kinetic-openni2-* ros-kinetic-moveit-* ros-kinetic-joy* ros-kinetic-octomap* \
               ros-kinetic-urdfdom-py ros-kinetic-libg2o ros-kinetic-pcl-ros  ros-kinetic-pcl-conversions \
               ros-kinetic-laser-* ros-kinetic-ps3joy ros-kinetic-stereo-image-proc ros-kinetic-image-transport* \
-              liburdf-dev  ros-kinetic-kdl-parser-py ros-robot-dev ros-simulators-dev ros-simulators-python-dev \
+              liburdf-dev  ros-kinetic-kdl-parser-py \
               python3-sip-dev python-numpy python-scipy python-matplotlib python-pandas  \
               libarmadillo-dev libblas-dev liblapack-dev  libflann-dev libmumps-seq-dev \
               libpng++-dev python-bs4 libsctp-dev mercurial ros-kinetic-rviz-imu-plugin libhighgui2.4 \
@@ -173,12 +173,6 @@ else
               python3-empy python3-setuptools python3-nose python3-pip python3-vcstool \
               protobuf-compiler
             sudo apt install -y ros-kinetic-gazebo-* gazebo7 libgazebo7-dev
-            mkdir -p $ROBOTOLOGY_ROOT/build
-            cd $ROBOTOLOGY_ROOT/build
-            cmake ..
-            make fcl
-            sh $ROBOTOLOGY_ROOT/scripts/get_moveit_kinetic.sh
-            source $ROBOTOLOGY_ROOT/external/moveit/install/setup.bash
 
         else
 
