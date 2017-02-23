@@ -33,3 +33,5 @@ find_or_build_package_with_tag(ReactiveWalk OFF)
 # Compile reactive_walking
 # --------------------------------------
 find_or_build_package_with_tag(reactive_walking OFF)
+
+find_or_build_package_with_tag(FootPressureSensorPublisher OFF)
