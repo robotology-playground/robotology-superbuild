@@ -13,4 +13,5 @@ ycm_ep_helper(  XCM
                 COMPONENT external
 		DEPENDS XBotInterface
 			XBotCore-interfaces
+		CMAKE_CACHE_ARGS -DBUILD_examples:BOOL=ON
              )
