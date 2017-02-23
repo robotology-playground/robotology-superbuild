@@ -6,17 +6,30 @@ set(YARP_TAG ecd0040)
 set(paramHelp_TAG de9f652)
 set(GazeboYARPPlugins_TAG caf5b45a8)
 set(iDynTree_TAG f0346c1)
-set(idynutils_TAG bb1fff2)
-set(OpenSoT_TAG 1c294e5d)
+set(idynutils_TAG ba98bc36)
+set(OpenSoT_TAG ddd588cfd)
 set(GYM_TAG 825a36ed7ae)
+set(fcl_TAG 54e9619bc2b)
+
+set(comaninterface_TAG VVV15)
+set(comanapp_TAG VVV15)
+set(comanmod_TAG VVV15)
 
 # CAPSULE: put the SHA1 of the commit or the TAG, not the branch name.
-set(roboptim-core_TAG v3.1)
-set(roboptim-core-plugin-ipopt_TAG v3.1)
-set(roboptim-capsule_TAG v3.1)
+set(roboptim-core_TAG 9f95efdc6) # need masters on 16.04
+set(roboptim-core-plugin-ipopt_TAG 2e04f69e497) # needs master on 16.04
+set(roboptim-capsule_TAG 7ac32a4c) # needs master on 16.04
+
+# old modules
+set(drc_door_TAG 89f229f51)
+set(arms_ik_TAG 5d83c506a1)
+set(locoman_service_1_TAG 572d134df5)
+set(locoman_service_2_TAG e810d67d9cb)
+set(locoman_utils_TAG 89cd9b83582a)
 
 # utils: put the SHA1 of the commit or the TAG, not the branch name.
 #set(drc_shared_TAG 8289f4fed1dd)
+set(trajectory_generator_TAG 4bcf25603c)
 
 # ROS publisher: put the SHA1 of the commit or the TAG, not the branch name.
 set(robot_state_publisher_ext_TAG 90ffac07f)
@@ -39,6 +52,7 @@ set(RobotInterfaceXBotRT_TAG 64afd0d5fa9b68)
 set(ADVR_shared_TAG a6eab47bbaa53ca)
 set(XBotCore-interfaces_TAG 700fd7ffebf13950)
 
-
+# CENTAURO 
+set(centauro-simulator_TAG 80393a9b)
 
 

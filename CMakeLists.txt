@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 2.8.12)
-if(COMMAND cmake_policy)
+
+if(POLICY CMP0064 AND COMMAND cmake_policy)
     cmake_policy(SET CMP0064 OLD)
-endif(COMMAND cmake_policy)
+endif(POLICY CMP0064 AND COMMAND cmake_policy)
 
 project(robotology NONE)
 
@@ -42,7 +43,17 @@ include(CTest)
 include(FeatureSummary)
 
 set(YCM_GIT_GITLAB_ROBOTOLOGY_BASE_ADDRESS "https://gitlab.robotology.eu/" CACHE STRING "Address to use for Robotology Gitlab git repositories" FORCE)
-set(YCM_USE_CMAKE_PROPOSED TRUE CACHE BOOL "Use files including unmerged cmake patches")
+
+if(UBUNTU_XENIAL)
+    set(YCM_USE_CMAKE_PROPOSED FALSE CACHE BOOL "Use files including unmerged cmake patches")
+
+    set(PYTHON_VERSION "2.7" CACHE STRING "Python Version" FORCE)
+    set(PYTHON_EXECUTABLE "/usr/bin/python2.7" CACHE STRING "Python Executable Path" FORCE)
+    set(PYTHON_INCLUDE_DIR "/usr/include/python2.7" CACHE STRING "Python Include Folder Path" FORCE)
+    set(PYTHON_LIBRARY "/usr/lib/x86_64-linux-gnu/libpython2.7.so" CACHE STRING "Python Library Folder Path" FORCE)
+else(UBUNTU_XENIAL)
+    set(YCM_USE_CMAKE_PROPOSED TRUE CACHE BOOL "Use files including unmerged cmake patches")
+endif(UBUNTU_XENIAL)
 
 include(ProjectsTags OPTIONAL)
 

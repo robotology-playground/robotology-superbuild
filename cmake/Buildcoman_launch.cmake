@@ -1,12 +1,11 @@
-# iit-cogimon-ros-pkg
+# coman_launch
 include(YCMEPHelper)
 include(FindOrBuildPackage)
 
-ycm_ep_helper(  iit-cogimon-ros-pkg
+ycm_ep_helper(  coman_launch
                 TYPE GIT
                 STYLE GITLAB_ROBOTOLOGY
-                REPOSITORY cogimon/iit-cogimon-ros-pkg.git
+                REPOSITORY walkman-drc/coman_launch.git
                 TAG master
                 COMPONENT robots
-                INSTALL_COMMAND ""
             )
