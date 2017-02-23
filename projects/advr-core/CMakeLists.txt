@@ -33,6 +33,11 @@ find_or_build_package_with_tag(RobotInterfaceROS OFF)
 # -------------------------
 find_or_build_package_with_tag(ModelInterfaceRBDL OFF)
 
+# -------------------------
+# Compile ModelInterfaceIDYNUTILS
+# -------------------------
+find_or_build_package_with_tag(ModelInterfaceIDYNUTILS OFF)
+
 # ---------------------------
 # Compile RobotInterfaceDUMMY
 # ---------------------------
@@ -84,3 +89,25 @@ find_or_build_package_with_tag(GazeboXBotPlugin OFF)
 # Compile XBotCore-interfaces
 # ----------------
 find_or_build_package_with_tag(XBotCore-interfaces OFF)
+
+# ----------------
+# Compile EtherCAT_tools
+# ----------------
+find_or_build_package_with_tag(EtherCAT_tools OFF)
+
+# ----------------
+# Compile XBotYARP
+# ----------------
+find_or_build_package_with_tag(XBotYARP OFF)
+
+# ----------------
+# Compile XBotGUI
+# ----------------
+find_or_build_package_with_tag(XBotGUI OFF)
+
+# ----------------
+# Compile OpenSoT2
+# ----------------
+find_or_build_package_with_tag(OpenSoT2 OFF)
+
+

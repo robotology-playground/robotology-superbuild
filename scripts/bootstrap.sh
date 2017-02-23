@@ -76,7 +76,9 @@ cmake .. -DYCM_EP_MAINTAINER_MODE=ON \
 -DSUPERBUILD_XCM:BOOL=ON \
 -DSUPERBUILD_sharedlibpp:BOOL=ON \
 -DSUPERBUILD_srdfdom_advr:BOOL=ON \
--DSUPERBUILD_wbc_tde:BOOL=ON
+-DSUPERBUILD_wbc_tde:BOOL=ON \
+-DSUPERBUILD_centauro-simulator:BOOL=ON
+
 make update-all 
 make -ik; make;
 

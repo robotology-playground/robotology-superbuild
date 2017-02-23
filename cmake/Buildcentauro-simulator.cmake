@@ -5,7 +5,7 @@ include(FindOrBuildPackage)
 ycm_ep_helper(  centauro-simulator
                 TYPE GIT
                 STYLE GITLAB_ADVRCLOUD
-                REPOSITORY Navvab/centauro-simulator.git
+                REPOSITORY jlee/centauro-simulator.git
                 TAG master
                 COMPONENT robots
 		)

@@ -6,9 +6,10 @@ set(YARP_TAG ecd0040)
 set(paramHelp_TAG de9f652)
 set(GazeboYARPPlugins_TAG caf5b45a8)
 set(iDynTree_TAG f0346c1)
-set(idynutils_TAG bb1fff2)
-set(OpenSoT_TAG 1c294e5d)
+set(idynutils_TAG ba98bc36)
+set(OpenSoT_TAG ddd588cfd)
 set(GYM_TAG 825a36ed7ae)
+set(fcl_TAG 54e9619bc2b)
 
 set(comaninterface_TAG VVV15)
 set(comanapp_TAG VVV15)
@@ -51,6 +52,7 @@ set(RobotInterfaceXBotRT_TAG edb6a022c4)
 set(ADVR_shared_TAG 7a2eb8393)
 set(XBotCore-interfaces_TAG bb4f80027b5a63f18efcae94)
 
-
+# CENTAURO 
+set(centauro-simulator_TAG ca43fbe06)
 
 
