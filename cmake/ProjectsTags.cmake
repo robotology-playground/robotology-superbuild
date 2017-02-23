@@ -47,9 +47,9 @@ set(RobotInterfaceROS_CommandArray_TAG beta2.0.0)
 set(ModelInterfaceRBDL_TAG a0b8fa9b506877)
 set(RobotInterfaceDUMMY_TAG 72c9400323)
 set(XCM_TAG efced7248f9)
-set(GazeboXBotPlugin_TAG 8f0aafbe294)
+set(GazeboXBotPlugin_TAG bbdf62ad52b)
 set(RobotInterfaceXBotRT_TAG 64afd0d5fa9b68) 
-set(ADVR_shared_TAG a6eab47bbaa53ca)
+set(ADVR_shared_TAG 1d9895dd56)
 set(XBotCore-interfaces_TAG 700fd7ffebf13950)
 
 # CENTAURO 
