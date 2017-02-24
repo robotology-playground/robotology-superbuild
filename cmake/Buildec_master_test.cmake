@@ -13,4 +13,7 @@ ycm_ep_helper(  ec_master_test
                 COMPONENT external
 		DEPENDS soem_advr
 			walkman-master-ecat
+		CMAKE_CACHE_ARGS -DBUILD_SHARED_LIBS:BOOL=ON
+                                 -DENABLE_XENO:BOOL=ON
+
              )
