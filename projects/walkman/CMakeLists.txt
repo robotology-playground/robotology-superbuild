@@ -20,6 +20,7 @@ find_or_build_package_with_tag(pilot_interface OFF)
 find_or_build_package_with_tag(network OFF)
 find_or_build_package_with_tag(yarp_ros_joint_state_publisher OFF)
 find_or_build_package_with_tag(upper_body_control OFF)
+find_or_build_package_with_tag(lazarus OFF)
 
 # --------------------------------------
 # Compile ReactiveWalk
