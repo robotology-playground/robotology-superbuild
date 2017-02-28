@@ -37,3 +37,9 @@ find_or_build_package_with_tag(InverseKinematics OFF)
 # QPPVM_RT_plugin
 # -------------------------
 find_or_build_package_with_tag(QPPVM_RT_plugin OFF)
+
+# -------------------------
+# Artificial Potential Fields
+# -------------------------
+find_or_build_package_with_tag(ArtificialPotentialFields OFF)
+

@@ -15,8 +15,15 @@ if [ -f ${ROBOTOLOGY_ROOT}/build/got_dependencies ]; then
 else
     # we are on Ubutntu
     if [ "`lsb_release -is`" = 'Ubuntu' ]; then
-        sudo apt-add-repository ppa:robotology/ppa -y
-        sudo add-apt-repository ppa:v-launchpad-jochen-sprickerhof-de/pcl -y
+        
+        # do not do install pcl, robotology on Xenial
+        if [ "`lsb_release -cs`" = 'xenial' ]; then
+          echo
+        else
+          sudo add-apt-repository ppa:v-launchpad-jochen-sprickerhof-de/pcl -y
+          sudo apt-add-repository ppa:robotology/ppa -y
+        fi
+        
         sudo sh -c 'echo "deb http://www.icub.org/ubuntu `lsb_release -cs` contrib/science" > /etc/apt/sources.list.d/icub.list'
         sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-latest.list'
         wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
@@ -27,8 +34,13 @@ else
         sudo apt-get remove --purge -y `dpkg-query -W --showformat='${binary:Package} \\ \n' | grep ca-certificates-icub-org`
         #sudo apt-get remove --purge ca-certificates-icub-org
         sudo apt-get update
-
-        sudo apt-get dist-upgrade -y --force-yes --fix-missing
+        
+        if [ "`lsb_release -cs`" = 'xenial' ]; then
+          sudo apt dist-upgrade -y --allow-unauthenticated --fix-missing
+        else
+          sudo apt-get dist-upgrade -y --force-yes --fix-missing
+        fi
+        
         
         # 12.04
         if [ "`lsb_release -cs`" = 'precise' ]; then
@@ -129,22 +141,46 @@ else
             if [ "${string#*$word}" != "$string" ]; then #if xenomai kernel...
                 if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" = 'ROBOT' ]; then
                     #No uncommon packages for xenomai
-                echo
+                    echo
+                fi
+            else
+                if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" = 'ROBOT' ]; then
+                    sudo apt-get install -y --force-yes --fix-missing linux-lowlatency
+                fi
             fi
+
+            if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" != 'ROBOT' ]; then
+              # clean up previous versions
+              sudo apt-get remove gazebo*
+              # install gazebo 6 and the dev
+              sudo apt-get install -y --force-yes --fix-missing ros-indigo-gazebo6-* libgazebo6-dev
+            fi
+        elif [ "`lsb_release -cs`" = 'xenial' ]; then
+            sudo apt install -y --allow-unauthenticated --fix-missing build-essential cmake cmake-curses-gui  \
+              git subversion doxygen graphviz  \
+              libace-dev libgsl0-dev libgtkmm-2.4-dev libgoocanvasmm-2.0-dev libsqlite3-dev swig  \
+              icub-common libdc1394-22-dev libgtkdataboxmm-0.9-0 libgtkdataboxmm-dev libtinyxml2-dev \
+              libeigen3-dev coinor-libipopt-dev libyaml-cpp-dev libxml2-dev libccd-dev \
+              ros-kinetic-desktop ros-kinetic-srdfdom ros-kinetic-cmake-modules ros-kinetic-rviz-visual-tools \
+              ros-kinetic-openni2-* ros-kinetic-moveit-* ros-kinetic-joy* ros-kinetic-octomap* \
+              ros-kinetic-urdfdom-py ros-kinetic-libg2o ros-kinetic-pcl-ros  ros-kinetic-pcl-conversions \
+              ros-kinetic-laser-* ros-kinetic-ps3joy ros-kinetic-stereo-image-proc ros-kinetic-image-transport* \
+              liburdf-dev  ros-kinetic-kdl-parser-py ros-robot-dev ros-simulators-dev ros-simulators-python-dev \
+              python3-sip-dev python-numpy python-scipy python-matplotlib python-pandas  \
+              libarmadillo-dev libblas-dev liblapack-dev  libflann-dev libmumps-seq-dev \
+              libpng++-dev python-bs4 libsctp-dev mercurial ros-kinetic-rviz-imu-plugin libhighgui2.4 \
+              libopensplice64 cppcheck \
+              python3-empy python3-setuptools python3-nose python3-pip python3-vcstool \
+              protobuf-compiler
+            sudo apt install -y ros-kinetic-gazebo-* gazebo7 libgazebo7-dev
+            mkdir -p $ROBOTOLOGY_ROOT/build
+            cd $ROBOTOLOGY_ROOT/build
+            cmake ..
+            make fcl
+            sh $ROBOTOLOGY_ROOT/scripts/get_moveit_kinetic.sh
+            source $ROBOTOLOGY_ROOT/external/moveit/install/setup.bash
+
         else
-            if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" = 'ROBOT' ]; then
-                sudo apt-get install -y --force-yes --fix-missing linux-lowlatency
-            fi
-        fi
-
-        if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" != 'ROBOT' ]; then
-	    # clean up previous versions
-	    sudo apt-get remove gazebo*
-	    # install gazebo 5 and the dev
-            sudo apt-get install -y --force-yes --fix-missing ros-indigo-gazebo5-* libgazebo5-dev
-        fi
-
-      else
 
          echo
          echo "`lsb_release -cs` is not supported at the moment."
@@ -200,8 +236,8 @@ else
 
     sudo ldconfig
 
-    sudo pip3 install -U setuptools
+    sudo pip install -U setuptools
 
-    source get_python_transitions.sh
+    source $ROBOTOLOGY_ROOT/scripts/get_python_transitions.sh
 
 fi
