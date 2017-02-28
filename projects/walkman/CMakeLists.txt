@@ -22,6 +22,7 @@ IF(USE_WALKMAN_DEMOS_PROJECTS)
     find_or_build_package(yarp_ros_joint_state_publisher)
     find_or_build_package(upper_body_control)
     find_or_build_package(ModelInterfaceRBDL)
+    find_or_build_package(walkman_fireman)
 ENDIF(USE_WALKMAN_DEMOS_PROJECTS)
 
 # --------------------------------------
