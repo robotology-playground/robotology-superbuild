@@ -19,4 +19,7 @@ ycm_ep_helper(  XBotCore
 			walkman-master-ecat
 			ec_master_test
 			sharedlibpp	
+		CMAKE_CACHE_ARGS -DBUILD_SHARED_LIBS:BOOL=ON
+                                 -DENABLE_XENO:BOOL=ON
+
             )

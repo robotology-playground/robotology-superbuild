@@ -14,5 +14,6 @@ ycm_ep_helper(  XBotYARP
                 COMPONENT external
                 DEPENDS XBotCoreModel
 			YARP
-			XBotCore-interfaces	
+			XBotCore-interfaces
+		CMAKE_CACHE_ARGS -DBUILD_SHARED_LIBS:BOOL=ON	
             )
