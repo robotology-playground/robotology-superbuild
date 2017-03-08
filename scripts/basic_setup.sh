@@ -24,3 +24,9 @@ if [ "`lsb_release -cs`" = 'trusty' ]; then
 		sh ./get_cmake_3_5_1.sh
 	#fi
 fi
+
+if [ "`lsb_release -cs`" = 'xenial' ]; then
+        sudo apt-get install ros-kinetic-desktop-full
+        sudo apt-get install ros-kinetic-gazebo-ros-pkgs
+fi
+
