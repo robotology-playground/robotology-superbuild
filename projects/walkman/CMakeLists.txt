@@ -34,4 +34,7 @@ find_or_build_package_with_tag(ReactiveWalk OFF)
 # --------------------------------------
 find_or_build_package_with_tag(reactive_walking OFF)
 
-find_or_build_package_with_tag(FootPressureSensorPublisher OFF)
+find_or_build_package_with_tag(SensorsPublisher OFF)
+
+find_or_build_package_with_tag(custom_sensor_msgs OFF)
+
