@@ -27,6 +27,10 @@ fi
 
 if [ "`lsb_release -cs`" = 'xenial' ]; then
         sudo apt-get install ros-kinetic-desktop-full
+	sudo apt-get install ros-kinetic-effort-controllers ros-kinetic-controller-manager
         sudo apt-get install ros-kinetic-gazebo-ros-pkgs
 fi
 
+# ROS bullshit
+sudo rosdep init
+rosdep update
