@@ -106,8 +106,8 @@ find_or_build_package_with_tag(XBotYARP OFF)
 find_or_build_package_with_tag(XBotGUI OFF)
 
 # ----------------
-# Compile OpenSoT2
+# Compile OpenSoT-lite
 # ----------------
-find_or_build_package_with_tag(OpenSoT2 OFF)
+find_or_build_package_with_tag(OpenSoT-lite OFF)
 
 

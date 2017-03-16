@@ -15,10 +15,10 @@ if(TARGET qpOASES)
   unset(binary_dir)
 endif()
 
-ycm_ep_helper(  OpenSoT2 TYPE GIT
+ycm_ep_helper(  OpenSoT-lite TYPE GIT
                 STYLE GITHUB
                 REPOSITORY robotology-playground/OpenSoT.git
-                TAG v2.0_iDynUtils2
+                TAG lite
                 COMPONENT external
                 DEPENDS XBotInterface advr_humanoids_common_utils
                 CMAKE_CACHE_ARGS -DOPENSOT_COMPILE_TESTS:BOOL=OFF
