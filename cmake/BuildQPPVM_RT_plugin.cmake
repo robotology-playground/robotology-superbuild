@@ -3,7 +3,7 @@ include(YCMEPHelper)
 include(FindOrBuildPackage)
 
 find_or_build_package(XCM QUIET)
-find_or_build_package(OpenSoT QUIET)
+find_or_build_package(OpenSoT-lite QUIET)
 
 ycm_ep_helper(  QPPVM_RT_plugin
                 TYPE GIT
@@ -12,5 +12,5 @@ ycm_ep_helper(  QPPVM_RT_plugin
                 TAG master
                 COMPONENT external
 		DEPENDS XCM
-			 OpenSoT
+			OpenSoT-lite
              )
