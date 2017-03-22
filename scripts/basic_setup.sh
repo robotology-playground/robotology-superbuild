@@ -17,6 +17,7 @@ sudo apt-get update
 
 if [ "`lsb_release -cs`" = 'trusty' ]; then
 	sudo apt-get install ros-indigo-desktop-full
+	sudo apt-get install ros-indigo-kdl-parser ros-indigo-eigen-conversions
 	sudo apt-get install ros-indigo-gazebo6-ros-pkgs
 	
 	#find a proper way to check the current cmake version
@@ -27,10 +28,10 @@ fi
 
 if [ "`lsb_release -cs`" = 'xenial' ]; then
         sudo apt-get install ros-kinetic-desktop-full
-	sudo apt-get install ros-kinetic-effort-controllers ros-kinetic-controller-manager
+	sudo apt-get install ros-kinetic-eigen-conversions ros-kinetic-kdl-parser ros-kinetic-effort-controllers ros-kinetic-controller-manager
         sudo apt-get install ros-kinetic-gazebo-ros-pkgs
 fi
 
-# ROS bullshit
+# ROS config
 sudo rosdep init
 rosdep update
