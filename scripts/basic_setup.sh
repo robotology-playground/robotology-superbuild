@@ -28,7 +28,7 @@ fi
 
 if [ "`lsb_release -cs`" = 'xenial' ]; then
         sudo apt-get install ros-kinetic-desktop-full
-	sudo apt-get install ros-kinetic-eigen-conversions ros-kinetic-kdl-parser ros-kinetic-effort-controllers ros-kinetic-controller-manager
+	sudo apt-get install ros-kinetic-eigen-conversions ros-kinetic-kdl-parser ros-kinetic-effort-controllers ros-kinetic-controller-manager ros-kinetic-transmission-interface
         sudo apt-get install ros-kinetic-gazebo-ros-pkgs
 fi
 
