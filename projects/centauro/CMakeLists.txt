@@ -43,3 +43,19 @@ find_or_build_package_with_tag(QPPVM_RT_plugin OFF)
 # -------------------------
 find_or_build_package_with_tag(ArtificialPotentialFields OFF)
 
+# ---------------------
+# Compile QPBuilder
+# ---------------------
+find_or_build_package_with_tag(QPBuilder OFF)
+
+# ---------------------
+# Compile MpcLocomotion
+# ---------------------
+find_or_build_package_with_tag(MpcLocomotion OFF)
+
+# ---------------------
+# Compile QPOases
+# ---------------------
+find_or_build_package_with_tag(QPOases OFF)
+
+
