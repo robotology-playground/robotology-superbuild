@@ -4,6 +4,7 @@ include(FindOrBuildPackage)
 
 find_or_build_package(advr_humanoids_common_utils QUIET)
 find_or_build_package(XBotInterface QUIET)
+find_or_build_package(YARP QUIET)
 
 ycm_ep_helper(  ModelInterfaceIDYNUTILS
                 TYPE GIT
@@ -13,4 +14,5 @@ ycm_ep_helper(  ModelInterfaceIDYNUTILS
                 COMPONENT external
 		DEPENDS advr_humanoids_common_utils
 			XBotInterface
+			YARP
              )
