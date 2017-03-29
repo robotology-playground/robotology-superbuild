@@ -4,7 +4,7 @@ set(YCM_TAG 538bec08ad3)
 # Superbuild CORE: put the SHA1 of the commit or the TAG, not the branch name.
 set(YARP_TAG ecd0040)
 set(paramHelp_TAG de9f652)
-set(GazeboYARPPlugins_TAG caf5b45a8)
+set(GazeboYARPPlugins_TAG b8432487)
 set(iDynTree_TAG f0346c1)
 set(idynutils_TAG ba98bc36)
 set(OpenSoT_TAG c46cc3b409564)
