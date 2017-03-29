@@ -110,4 +110,7 @@ find_or_build_package_with_tag(XBotGUI OFF)
 # ----------------
 find_or_build_package_with_tag(OpenSoT2 OFF)
 
-
+# ----------------
+# Compile OpenSoT3
+# ----------------
+find_or_build_package_with_tag(OpenSoT3 OFF)
