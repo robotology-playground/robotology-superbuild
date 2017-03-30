@@ -8,8 +8,8 @@ find_package(Eigen QUIET)
 
 ycm_ep_helper(  ReactiveWalk
                 TYPE GIT
-                STYLE GITLAB_ROBOTOLOGY
-                REPOSITORY juan.castano/reactivewalk.git
+                STYLE GITHUB
+                REPOSITORY ADVRHumanoids/reactivewalk.git
                 TAG master
                 COMPONENT external
                 

@@ -2,8 +2,8 @@
 include(YCMEPHelper)
 
 ycm_ep_helper(network TYPE GIT
-                      STYLE GITLAB_ROBOTOLOGY
-                      REPOSITORY walkman-drc/network.git
+                      STYLE GITHUB
+                      REPOSITORY ADVRHumanoids/network-drc.git
                       TAG master
                       COMPONENT external)
 

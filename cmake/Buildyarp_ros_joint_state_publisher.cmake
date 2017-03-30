@@ -12,8 +12,8 @@ find_or_build_package(YARP QUIET)
 
 ycm_ep_helper(  yarp_ros_joint_state_publisher
                 TYPE GIT
-                STYLE GITLAB_ROBOTOLOGY
-                REPOSITORY walkman-drc/yarp_ros_joint_state_publisher.git
+                STYLE GITHUB
+                REPOSITORY ADVRHumanoids/yarp_ros_joint_state_publisher.git
                 TAG master
                 COMPONENT external
                 DEPENDS YARP

@@ -7,8 +7,8 @@ find_or_build_package(YARP QUIET)
 
 ycm_ep_helper(  comanmod
                 TYPE GIT
-                STYLE GITLAB_ROBOTOLOGY
-                REPOSITORY walkman-drc/comanmod.git
+                STYLE GITHUB
+                REPOSITORY ADVRHumanoids/comanmod.git
                 TAG master
                 COMPONENT robots
                 DEPENDS COMAN_shared

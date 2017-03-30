@@ -6,8 +6,8 @@ include(FindOrBuildPackage)
 
 ycm_ep_helper(  iit-bigman-ros-pkg
                 TYPE GIT
-                STYLE GITLAB_ROBOTOLOGY
-                REPOSITORY walkman-drc/iit-bigman-ros-pkg.git
+                STYLE GITHUB
+                REPOSITORY ADVRHumanoids/iit-bigman-ros-pkg.git
                 TAG master
                 COMPONENT robots
                # DEPENDS moveit_compute_default_collisions

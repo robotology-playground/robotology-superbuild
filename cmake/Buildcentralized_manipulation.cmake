@@ -8,8 +8,8 @@ find_or_build_package(trajectory_utils QUIET)
 
 ycm_ep_helper(  centralized_manipulation
                 TYPE GIT
-                STYLE GITLAB_ROBOTOLOGY
-                REPOSITORY luca.muratore/centralized_manipulation.git
+                STYLE GITHUB
+                REPOSITORY ADVRHumanoids/centralized_manipulation.git
                 TAG master
                 COMPONENT robots
                 DEPENDS OpenSoT
