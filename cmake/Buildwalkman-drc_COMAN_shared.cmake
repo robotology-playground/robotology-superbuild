@@ -8,8 +8,8 @@ endif()
 
 ycm_ep_helper(  walkman-drc_COMAN_shared
                 TYPE GIT
-                STYLE GITLAB_ROBOTOLOGY
-                REPOSITORY walkman-drc/coman_shared.git
+                STYLE GITHUB
+                REPOSITORY ADVRHumanoids/coman_shared.git
                 TAG emergency
                 COMPONENT robots
                 DEPENDS YamlCpp

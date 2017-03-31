@@ -9,8 +9,8 @@ find_or_build_package(drc_shared QUIET)
 
 ycm_ep_helper(  walking
                 TYPE GIT
-                STYLE GITLAB_ROBOTOLOGY
-                REPOSITORY walkman-drc/walking.git
+                STYLE GITHUB
+                REPOSITORY ADVRHumanoids/walking.git
                 TAG master
                 COMPONENT robots
                 DEPENDS iDynTree

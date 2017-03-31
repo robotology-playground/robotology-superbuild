@@ -6,8 +6,8 @@ find_package(OROCOS-RTT QUIET)
 
 ycm_ep_helper(  orocos_tutorials
                 TYPE GIT
-                STYLE GITLAB_ROBOTOLOGY
-                REPOSITORY cogimon/orocos_tutorials.git
+                STYLE GITHUB
+                REPOSITORY ADVRHumanoids/orocos_tutorials.git
                 TAG master
                 COMPONENT external
                 INSTALL_COMMAND ""

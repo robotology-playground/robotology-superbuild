@@ -172,7 +172,7 @@ else
               libopensplice64 cppcheck \
               python3-empy python3-setuptools python3-nose python3-pip python3-vcstool \
               protobuf-compiler
-            sudo apt install -y ros-kinetic-gazebo-* gazebo7 libgazebo7-dev
+            sudo apt install -y ros-kinetic-gazebo8-* gazebo8 libgazebo8-dev
             mkdir -p $ROBOTOLOGY_ROOT/build
             cd $ROBOTOLOGY_ROOT/build
             cmake ..
@@ -189,7 +189,9 @@ else
       fi
     fi
 
-
+    # needed by XBOTCore logger
+    sudo apt-get install libmatio-dev
+    
     # needed by SoT demos
     sudo apt-get install -y --force-yes --fix-missing python-pip python-pygraphviz
     sudo pip install svg.path 

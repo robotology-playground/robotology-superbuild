@@ -10,8 +10,8 @@ find_or_build_package(ec_master_test QUIET)
 
 ycm_ep_helper(  XBotCore
                 TYPE GIT
-                STYLE GITLAB_ROBOTOLOGY
-                REPOSITORY luca.muratore/xbotcore.git
+                STYLE GITHUB
+                REPOSITORY ADVRHumanoids/xbotcore.git
                 TAG centauro_bonn_review_2016
                 COMPONENT external
 		DEPENDS XCM
