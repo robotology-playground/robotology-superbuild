@@ -128,7 +128,7 @@ if [ -d ${ROBOTOLOGY_ROOT}/external/ros_orocos_joints_gui ]; then
 fi
 
 if [ -d ${ROBOTOLOGY_ROOT}/robots/centauro-simulator ]; then
-       pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/robots/centauro-simulator/centauro_gazebo
+       pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/robots/centauro-simulator
 fi
 
 if [ -d ${ROBOTOLOGY_ROOT}/robots/gazebo_ros_demos ]; then
