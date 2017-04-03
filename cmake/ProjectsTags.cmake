@@ -29,7 +29,7 @@ set(locoman_utils_TAG 89cd9b83582a)
 
 # utils: put the SHA1 of the commit or the TAG, not the branch name.
 #set(drc_shared_TAG 8289f4fed1dd)
-set(trajectory_generator_TAG 4bcf25603c)
+set(trajectory_generator_TAG 332b984362)
 
 # ROS publisher: put the SHA1 of the commit or the TAG, not the branch name.
 set(robot_state_publisher_ext_TAG 90ffac07f)
