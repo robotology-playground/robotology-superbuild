@@ -22,6 +22,7 @@ find_or_build_package_with_tag(yarp_ros_joint_state_publisher OFF)
 find_or_build_package_with_tag(upper_body_control OFF)
 find_or_build_package_with_tag(lazarus OFF)
 find_or_build_package_with_tag(walkman_fireman OFF)
+find_or_build_package_with_tag(locomotion OFF)
 
 # --------------------------------------
 # Compile ReactiveWalk
