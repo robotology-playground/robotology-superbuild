@@ -110,4 +110,8 @@ find_or_build_package_with_tag(XBotGUI OFF)
 # ----------------
 find_or_build_package_with_tag(OpenSoT-lite OFF)
 
+# ----------------
+# Compile OpenSoT-lite
+# ----------------
+find_or_build_package_with_tag(MiscellaneousPlugins OFF)
 
