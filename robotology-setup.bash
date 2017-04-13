@@ -131,6 +131,10 @@ if [ -d ${ROBOTOLOGY_ROOT}/robots/centauro-simulator ]; then
        pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/robots/centauro-simulator/centauro_gazebo
 fi
 
+if [ -d ${ROBOTOLOGY_ROOT}/robots/gazebo_ros_demos ]; then
+       pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/robots/gazebo_ros_demos
+fi
+
 # vigir stuffs
 if [ -d $ROBOTOLOGY_ROOT/vigir/vigir_footstep_planning_basics ]; then
         pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/vigir/vigir_footstep_planning_basics
