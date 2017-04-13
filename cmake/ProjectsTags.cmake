@@ -53,6 +53,6 @@ set(ADVR_shared_TAG 1d9895dd56)
 set(XBotCore-interfaces_TAG 69527281ea)
 
 # CENTAURO 
-set(centauro-simulator_TAG 80393a9b)
+
 
 
