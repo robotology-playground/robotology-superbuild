@@ -9,4 +9,6 @@ ycm_ep_helper(  centauro-simulator
                 TAG xbot_control
                 COMPONENT robots
                 DEPENDS
+                BUILD_COMMAND ""
+		INSTALL_COMMAND ""
 		)
