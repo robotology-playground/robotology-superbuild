@@ -24,6 +24,10 @@ find_or_build_package_with_tag(lazarus OFF)
 find_or_build_package_with_tag(walkman_fireman OFF)
 find_or_build_package_with_tag(locomotion OFF)
 find_or_build_package_with_tag(contact_planning OFF)
+find_or_build_package_with_tag(segway_v3 OFF)
+find_or_build_package_with_tag(segway_v3_robot OFF)
+find_or_build_package_with_tag(segway_v3_desktop OFF)
+find_or_build_package_with_tag(segway_v3_simulator OFF)
 
 # --------------------------------------
 # Compile ReactiveWalk
