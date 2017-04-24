@@ -154,6 +154,9 @@ fi
 if [ -d $ROBOTOLOGY_ROOT/vigir/vigir_terrain_classifier ]; then
         pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/vigir/vigir_terrain_classifier
 fi
+if [ -d $ROBOTOLOGY_ROOT/external/gazebo-pkgs ]; then
+        pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/external/gazebo-pkgs/gazebo_grasp_plugin
+fi
 
 
 export COMAN_ROOT=${ROBOTOLOGY_ROOT}/build/install
