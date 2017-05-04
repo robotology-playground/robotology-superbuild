@@ -2,7 +2,8 @@
 include(YCMEPHelper)
 include(FindOrBuildPackage)
 
-find_or_build_package_with_tag(srdfdom_advr QUIET)
+find_or_build_package(srdfdom_advr QUIET)
+find_or_build_package(iDynTree QUIET)
 
 ycm_ep_helper(  advr_humanoids_common_utils
                 TYPE GIT
@@ -10,5 +11,6 @@ ycm_ep_helper(  advr_humanoids_common_utils
                 REPOSITORY advr_humanoids/advr_humanoids_common_utils.git
                 TAG master
                 DEPENDS srdfdom_advr
+			iDynTree
                 COMPONENT external
             )

@@ -81,3 +81,8 @@ find_or_build_package_with_tag(ros_orocos_joints_gui OFF)
 # Compile compliance_ctrl
 # --------------------------------------
 find_or_build_package_with_tag(compliance_ctrl OFF)
+
+# --------------------------------------
+# Compile gazebo-pkgs
+# --------------------------------------
+find_or_build_package_with_tag(gazebo-pkgs OFF)

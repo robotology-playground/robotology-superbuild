@@ -58,4 +58,9 @@ find_or_build_package_with_tag(MpcLocomotion OFF)
 # ---------------------
 find_or_build_package_with_tag(QPOases OFF)
 
+# ---------------------
+# Compile bi-man2 
+# ---------------------
+find_or_build_package_with_tag(bi-man2 OFF)
+
 
