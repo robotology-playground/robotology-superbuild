@@ -3,7 +3,7 @@
 sudo apt-get update
 
 # essential
-sudo apt-get install git cmake cmake-curses-gui build-essential gitg git-gui meld vim mercurial
+sudo apt-get install git cmake cmake-curses-gui build-essential gitg git-gui meld vim terminator mercurial libmatio-dev
 
 # ROS list and key
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
@@ -17,6 +17,7 @@ sudo apt-get update
 
 if [ "`lsb_release -cs`" = 'trusty' ]; then
 	sudo apt-get install ros-indigo-desktop-full
+	sudo apt-get install ros-indigo-kdl-parser ros-indigo-eigen-conversions
 	sudo apt-get install ros-indigo-gazebo6-ros-pkgs
 	
 	#find a proper way to check the current cmake version
@@ -24,3 +25,13 @@ if [ "`lsb_release -cs`" = 'trusty' ]; then
 		sh ./get_cmake_3_5_1.sh
 	#fi
 fi
+
+if [ "`lsb_release -cs`" = 'xenial' ]; then
+        sudo apt-get install ros-kinetic-desktop-full
+	sudo apt-get install ros-kinetic-eigen-conversions ros-kinetic-kdl-parser ros-kinetic-effort-controllers ros-kinetic-controller-manager ros-kinetic-transmission-interface
+        sudo apt-get install ros-kinetic-gazebo-ros-pkgs
+fi
+
+# ROS config
+sudo rosdep init
+rosdep update

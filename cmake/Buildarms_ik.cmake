@@ -9,8 +9,8 @@ find_or_build_package(locoman_utils QUIET)
 
 ycm_ep_helper(  arms_ik 
                 TYPE GIT
-                STYLE GITLAB_ROBOTOLOGY
-                REPOSITORY walkman-drc/arms_ik.git
+                STYLE GITHUB
+                REPOSITORY ADVRHumanoids/arms_ik.git
                 TAG master
                 COMPONENT robots
                 DEPENDS drc_shared

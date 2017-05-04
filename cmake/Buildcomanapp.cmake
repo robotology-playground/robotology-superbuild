@@ -6,8 +6,8 @@ find_or_build_package(YARP QUIET)
 
 ycm_ep_helper(  comanapp
                 TYPE GIT
-                STYLE GITLAB_ROBOTOLOGY
-                REPOSITORY walkman-drc/comanapp.git
+                STYLE GITHUB
+                REPOSITORY ADVRHumanoids/comanapp.git
                 TAG master
                 COMPONENT robots
                 DEPENDS YARP

@@ -42,3 +42,30 @@ find_or_build_package_with_tag(QPPVM_RT_plugin OFF)
 # wbc_tde
 # -------------------------
 find_or_build_package_with_tag(wbc_tde OFF)
+
+# -------------------------
+# Artificial Potential Fields
+# -------------------------
+find_or_build_package_with_tag(ArtificialPotentialFields OFF)
+
+# ---------------------
+# Compile QPBuilder
+# ---------------------
+find_or_build_package_with_tag(QPBuilder OFF)
+
+# ---------------------
+# Compile MpcLocomotion
+# ---------------------
+find_or_build_package_with_tag(MpcLocomotion OFF)
+
+# ---------------------
+# Compile QPOases
+# ---------------------
+find_or_build_package_with_tag(QPOases OFF)
+
+# ---------------------
+# Compile bi-man2 
+# ---------------------
+find_or_build_package_with_tag(bi-man2 OFF)
+
+

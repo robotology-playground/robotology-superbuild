@@ -9,8 +9,8 @@ find_or_build_package(locoman_service_2 QUIET)
 
 
 ycm_ep_helper(locomanipulation 	TYPE GIT
-                    		STYLE GITLAB_ROBOTOLOGY 
-                    		REPOSITORY walkman-drc/locomanipulation.git
+                    		STYLE GITHUB
+                                REPOSITORY ADVRHumanoids/locomanipulation.git
                     		TAG new_master
 				COMPONENT robots
                     		DEPENDS	GYM

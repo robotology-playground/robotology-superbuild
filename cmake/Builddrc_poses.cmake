@@ -9,8 +9,8 @@ find_or_build_package(Eigen QUIET)
 
 ycm_ep_helper(  drc_poses
                 TYPE GIT
-                STYLE GITLAB_ROBOTOLOGY
-                REPOSITORY walkman-drc/drc_poses.git
+                STYLE GITHUB
+                REPOSITORY ADVRHumanoids/drc_poses.git
                 TAG master
                 COMPONENT robots
                 DEPENDS drc_shared

@@ -7,8 +7,8 @@ find_or_build_package(drc_shared QUIET)
 
 ycm_ep_helper(  supervisor
                 TYPE GIT
-                STYLE STYLE GITLAB_ROBOTOLOGY
-                REPOSITORY walkman-drc/supervisor.git
+                STYLE GITHUB
+                REPOSITORY ADVRHumanoids/supervisor.git
                 TAG master
                 COMPONENT external
                 DEPENDS GYM

@@ -125,13 +125,13 @@ else
               git subversion doxygen graphviz  \
               libace-dev libgsl0-dev libgtkmm-2.4-dev libgoocanvasmm-dev libsqlite3-dev swig  \
               icub-common libtinyxml2-dev \
-              libeigen3-dev libyaml-cpp-dev libxml2-dev  \
+              libeigen3-dev coinor-libipopt-dev libyaml-cpp-dev libxml2-dev  \
               ros-indigo-desktop ros-indigo-srdfdom ros-indigo-cmake-modules  \
               ros-indigo-openni2-* ros-indigo-moveit-* ros-indigo-joy* ros-indigo-octomap* \
               ros-indigo-urdfdom-py ros-indigo-libg2o ros-indigo-pcl-ros  ros-indigo-pcl-conversions \
               ros-indigo-laser-* ros-indigo-ps3joy ros-indigo-stereo-image-proc ros-indigo-image-transport* \
               python3-sip-dev python-numpy python-scipy python-matplotlib python-pandas  \
-              libarmadillo-dev libblas-dev liblapack-dev  libflann-dev libmumps-seq-dev \
+              libarmadillo-dev libblas-dev liblapack-dev  libflann-dev libmumps-seq-dev libgfortran-4.8-dev \
               libpng++-dev python-bs4 libsctp-dev mercurial ros-indigo-rviz-imu-plugin libhighgui2.4 \
               libopensplice64 cppcheck \
               python3-empy python3-setuptools python3-nose python3-pip python3-vcstool \
@@ -172,7 +172,7 @@ else
               libopensplice64 cppcheck \
               python3-empy python3-setuptools python3-nose python3-pip python3-vcstool \
               protobuf-compiler
-            sudo apt install -y ros-kinetic-gazebo-* gazebo7 libgazebo7-dev
+            sudo apt install -y ros-kinetic-gazebo8-* gazebo8 libgazebo8-dev
 
         else
 
