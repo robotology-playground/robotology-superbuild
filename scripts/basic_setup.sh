@@ -30,6 +30,10 @@ if [ "`lsb_release -cs`" = 'xenial' ]; then
         sudo apt-get install ros-kinetic-desktop-full
 	sudo apt-get install ros-kinetic-eigen-conversions ros-kinetic-kdl-parser ros-kinetic-effort-controllers ros-kinetic-controller-manager ros-kinetic-transmission-interface
         sudo apt-get install ros-kinetic-gazebo-ros-pkgs
+
+	# dependency from iit-bigman-ros-package
+	sudo apt-get install python-pip
+	sudo pip install BeautifulSoup4 lxml 
 fi
 
 # ROS config
