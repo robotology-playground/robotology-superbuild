@@ -12,7 +12,6 @@ export GIT_SSL_NO_VERIFY=1
 git clone --recursive -b toolchain-2.7 https://github.com/orocos-toolchain/orocos_toolchain.git src
 cd src
 git clone https://github.com/orocos/rtt_geometry.git
-cd src
 git clone https://github.com/orocos/rtt_ros_integration.git
 cd ..
 
@@ -21,6 +20,9 @@ export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$ROBOTOLOGY_ROOT/orocos_ws/src
 sudo apt-get install ruby ruby-dev
 sudo apt-get install libomniorb4-dev omniorb-idl omniorb omniorb-nameserver omniidl
 sudo gem install rake hoe
+
+sudo rosdep init
+rosdep update
 
 rosdep install orocos_toolchain
 
