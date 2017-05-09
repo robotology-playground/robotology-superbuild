@@ -45,7 +45,7 @@ set(srdfdom_advr_TAG 67bfe684b3703276b)
 set(XBotCoreModel_TAG bd7e93c15a7844)
 set(XBotCore-interfaces_TAG e5e2714975d5)
 set(XBotInterface_TAG b7dbfe730baf1)
-set(XCM_TAG 0dda0924b12dc3d)
+set(XCM_TAG be54dd1b9d28)
 
 set(RobotInterfaceDUMMY_TAG 72c9400323)
 set(RobotInterfaceXBotRT_TAG 7057c412d28) 
@@ -54,7 +54,7 @@ set(RobotInterfaceROS_TAG 55ab6536aceff0fe)
 set(RobotInterfaceROS_CustomCmndInterface_TAG b10ad7e200290a)
 set(RobotInterfaceROS_CommandArray_TAG beta2.0.0)
 
-set(ModelInterfaceRBDL_TAG a0b8fa9b506877)
+set(ModelInterfaceRBDL_TAG a45209773eb)
 
 set(GazeboXBotPlugin_TAG 61e2a2135b3)
 
