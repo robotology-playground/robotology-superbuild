@@ -22,8 +22,9 @@ if [ "`lsb_release -cs`" = 'trusty' ]; then
 	
 	#find a proper way to check the current cmake version
 	#if [ "`cmake --version`"  != '3.5.1' ]; then
-		sh ./get_cmake_3_5_1.sh
-	#fi
+	sh ./get_cmake_3_5_1.sh
+	cp FindEigen3.cmake /usr/local/share/cmake-3.5/Modules # fix Eigen3 not found on external project
+        #fi
 fi
 
 if [ "`lsb_release -cs`" = 'xenial' ]; then
