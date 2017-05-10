@@ -38,7 +38,7 @@ set(yarp_ros_joint_state_publisher_TAG 101ddfb3c)
 
 # XBot Core libraries
 
-set(ADVR_shared_TAG 77e5836ce6fde)
+set(ADVR_shared_TAG 2d9a1c018eb4a)
 
 set(sharedlibpp_TAG v1.0)
 set(srdfdom_advr_TAG 67bfe684b3703276b)
