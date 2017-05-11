@@ -11,6 +11,7 @@ set(OpenSoT_TAG c46cc3b409564)
 set(GYM_TAG 825a36ed7ae)
 set(fcl_TAG 54e9619bc2b)
 
+# COMAN
 set(comaninterface_TAG VVV15)
 set(comanapp_TAG VVV15)
 set(comanmod_TAG VVV15)
@@ -37,27 +38,27 @@ set(yarp_ros_joint_state_publisher_TAG 101ddfb3c)
 
 # XBot Core libraries
 
-set(ADVR_shared_TAG 54d081f018ccd1b)
+set(ADVR_shared_TAG 2d9a1c018eb4a)
 
 set(sharedlibpp_TAG v1.0)
 set(srdfdom_advr_TAG 67bfe684b3703276b)
-set(XBotCoreModel_TAG 9edc9f5becb5f8)
-set(XBotCore-interfaces_TAG 045be6335e6e620ced)
+set(XBotCoreModel_TAG bd7e93c15a7844)
+set(XBotCore-interfaces_TAG e5e2714975d5)
 set(XBotInterface_TAG b7dbfe730baf1)
-set(XCM_TAG 60f59c6c7a1)
+set(XCM_TAG 2d4144fcd1279)
 
 set(RobotInterfaceDUMMY_TAG 72c9400323)
-set(RobotInterfaceXBotRT_TAG afa94c46f70cb6cc) 
+set(RobotInterfaceXBotRT_TAG 7057c412d28) 
 set(RobotInterfaceYARP_TAG c1ae076cf4cc)
 set(RobotInterfaceROS_TAG 55ab6536aceff0fe)
 set(RobotInterfaceROS_CustomCmndInterface_TAG b10ad7e200290a)
 set(RobotInterfaceROS_CommandArray_TAG beta2.0.0)
 
-set(ModelInterfaceRBDL_TAG a0b8fa9b506877)
+set(ModelInterfaceRBDL_TAG a45209773eb)
 
 set(GazeboXBotPlugin_TAG 61e2a2135b3)
 
 # Robots
-set(iit-bigman-ros-pkg_TAG 2b9e47b18f24e)
+set(iit-bigman-ros-pkg_TAG 2b9e47b18f24e0)
 set(centauro-simulator_TAG bc52885a985ce750f)
 

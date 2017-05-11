@@ -83,6 +83,11 @@ find_or_build_package_with_tag(ros_orocos_joints_gui OFF)
 find_or_build_package_with_tag(compliance_ctrl OFF)
 
 # --------------------------------------
+# Compile cogimon-gazebo-models
+# --------------------------------------
+find_or_build_package_with_tag(cogimon-gazebo-models OFF)
+
+# --------------------------------------
 # Compile gazebo-pkgs
 # --------------------------------------
 find_or_build_package_with_tag(gazebo-pkgs OFF)
