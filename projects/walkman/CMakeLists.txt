@@ -29,6 +29,9 @@ find_or_build_package_with_tag(segway_v3_robot OFF)
 find_or_build_package_with_tag(segway_v3_desktop OFF)
 find_or_build_package_with_tag(segway_v3_simulator OFF)
 
+find_or_build_package_with_tag(chengxu_walking OFF)
+
+
 # --------------------------------------
 # Compile ReactiveWalk
 # --------------------------------------
