@@ -6,32 +6,32 @@ set(YCM_GIT_GITLAB_ADVRCLOUD_BASE_ADDRESS "ssh://git@gitlab.advrcloud.iit.it/" C
 # ---------------------
 # Compile XBotInterface
 # ---------------------
-find_or_build_package_with_tag(XBotInterface OFF)
+find_or_build_package_with_tag(XBotInterface ON)
 
 # ---------------------
 # Compile srdfdom_advr
 # ---------------------
-find_or_build_package_with_tag(srdfdom_advr OFF)
+find_or_build_package_with_tag(srdfdom_advr ON)
 
 # ---------------------
 # Compile XBotCoreModel
 # ---------------------
-find_or_build_package_with_tag(XBotCoreModel OFF)
+find_or_build_package_with_tag(XBotCoreModel ON)
 
 # ------------------
 # Compile sharedlibpp
 # ------------------
-find_or_build_package_with_tag(sharedlibpp OFF)
+find_or_build_package_with_tag(sharedlibpp ON)
 
 # -------------------------
 # Compile RobotInterfaceROS
 # -------------------------
-find_or_build_package_with_tag(RobotInterfaceROS OFF)
+find_or_build_package_with_tag(RobotInterfaceROS ON)
 
 # -------------------------
 # Compile ModelInterfaceRBDL
 # -------------------------
-find_or_build_package_with_tag(ModelInterfaceRBDL OFF)
+find_or_build_package_with_tag(ModelInterfaceRBDL ON)
 
 # -------------------------
 # Compile ModelInterfaceIDYNUTILS
@@ -41,7 +41,7 @@ find_or_build_package_with_tag(ModelInterfaceIDYNUTILS OFF)
 # ---------------------------
 # Compile RobotInterfaceDUMMY
 # ---------------------------
-find_or_build_package_with_tag(RobotInterfaceDUMMY OFF)
+find_or_build_package_with_tag(RobotInterfaceDUMMY ON)
 
 # --------------------------
 # Compile RobotInterfaceYARP
@@ -51,17 +51,17 @@ find_or_build_package_with_tag(RobotInterfaceYARP OFF)
 # ----------------------------
 # Compile RobotInterfaceXBotRT
 # ----------------------------
-find_or_build_package_with_tag(RobotInterfaceXBotRT OFF)
+find_or_build_package_with_tag(RobotInterfaceXBotRT ON)
 
 # ----------------------------
 # Compile XCM
 # ----------------------------
-find_or_build_package_with_tag(XCM OFF)
+find_or_build_package_with_tag(XCM ON)
 
 # -------------------
 # Compile ADVR_shared
 # -------------------
-find_or_build_package_with_tag(ADVR_shared OFF)
+find_or_build_package_with_tag(ADVR_shared ON)
 
 # -------------------
 # Compile advr_humanoids_common_utils
@@ -83,12 +83,12 @@ endif(SUPERBUILD_XBotCore)
 # ------------------------
 # Compile GazeboXBotPlugin
 # ------------------------
-find_or_build_package_with_tag(GazeboXBotPlugin OFF)
+find_or_build_package_with_tag(GazeboXBotPlugin ON)
 
 # ----------------
 # Compile XBotCore-interfaces
 # ----------------
-find_or_build_package_with_tag(XBotCore-interfaces OFF)
+find_or_build_package_with_tag(XBotCore-interfaces ON)
 
 # ----------------
 # Compile EtherCAT_tools
@@ -113,5 +113,5 @@ find_or_build_package_with_tag(OpenSoT-lite OFF)
 # ----------------
 # Compile OpenSoT-lite
 # ----------------
-find_or_build_package_with_tag(MiscellaneousPlugins OFF)
+find_or_build_package_with_tag(MiscellaneousPlugins ON)
 
