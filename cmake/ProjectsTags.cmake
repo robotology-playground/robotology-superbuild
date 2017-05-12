@@ -56,6 +56,8 @@ set(RobotInterfaceROS_CommandArray_TAG beta2.0.0)
 
 set(ModelInterfaceRBDL_TAG a45209773eb)
 
+set(XBotCore_TAG 885eea96b56c126)
+
 set(GazeboXBotPlugin_TAG 61e2a2135b3)
 
 # Robots
