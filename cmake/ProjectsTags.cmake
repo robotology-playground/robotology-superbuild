@@ -1,13 +1,13 @@
-#superbuild
+# Superbuild
 set(YCM_TAG 538bec08ad3)
 
-# Superbuild CORE: put the SHA1 of the commit or the TAG, not the branch name.
+# Superbuild DRC CORE: put the SHA1 of the commit or the TAG, not the branch name.
 set(YARP_TAG ecd0040)
 set(paramHelp_TAG de9f652)
-set(GazeboYARPPlugins_TAG caf5b45a8)
+set(GazeboYARPPlugins_TAG b843248)
 set(iDynTree_TAG f0346c1)
 set(idynutils_TAG ba98bc36)
-set(OpenSoT_TAG ddd588cfd)
+set(OpenSoT_TAG c46cc3b409564)
 set(GYM_TAG 825a36ed7ae)
 set(fcl_TAG 54e9619bc2b)
 
@@ -29,30 +29,35 @@ set(locoman_utils_TAG 89cd9b83582a)
 
 # utils: put the SHA1 of the commit or the TAG, not the branch name.
 #set(drc_shared_TAG 8289f4fed1dd)
-set(trajectory_generator_TAG 4bcf25603c)
+set(trajectory_generator_TAG 332b984362)
 
 # ROS publisher: put the SHA1 of the commit or the TAG, not the branch name.
 set(robot_state_publisher_ext_TAG 90ffac07f)
 set(yarp_ros_joint_state_publisher_TAG 101ddfb3c)
 
-# XBot
+# XBot Core libraries
+
+set(ADVR_shared_TAG 00a2f23f280b296c9e)
+
 set(sharedlibpp_TAG v1.0)
-set(srdfdom_advr_TAG v1.0)
-set(XBotCoreModel_TAG 44443ce6)
-set(XBotInterface_TAG 0713a4a7f3a94)
-set(RobotInterfaceYARP_TAG c1ae076cf4cc)
-set(RobotInterfaceROS_TAG v1.0.1)
-set(RobotInterfaceROS_CustomCmndInterface_TAG beta2.0.0)
-set(RobotInterfaceROS_CommandArray_TAG beta2.0.0)
-set(ModelInterfaceRBDL_TAG a0b8fa9b506877)
+set(srdfdom_advr_TAG 67bfe684b3703276b)
+set(XBotCoreModel_TAG 9edc9f5becb5f8)
+set(XBotCore-interfaces_TAG 045be6335e6e620ced)
+set(XBotInterface_TAG b7dbfe730baf1)
+set(XCM_TAG 60f59c6c7a1)
+
 set(RobotInterfaceDUMMY_TAG 72c9400323)
-set(XCM_TAG efced7248f9)
-set(GazeboXBotPlugin_TAG be7a5f5c635e3)
-set(RobotInterfaceXBotRT_TAG ffcf5c58a) 
-set(ADVR_shared_TAG 1d9895dd56)
-set(XBotCore-interfaces_TAG 700fd7ffebf13950)
+set(RobotInterfaceXBotRT_TAG afa94c46f70cb6cc) 
+set(RobotInterfaceYARP_TAG c1ae076cf4cc)
+set(RobotInterfaceROS_TAG 55ab6536aceff0fe)
+set(RobotInterfaceROS_CustomCmndInterface_TAG b10ad7e200290a)
+set(RobotInterfaceROS_CommandArray_TAG beta2.0.0)
 
-# CENTAURO 
-set(centauro-simulator_TAG 41854ccdca)
+set(ModelInterfaceRBDL_TAG a0b8fa9b506877)
 
+set(GazeboXBotPlugin_TAG 61e2a2135b3)
+
+# Robots
+set(iit-bigman-ros-pkg_TAG 2b9e47b18f24e)
+set(centauro-simulator_TAG wbc_tde)
 

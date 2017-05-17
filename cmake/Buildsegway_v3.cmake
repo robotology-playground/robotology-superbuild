@@ -1,12 +1,11 @@
-# trajectory_utils
+# rbdl 
 include(YCMEPHelper)
 include(FindOrBuildPackage)
 
-
-ycm_ep_helper(  trajectory_utils
+ycm_ep_helper(  segway_v3
                 TYPE GIT
                 STYLE GITHUB
-                REPOSITORY ADVRHumanoids/trajectory_utils.git
+                REPOSITORY StanleyInnovation/segway_v3.git
                 TAG master
                 COMPONENT external
             )

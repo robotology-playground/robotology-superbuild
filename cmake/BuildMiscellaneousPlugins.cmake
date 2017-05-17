@@ -1,16 +1,14 @@
-# ReactiveWalk
+# MiscellaneousPlugins
 include(YCMEPHelper)
 include(FindOrBuildPackage)
 
-find_package(Eigen QUIET)
+find_or_build_package(XCM QUIET)
 
-
-
-ycm_ep_helper(  ReactiveWalk
+ycm_ep_helper(  MiscellaneousPlugins
                 TYPE GIT
                 STYLE GITHUB
-                REPOSITORY ADVRHumanoids/reactivewalk.git
+                REPOSITORY ADVRHumanoids/MiscellaneousPlugins.git
                 TAG master
                 COMPONENT external
-                
+		DEPENDS XCM
              )

@@ -24,3 +24,11 @@ To  run the simulation:
 roscd centauro_gazebo/launch
 roslaunch centauro_world.launch legs:=false hands:=false
 ```
+From a different terminal,
+```
+./build/external/XCM/devel/lib/XCM/CommunicationHandler external/wbc_tde/configs/config_centauro-rt_upperbody.yaml
+```
+And finally, from the third terminal, we can enable the control plugin
+```
+rosservice call /wbc_tde_switch true
+```

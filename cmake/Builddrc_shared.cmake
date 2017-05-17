@@ -6,11 +6,12 @@ include(FindOrBuildPackage)
 find_package(roscpp QUIET)
 
 find_or_build_package(YARP QUIET)
+find_or_build_package(YCM QUIET)
 
 ycm_ep_helper(  drc_shared
                 TYPE GIT
-                STYLE GITLAB_ROBOTOLOGY
-                REPOSITORY walkman-drc/drc_shared.git
+                STYLE GITHUB
+                REPOSITORY ADVRHumanoids/drc_shared.git
                 TAG master
                 COMPONENT robots
                 DEPENDS YARP

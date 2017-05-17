@@ -96,6 +96,7 @@ export ROS_PACKAGE_PATH=$ROBOTOLOGY_ROOT/build/install/share:$ROS_PACKAGE_PATH
 pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/build/install/stacks
 pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/robots/IITComanRosPkg
 pathadd CPATH $ROBOTOLOGY_ROOT/build/install/include
+pathadd CPATH /opt/ros/${ROS_DISTRO}/include
 pathadd PYTHONPATH $ROBOTOLOGY_ROOT/build/install/lib/python2.7/site-packages
 pathadd PYTHONPATH $ROBOTOLOGY_ROOT/build/install/lib/python2.7/dist-packages
 pathadd PYTHONPATH $ROBOTOLOGY_ROOT/external/OpenSoT/python/interfaces/yarp
@@ -135,6 +136,10 @@ if [ -d ${ROBOTOLOGY_ROOT}/robots/centauro-simulator ]; then
        pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/robots/centauro-simulator
 fi
 
+if [ -d ${ROBOTOLOGY_ROOT}/robots/gazebo_ros_demos ]; then
+       pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/robots/gazebo_ros_demos
+fi
+
 # vigir stuffs
 if [ -d $ROBOTOLOGY_ROOT/vigir/vigir_footstep_planning_basics ]; then
         pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/vigir/vigir_footstep_planning_basics
@@ -153,6 +158,9 @@ if [ -d $ROBOTOLOGY_ROOT/vigir/vigir_pluginlib ]; then
 fi
 if [ -d $ROBOTOLOGY_ROOT/vigir/vigir_terrain_classifier ]; then
         pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/vigir/vigir_terrain_classifier
+fi
+if [ -d $ROBOTOLOGY_ROOT/external/gazebo-pkgs ]; then
+        pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/external/gazebo-pkgs/gazebo_grasp_plugin
 fi
 
 
@@ -181,6 +189,7 @@ if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" == "SIMULATION" ]; then
     fi
 
     alias gazeboros='export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ROBOTOLOGY_ROOT/build/install/lib/drcsim_gazebo_ros_plugins/plugins; gazebo --verbose -s libgazebo_ros_api_plugin.so'
+    alias gazeborosyarp='export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ROBOTOLOGY_ROOT/build/install/lib/drcsim_gazebo_ros_plugins/plugins; gazebo --verbose -s libgazebo_ros_api_plugin.so -s libgazebo_yarp_clock.so'
 
 fi
 

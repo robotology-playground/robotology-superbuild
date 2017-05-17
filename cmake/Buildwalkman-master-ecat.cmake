@@ -11,4 +11,7 @@ ycm_ep_helper(  walkman-master-ecat
                 TAG centauro_bonn_review_2016
                 COMPONENT external
 		DEPENDS soem_advr
+		CMAKE_CACHE_ARGS -DBUILD_SHARED_LIBS:BOOL=ON
+                                 -DENABLE_XENO:BOOL=ON
+
              )

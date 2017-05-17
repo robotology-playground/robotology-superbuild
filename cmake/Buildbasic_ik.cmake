@@ -7,8 +7,8 @@ find_or_build_package(GYM QUIET)
 
 ycm_ep_helper(  basic_ik
                 TYPE GIT
-                STYLE GITLAB_ROBOTOLOGY
-                REPOSITORY luca.muratore/basic_ik.git
+                STYLE GITHUB
+                REPOSITORY ADVRHumanoids/basic_ik.git
                 TAG master
                 COMPONENT robots
                 DEPENDS OpenSoT

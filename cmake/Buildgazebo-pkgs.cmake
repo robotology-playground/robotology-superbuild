@@ -1,12 +1,10 @@
-# trajectory_utils
+# gazebo-pkgs
 include(YCMEPHelper)
-include(FindOrBuildPackage)
 
-
-ycm_ep_helper(  trajectory_utils
+ycm_ep_helper(  gazebo-pkgs
                 TYPE GIT
                 STYLE GITHUB
-                REPOSITORY ADVRHumanoids/trajectory_utils.git
+                REPOSITORY EnricoMingo/gazebo-pkgs.git
                 TAG master
                 COMPONENT external
             )

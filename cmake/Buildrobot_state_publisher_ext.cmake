@@ -13,8 +13,8 @@ find_or_build_package(iDynTree QUIET)
 
 ycm_ep_helper(  robot_state_publisher_ext
                 TYPE GIT
-                STYLE GITLAB_ROBOTOLOGY
-                REPOSITORY walkman-drc/robot_state_publisher_ext.git
+                STYLE GITHUB
+                REPOSITORY ADVRHumanoids/robot_state_publisher_ext.git
                 TAG master
                 COMPONENT external
                 DEPENDS GYM

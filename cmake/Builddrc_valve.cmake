@@ -9,8 +9,8 @@ find_or_build_package(trajectory_generator QUIET)
 
 ycm_ep_helper(  drc_valve 
                 TYPE GIT
-                STYLE GITLAB_ROBOTOLOGY
-                REPOSITORY walkman-drc/drc_valve.git
+                STYLE GITHUB
+                REPOSITORY ADVRHumanoids/drc_valve.git
                 TAG master
                 COMPONENT robots
                 DEPENDS drc_shared
