@@ -8,4 +8,5 @@ ycm_ep_helper(  walkman_final_demo_field
                 REPOSITORY ADVRHumanoids/walkman_final_demo_field.git
                 TAG master
                 COMPONENT robots
+		INSTALL_COMMAND ""
             )
