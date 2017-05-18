@@ -47,3 +47,8 @@ find_or_build_package_with_tag(SensorsPublisher OFF)
 
 find_or_build_package_with_tag(custom_sensor_msgs OFF)
 
+# --------------------------------------
+# Compile walkman_final_demo_field
+# --------------------------------------
+find_or_build_package_with_tag(walkman_final_demo_field OFF)
+

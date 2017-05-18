@@ -100,6 +100,9 @@ pathadd GAZEBO_PLUGIN_PATH /opt/ros/indigo/lib
 pathadd GAZEBO_PLUGIN_PATH $ROBOTOLOGY_ROOT/build/install/lib
 pathadd GAZEBO_MODEL_PATH $ROBOTOLOGY_ROOT/robots/IITComanRosPkg/coman_gazebo/database
 pathadd GAZEBO_MODEL_PATH $ROBOTOLOGY_ROOT/robots/icub_gazebo
+if [ -d $ROBOTOLOGY_ROOT/robots/walkman_final_demo_field ]; then
+       pathadd GAZEBO_MODEL_PATH $ROBOTOLOGY_ROOT/robots/walkman_final_demo_field
+fi
 if [ -d $ROBOTOLOGY_ROOT/robots/iit-bigman-ros-pkg ]; then
         pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/robots/iit-bigman-ros-pkg
 	pathadd GAZEBO_MODEL_PATH $ROBOTOLOGY_ROOT/robots/iit-bigman-ros-pkg/bigman_gazebo/database
