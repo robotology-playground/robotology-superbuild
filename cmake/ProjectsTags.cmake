@@ -58,7 +58,7 @@ set(ModelInterfaceRBDL_TAG a45209773eb)
 
 set(XBotCore_TAG 885eea96b56c126)
 
-set(GazeboXBotPlugin_TAG 61e2a2135b3)
+set(GazeboXBotPlugin_TAG cca4168f6b9d2c227dae7)
 
 # Robots
 set(iit-bigman-ros-pkg_TAG 2b9e47b18f24e0)
