@@ -42,10 +42,10 @@ set(ADVR_shared_TAG 2d9a1c018eb4a)
 
 set(sharedlibpp_TAG v1.0)
 set(srdfdom_advr_TAG 67bfe684b3703276b)
-set(XBotCoreModel_TAG bd7e93c15a7844)
-set(XBotCore-interfaces_TAG e5e2714975d5)
-set(XBotInterface_TAG ede5ee06b96dd6)
-set(XCM_TAG b705aaf0b56e)
+set(XBotCoreModel_TAG 9be02db2583)
+set(XBotCore-interfaces_TAG 73c6533012508545506c2)
+set(XBotInterface_TAG ef58f663676d0749)
+set(XCM_TAG 1e00f527ebd185ba61c)
 
 set(RobotInterfaceDUMMY_TAG 72c9400323)
 set(RobotInterfaceXBotRT_TAG 7057c412d28) 
@@ -54,7 +54,7 @@ set(RobotInterfaceROS_TAG 55ab6536aceff0fe)
 set(RobotInterfaceROS_CustomCmndInterface_TAG b10ad7e200290a)
 set(RobotInterfaceROS_CommandArray_TAG beta2.0.0)
 
-set(ModelInterfaceRBDL_TAG a45209773eb)
+set(ModelInterfaceRBDL_TAG a45209773ebdee)
 
 set(XBotCore_TAG 885eea96b56c126)
 
