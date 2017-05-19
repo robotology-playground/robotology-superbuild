@@ -43,7 +43,7 @@ set(ADVR_shared_TAG 2d9a1c018eb4a)
 set(sharedlibpp_TAG v1.0)
 set(srdfdom_advr_TAG 67bfe684b3703276b)
 set(XBotCoreModel_TAG 9be02db2583)
-set(XBotCore-interfaces_TAG 73c6533012508545506c2)
+set(XBotCore-interfaces_TAG e1009fb5921a737)
 set(XBotInterface_TAG ef58f663676d0749)
 set(XCM_TAG 1e00f527ebd185ba61c)
 
