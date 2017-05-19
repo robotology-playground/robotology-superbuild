@@ -177,16 +177,8 @@ unalias gzserver > /dev/null 2>&1
 if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" == "SIMULATION" ]; then
     export YARP_CLOCK=/clock
 
-    # check for optirun
-    HAS_OPTIRUN=true;
-    type optirun >/dev/null 2>&1 || { HAS_OPTIRUN=false; }
-    if [ $HAS_OPTIRUN == true ]; then
-        alias gazebo='optirun gazebo -s libgazebo_yarp_clock.so'
-    else
-        alias gazebo='gazebo -s libgazebo_yarp_clock.so'
-        alias gzserver='gzserver -s libgazebo_yarp_clock.so'
-    fi
-
+    alias gazeboyarp='gazebo --verbose'  
+    alias gazeboyarp='gazebo --verbose -s libgazebo_yarp_clock.so'
     alias gazeboros='export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ROBOTOLOGY_ROOT/build/install/lib/drcsim_gazebo_ros_plugins/plugins; gazebo --verbose -s libgazebo_ros_api_plugin.so'
     alias gazeborosyarp='export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ROBOTOLOGY_ROOT/build/install/lib/drcsim_gazebo_ros_plugins/plugins; gazebo --verbose -s libgazebo_ros_api_plugin.so -s libgazebo_yarp_clock.so'
 
