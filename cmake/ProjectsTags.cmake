@@ -45,7 +45,7 @@ set(srdfdom_advr_TAG 67bfe684b3703276b)
 set(XBotCoreModel_TAG 9be02db2583)
 set(XBotCore-interfaces_TAG e1009fb5921a737)
 set(XBotInterface_TAG ef58f663676d0749)
-set(XCM_TAG 1e00f527ebd185ba61c)
+set(XCM_TAG 9c9d211a4f39a304)
 
 set(RobotInterfaceDUMMY_TAG 72c9400323)
 set(RobotInterfaceXBotRT_TAG 7057c412d28) 
