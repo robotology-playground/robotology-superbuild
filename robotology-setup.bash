@@ -66,11 +66,27 @@ if [ -f ${ROBOTOLOGY_ROOT}/orocos_ws/install_isolated/setup.bash ]; then
        fi           
        
        if [ -f ${ROBOTOLOGY_ROOT}/robots/rtt_coman/CMakeLists.txt ]; then
-              pathadd RTT_COMPONENT_PATH $ROBOTOLOGY_ROOT/build/install/lib/orocos/gnulinux/rtt_coman
+		if [ ${OROCOS_TARGET}='xenomai' ]; then 	
+			pathadd RTT_COMPONENT_PATH $ROBOTOLOGY_ROOT/build/install/lib/orocos/xenomai/orocos_ros_joint_state_publisher
+		else
+              		pathadd RTT_COMPONENT_PATH $ROBOTOLOGY_ROOT/build/install/lib/orocos/gnulinux/orocos_ros_joint_state_publisher
+		fi
        fi 
+       
+       if [ -f ${ROBOTOLOGY_ROOT}/external/orocos_ros_joint_state_publisher/CMakeLists.txt ]; then
+		if [ ${OROCOS_TARGET}='xenomai' ]; then 	
+			pathadd RTT_COMPONENT_PATH $ROBOTOLOGY_ROOT/build/install/lib/orocos/xenomai/rtt_coman
+		else
+              		pathadd RTT_COMPONENT_PATH $ROBOTOLOGY_ROOT/build/install/lib/orocos/gnulinux/rtt_coman
+		fi
+       fi
 
        if [ -f ${ROBOTOLOGY_ROOT}/external/ros_orocos_joints_gui/CMakeLists.txt ]; then
-              pathadd RTT_COMPONENT_PATH $ROBOTOLOGY_ROOT/build/install/lib/orocos/gnulinux/ros_orocos_joints_gui
+                if [ ${OROCOS_TARGET}='xenomai' ]; then 	
+			pathadd RTT_COMPONENT_PATH $ROBOTOLOGY_ROOT/build/install/lib/orocos/xenomai/ros_orocos_joints_gui
+		else
+              		pathadd RTT_COMPONENT_PATH $ROBOTOLOGY_ROOT/build/install/lib/orocos/gnulinux/ros_orocos_joints_gui
+		fi
        fi
 fi
 
