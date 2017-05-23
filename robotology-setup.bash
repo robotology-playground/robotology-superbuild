@@ -66,11 +66,27 @@ if [ -f ${ROBOTOLOGY_ROOT}/orocos_ws/install_isolated/setup.bash ]; then
        fi           
        
        if [ -f ${ROBOTOLOGY_ROOT}/robots/rtt_coman/CMakeLists.txt ]; then
-              pathadd RTT_COMPONENT_PATH $ROBOTOLOGY_ROOT/build/install/lib/orocos/gnulinux/rtt_coman
+		if [ ${OROCOS_TARGET}='xenomai' ]; then 	
+			pathadd RTT_COMPONENT_PATH $ROBOTOLOGY_ROOT/build/install/lib/orocos/xenomai/orocos_ros_joint_state_publisher
+		else
+              		pathadd RTT_COMPONENT_PATH $ROBOTOLOGY_ROOT/build/install/lib/orocos/gnulinux/orocos_ros_joint_state_publisher
+		fi
        fi 
+       
+       if [ -f ${ROBOTOLOGY_ROOT}/external/orocos_ros_joint_state_publisher/CMakeLists.txt ]; then
+		if [ ${OROCOS_TARGET}='xenomai' ]; then 	
+			pathadd RTT_COMPONENT_PATH $ROBOTOLOGY_ROOT/build/install/lib/orocos/xenomai/rtt_coman
+		else
+              		pathadd RTT_COMPONENT_PATH $ROBOTOLOGY_ROOT/build/install/lib/orocos/gnulinux/rtt_coman
+		fi
+       fi
 
        if [ -f ${ROBOTOLOGY_ROOT}/external/ros_orocos_joints_gui/CMakeLists.txt ]; then
-              pathadd RTT_COMPONENT_PATH $ROBOTOLOGY_ROOT/build/install/lib/orocos/gnulinux/ros_orocos_joints_gui
+                if [ ${OROCOS_TARGET}='xenomai' ]; then 	
+			pathadd RTT_COMPONENT_PATH $ROBOTOLOGY_ROOT/build/install/lib/orocos/xenomai/ros_orocos_joints_gui
+		else
+              		pathadd RTT_COMPONENT_PATH $ROBOTOLOGY_ROOT/build/install/lib/orocos/gnulinux/ros_orocos_joints_gui
+		fi
        fi
 fi
 
@@ -96,9 +112,13 @@ pathadd PYTHONPATH $ROBOTOLOGY_ROOT/build/install/lib/python2.7/site-packages
 pathadd PYTHONPATH $ROBOTOLOGY_ROOT/build/install/lib/python2.7/dist-packages
 pathadd PYTHONPATH $ROBOTOLOGY_ROOT/external/OpenSoT/python/interfaces/yarp
 pathadd PKG_CONFIG_PATH $ROBOTOLOGY_ROOT/build/install/lib/pkgconfig
+pathadd GAZEBO_PLUGIN_PATH /opt/ros/indigo/lib
 pathadd GAZEBO_PLUGIN_PATH $ROBOTOLOGY_ROOT/build/install/lib
 pathadd GAZEBO_MODEL_PATH $ROBOTOLOGY_ROOT/robots/IITComanRosPkg/coman_gazebo/database
 pathadd GAZEBO_MODEL_PATH $ROBOTOLOGY_ROOT/robots/icub_gazebo
+if [ -d $ROBOTOLOGY_ROOT/robots/walkman_final_demo_field ]; then
+       pathadd GAZEBO_MODEL_PATH $ROBOTOLOGY_ROOT/robots/walkman_final_demo_field
+fi
 if [ -d $ROBOTOLOGY_ROOT/robots/iit-bigman-ros-pkg ]; then
         pathadd ROS_PACKAGE_PATH $ROBOTOLOGY_ROOT/robots/iit-bigman-ros-pkg
 	pathadd GAZEBO_MODEL_PATH $ROBOTOLOGY_ROOT/robots/iit-bigman-ros-pkg/bigman_gazebo/database
@@ -173,16 +193,8 @@ unalias gzserver > /dev/null 2>&1
 if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" == "SIMULATION" ]; then
     export YARP_CLOCK=/clock
 
-    # check for optirun
-    HAS_OPTIRUN=true;
-    type optirun >/dev/null 2>&1 || { HAS_OPTIRUN=false; }
-    if [ $HAS_OPTIRUN == true ]; then
-        alias gazebo='optirun gazebo -s libgazebo_yarp_clock.so'
-    else
-        alias gazebo='gazebo -s libgazebo_yarp_clock.so'
-        alias gzserver='gzserver -s libgazebo_yarp_clock.so'
-    fi
-
+    alias gazeboyarp='gazebo --verbose'  
+    alias gazeboyarp='gazebo --verbose -s libgazebo_yarp_clock.so'
     alias gazeboros='export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ROBOTOLOGY_ROOT/build/install/lib/drcsim_gazebo_ros_plugins/plugins; gazebo --verbose -s libgazebo_ros_api_plugin.so'
     alias gazeborosyarp='export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ROBOTOLOGY_ROOT/build/install/lib/drcsim_gazebo_ros_plugins/plugins; gazebo --verbose -s libgazebo_ros_api_plugin.so -s libgazebo_yarp_clock.so'
 

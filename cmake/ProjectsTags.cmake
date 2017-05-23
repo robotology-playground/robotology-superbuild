@@ -42,10 +42,10 @@ set(ADVR_shared_TAG 2d9a1c018eb4a)
 
 set(sharedlibpp_TAG v1.0)
 set(srdfdom_advr_TAG 67bfe684b3703276b)
-set(XBotCoreModel_TAG bd7e93c15a7844)
-set(XBotCore-interfaces_TAG e5e2714975d5)
-set(XBotInterface_TAG ede5ee06b96dd6)
-set(XCM_TAG b705aaf0b56e)
+set(XBotCoreModel_TAG 9be02db2583)
+set(XBotCore-interfaces_TAG e1009fb5921a737)
+set(XBotInterface_TAG ef58f663676d0749)
+set(XCM_TAG 9c9d211a4f39a304)
 
 set(RobotInterfaceDUMMY_TAG 72c9400323)
 set(RobotInterfaceXBotRT_TAG 7057c412d28) 
@@ -54,11 +54,11 @@ set(RobotInterfaceROS_TAG 55ab6536aceff0fe)
 set(RobotInterfaceROS_CustomCmndInterface_TAG b10ad7e200290a)
 set(RobotInterfaceROS_CommandArray_TAG beta2.0.0)
 
-set(ModelInterfaceRBDL_TAG a45209773eb)
+set(ModelInterfaceRBDL_TAG a45209773ebdee)
 
 set(XBotCore_TAG 885eea96b56c126)
 
-set(GazeboXBotPlugin_TAG 61e2a2135b3)
+set(GazeboXBotPlugin_TAG cca4168f6b9d2c227dae7)
 
 # Robots
 set(iit-bigman-ros-pkg_TAG 2b9e47b18f24e0)
