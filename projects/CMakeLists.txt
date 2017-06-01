@@ -13,7 +13,6 @@ IF(SUPERBUILD_DRC_CORE)
     find_or_build_package(paramHelp)
 
     find_or_build_package(comanapp)
-    find_or_build_package(coman_launch)
 ENDIF(SUPERBUILD_DRC_CORE)
 
 # ----------------
