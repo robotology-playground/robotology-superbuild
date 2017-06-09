@@ -40,7 +40,7 @@ ycm_ep_helper(  YARP
                                  -DYARP_CLEAN_API:BOOL=ON
                                  -DYARP_COMPILE_TESTS:BOOL=OFF
                                  -DYARP_COMPILE_EXPERIMENTAL_WRAPPERS:BOOL=ON
-                                 -DYARP_COMPILE_BINDINGS:BOOL=ON
+                                 -DYARP_COMPILE_BINDINGS:BOOL=OFF
                                  -DCREATE_PYTHON:BOOL=ON
                                  -DCREATE_GUIS:BOOL=ON
                 )
