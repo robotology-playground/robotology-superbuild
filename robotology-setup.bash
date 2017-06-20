@@ -202,7 +202,6 @@ unalias gzserver > /dev/null 2>&1
 if [ "${ROBOTOLOGY_PROFILE:=DEFAULT}" == "SIMULATION" ]; then
     export YARP_CLOCK=/clock
 
-    alias gazeboyarp='gazebo --verbose'  
     alias gazeboyarp='gazebo --verbose -s libgazebo_yarp_clock.so'
     alias gazeboros='export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ROBOTOLOGY_ROOT/build/install/lib/drcsim_gazebo_ros_plugins/plugins; gazebo --verbose -s libgazebo_ros_api_plugin.so'
     alias gazeborosyarp='export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ROBOTOLOGY_ROOT/build/install/lib/drcsim_gazebo_ros_plugins/plugins; gazebo --verbose -s libgazebo_ros_api_plugin.so -s libgazebo_yarp_clock.so'
